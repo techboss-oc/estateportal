@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>EstatePortal - Forgot Password</title>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts & Material Symbols -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-container": "#bcceff",
+                        "on-error": "#ffffff",
+                        "inverse-on-surface": "#eff1f3",
+                        "tertiary-container": "#49596f",
+                        "on-surface": "#191c1e",
+                        "secondary-fixed-dim": "#c3c6cf",
+                        "primary": "#003c90",
+                        "surface-tint": "#1d59c1",
+                        "on-secondary-fixed": "#181c22",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-tertiary-container": "#bfd0ea",
+                        "surface-container-high": "#e6e8ea",
+                        "inverse-primary": "#b0c6ff",
+                        "on-secondary": "#ffffff",
+                        "secondary-container": "#dfe2eb",
+                        "tertiary": "#324257",
+                        "secondary": "#5b5e66",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "on-secondary-container": "#61646c",
+                        "inverse-surface": "#2d3133",
+                        "surface-variant": "#e0e3e5",
+                        "surface": "#f7f9fb",
+                        "on-surface-variant": "#434653",
+                        "secondary-fixed": "#dfe2eb",
+                        "on-primary": "#ffffff",
+                        "error": "#ba1a1a",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-error-container": "#93000a",
+                        "primary-fixed": "#d9e2ff",
+                        "on-primary-fixed-variant": "#00419c",
+                        "surface-container-lowest": "#ffffff",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "error-container": "#ffdad6",
+                        "surface-bright": "#f7f9fb",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed-variant": "#43474e",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "surface-container": "#eceef0",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed": "#001945",
+                        "outline": "#737784",
+                        "on-background": "#191c1e",
+                        "on-tertiary": "#ffffff",
+                        "primary-container": "#0f52ba",
+                        "outline-variant": "#c3c6d5"
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    spacing: {
+                        "margin-desktop": "40px",
+                        "gutter": "24px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    fontFamily: {
+                        "headline-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    fontSize: {
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body {
+            background-color: theme('colors.background');
+            color: theme('colors.on-background');
+        }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="antialiased min-h-screen flex items-center justify-center bg-background overflow-hidden selection:bg-primary-fixed selection:text-on-primary-fixed">
+<!-- Main Container -->
+<div class="flex flex-col md:flex-row w-full min-h-screen">
+<!-- Left Panel: Visual/Brand (Hidden on mobile) -->
+<div class="hidden md:flex md:w-1/2 lg:w-[55%] relative overflow-hidden bg-surface-container-high items-end justify-start p-margin-desktop">
+<!-- Background Image -->
+<div class="absolute inset-0 z-0">
+<img alt="Secure Property Management Visual" class="w-full h-full object-cover object-center" data-alt="A highly detailed architectural visualization of a futuristic, high-end real estate complex. The building features sleek glass facades, geometric concrete structures, and minimal, clean lines characteristic of modern minimalist design. The lighting is bright and high-key, creating a pristine light-mode aesthetic with soft shadows. The overall mood is authoritative, secure, and technologically advanced, fitting for a premium fintech and property management portal." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBapEYw7KPf8xyZJ1TBP6V0NoF1pRCqUyxhjFKFB-x31PJ8FYBuMnAvR87UT3OIvKh0PFbIw6NG9FwCh1IBhE3hgNjay3v7J1cLsxwjqZsGjANvgpx8ijsdgcWRJjvWLhLoMBd__nyC-I99HP3_jB2-RljO8hbz226ARbTQXWmgVp93EpWBl8Jwd2zgL68A2I_u33Dii4W8MSOAMEE_SIgfF5wWR6ab1TpvOgBFaSVmgGC42CPrEI_2"/>
+<!-- Overlay Gradient -->
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent"></div>
+</div>
+<!-- Content over image -->
+<div class="relative z-10 w-full max-w-lg glass-panel p-8 rounded-xl">
+<div class="flex items-center gap-3 mb-6">
+<span class="material-symbols-outlined text-white text-3xl" style="font-variation-settings: 'FILL' 1;">domain</span>
+<h2 class="font-headline-md text-headline-md text-white tracking-tight">EstatePortal</h2>
+</div>
+<h1 class="font-display-lg text-display-lg text-white mb-4">Secure Property Management</h1>
+<p class="font-body-lg text-body-lg text-white/90">
+                    Advanced digital finance and asset management engineered for high-stakes environments.
+                </p>
+</div>
+</div>
+<!-- Right Panel: Auth Form -->
+<div class="w-full md:w-1/2 lg:w-[45%] flex flex-col justify-center px-margin-mobile py-12 md:px-margin-desktop lg:px-24 bg-surface-lowest z-10 relative">
+<!-- Mobile Brand Header (Visible only on mobile) -->
+<div class="md:hidden flex items-center gap-3 mb-12 justify-center w-full">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">domain</span>
+<h2 class="font-headline-md text-headline-md text-primary tracking-tight font-bold">EstatePortal</h2>
+</div>
+<!-- Form Container -->
+<div class="w-full max-w-md mx-auto">
+<div class="mb-10 text-center md:text-left">
+<h1 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Password Reset</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Enter your email address and we'll send you a link to securely reset your password.</p>
+</div>
+<form class="space-y-6" onsubmit="event.preventDefault();">
+<!-- Input Group -->
+<div class="space-y-2">
+<label class="font-label-caps text-label-caps text-on-surface-variant uppercase block" for="email">Email Address</label>
+<div class="relative group">
+<div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+<span class="material-symbols-outlined text-outline-variant group-focus-within:text-primary transition-colors">mail</span>
+</div>
+<input class="w-full pl-11 pr-4 py-3 bg-surface border border-outline-variant rounded-lg font-body-md text-body-md text-on-surface placeholder:text-outline focus:outline-none focus:ring-4 focus:ring-primary-fixed focus:border-primary transition-all duration-200" id="email" name="email" placeholder="admin@estateportal.com" required="" type="email"/>
+</div>
+</div>
+<!-- Action Button -->
+<button class="w-full flex items-center justify-center gap-2 py-3 px-4 bg-primary text-on-primary rounded-lg font-body-md text-body-md font-semibold hover:bg-surface-tint shadow-[0_4px_14px_0_rgba(0,60,144,0.15)] active:scale-[0.98] transition-all duration-200" type="submit">
+                        Send Reset Link
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+<!-- Back Link -->
+<div class="pt-6 text-center">
+<a class="inline-flex items-center gap-2 font-body-sm text-body-sm text-primary hover:text-surface-tint font-medium transition-colors" href="#">
+<span class="material-symbols-outlined text-[18px]">arrow_back</span>
+                            Back to Login
+                        </a>
+</div>
+</form>
+</div>
+<!-- Footer details -->
+<div class="absolute bottom-6 left-0 w-full text-center md:text-left md:pl-margin-desktop lg:pl-24 px-margin-mobile">
+<p class="font-label-caps text-label-caps text-outline uppercase tracking-widest">
+                    © 2024 EstatePortal Systems
+                </p>
+</div>
+</div>
+</div>
+</body></html>

@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Customer Documents - EstatePortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#dfe2eb",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#bfd0ea",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#003c90",
+                        "inverse-primary": "#b0c6ff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#1d59c1",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-secondary-fixed": "#181c22",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary-fixed": "#d9e2ff",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#dfe2eb",
+                        "tertiary-fixed": "#d3e4fe",
+                        "outline-variant": "#c3c6d5",
+                        "tertiary-container": "#49596f",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "on-secondary-container": "#61646c",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#5b5e66",
+                        "outline": "#737784",
+                        "primary-container": "#0f52ba",
+                        "secondary-fixed-dim": "#c3c6cf",
+                        "on-surface-variant": "#434653",
+                        "tertiary": "#324257",
+                        "on-primary-container": "#bcceff",
+                        "on-primary-fixed-variant": "#00419c",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed": "#001945",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#43474e",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1e",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased overflow-x-hidden">
+<!-- TopAppBar -->
+<header class="bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl docked full-width top-0 sticky z-30 border-b border-outline-variant dark:border-outline flat no shadows flex justify-between items-center w-full px-gutter h-16 ml-[240px] max-w-[calc(100%-240px)] hidden md:flex">
+<div class="flex-1 flex items-center">
+<div class="relative w-96">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:ring-1 focus:ring-primary focus:bg-surface-container transition-colors" placeholder="Search documents..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button aria-label="notifications" class="hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full p-2 transition-all text-on-surface-variant dark:text-surface-variant Active: opacity-80 scale-95">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+<button aria-label="apps" class="hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full p-2 transition-all text-on-surface-variant dark:text-surface-variant Active: opacity-80 scale-95">
+<span class="material-symbols-outlined" data-icon="apps">apps</span>
+</button>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-4 py-2 rounded-full hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm ml-2">Quick Action</button>
+<img alt="Administrator Profile Image" class="w-8 h-8 rounded-full border border-outline-variant ml-2 object-cover" data-alt="A professional headshot of a corporate administrator in a bright, modern office setting. The lighting is soft and flattering, creating a high-end corporate aesthetic. The image is cropped in a perfect circle for a user profile avatar." src="https://lh3.googleusercontent.com/aida-public/AB6AXuD_gBrNOiLHYgglV8e0wMqWm1wiKU6wbwA7FE8QHjSuFEhrMVcYMgpLiiG6bV5JXwkLqkYuDrP0MPi-Mlu5-kL9Qg6FeOAixxqIALbQuNx6Qz6EDuxo8ui8Pkz9B8nA5__o5Nq1qHrZKIydAMf2_00YQV5pe3De33GSaL3TpBPLsxzf4QYlPaLK4XE4KANcjHXFPlm5ABblZ6ZkqSBqQX_EaC8ExHBOR9_k1W_CLsQhewYQwS7QSRYG"/>
+</div>
+</header>
+<!-- SideNavBar -->
+<nav class="bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl fixed left-0 top-0 h-full w-[240px] z-40 border-r border-outline-variant dark:border-outline flat no shadows flex flex-col py-gutter px-4 hidden md:flex">
+<div class="mb-8 px-2 flex flex-col gap-1">
+<h1 class="font-display-lg text-headline-md font-bold text-primary dark:text-inverse-primary tracking-tight">EstatePortal</h1>
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Customer Account</span>
+</div>
+<div class="flex-1 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 Active: scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="dashboard">dashboard</span>
+                Dashboard
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 Active: scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="domain">domain</span>
+                My Properties
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 Active: scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="payments">payments</span>
+                Payments
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-body-md text-body-md text-primary dark:text-inverse-primary font-bold border-l-4 border-primary bg-primary-fixed/30 dark:bg-primary-container/20 hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 Active: scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="description" data-weight="fill" style="font-variation-settings: 'FILL' 1;">description</span>
+                Documents
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 Active: scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="support_agent">support_agent</span>
+                Support
+            </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 Active: scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="settings">settings</span>
+                Settings
+            </a>
+</div>
+<div class="mt-auto flex flex-col gap-4">
+<button class="w-full bg-surface-container border border-outline-variant text-on-surface font-label-caps text-label-caps py-2.5 rounded-lg hover:bg-surface-container-high transition-colors shadow-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+                New Inquiry
+            </button>
+<div class="flex flex-col gap-1 border-t border-outline-variant pt-4">
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-body-md text-body-md text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="help">help</span>
+                    Help Center
+                </a>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg font-body-md text-body-md text-error hover:bg-error-container/20 transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]" data-icon="logout">logout</span>
+                    Logout
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="md:ml-[240px] p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto min-h-screen pb-32 md:pb-margin-desktop">
+<!-- Page Header -->
+<div class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-2">Document Repository</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Securely view, download, and manage all your property-related documentation.</p>
+</div>
+<div class="flex gap-3">
+<button class="bg-surface border border-outline-variant text-on-surface font-label-caps text-label-caps px-4 py-2.5 rounded-lg hover:bg-surface-container-high transition-colors flex items-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">filter_list</span>
+                    Filter
+                </button>
+<button class="bg-primary text-on-primary font-label-caps text-label-caps px-6 py-2.5 rounded-lg hover:bg-primary-container hover:shadow-md transition-all flex items-center gap-2 shadow-sm shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">upload</span>
+                    Upload
+                </button>
+</div>
+</div>
+<!-- Filter Chips -->
+<div class="flex flex-wrap gap-2 mb-8">
+<button class="px-4 py-1.5 rounded-full font-label-caps text-label-caps bg-primary text-on-primary border border-primary transition-colors">All</button>
+<button class="px-4 py-1.5 rounded-full font-label-caps text-label-caps bg-surface text-on-surface-variant border border-outline-variant hover:bg-surface-container transition-colors">Allocation Letter</button>
+<button class="px-4 py-1.5 rounded-full font-label-caps text-label-caps bg-surface text-on-surface-variant border border-outline-variant hover:bg-surface-container transition-colors">Receipt</button>
+<button class="px-4 py-1.5 rounded-full font-label-caps text-label-caps bg-surface text-on-surface-variant border border-outline-variant hover:bg-surface-container transition-colors">Survey Plan</button>
+<button class="px-4 py-1.5 rounded-full font-label-caps text-label-caps bg-surface text-on-surface-variant border border-outline-variant hover:bg-surface-container transition-colors">Agreement</button>
+</div>
+<!-- Documents Table Container (Glassmorphic) -->
+<div class="bg-surface-container-lowest border border-outline-variant rounded-xl overflow-hidden shadow-sm relative">
+<!-- Table Header -->
+<div class="grid grid-cols-12 gap-4 px-6 py-4 bg-surface-container-low border-b border-outline-variant font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider items-center hidden lg:grid">
+<div class="col-span-3">Document Name</div>
+<div class="col-span-3">Property</div>
+<div class="col-span-2">Type</div>
+<div class="col-span-2">Date Uploaded</div>
+<div class="col-span-1">Status</div>
+<div class="col-span-1 text-right">Actions</div>
+</div>
+<!-- Table Body -->
+<div class="divide-y divide-outline-variant/50">
+<!-- Row 1 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 px-6 py-4 hover:bg-surface-container/30 transition-colors items-center group">
+<div class="col-span-1 lg:col-span-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">description</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Phase 2 Allocation Cert.</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant lg:hidden mt-1">Allocation Letter • 12 Oct 2023</p>
+</div>
+</div>
+<div class="col-span-1 lg:col-span-3 font-body-sm text-body-sm text-on-surface-variant hidden lg:block">
+                        LOT 7 - Potter's House Phase 2
+                    </div>
+<div class="col-span-1 lg:col-span-2 hidden lg:flex items-center">
+<span class="px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-caps text-label-caps">Allocation Letter</span>
+</div>
+<div class="col-span-1 lg:col-span-2 font-label-caps text-label-caps text-on-surface-variant hidden lg:block">
+                        12 Oct 2023
+                    </div>
+<div class="col-span-1 flex items-center justify-between lg:justify-start">
+<span class="flex items-center gap-1.5 font-label-caps text-label-caps text-[#059669] bg-[#d1fae5] px-2 py-0.5 rounded-full border border-[#a7f3d0]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                            Verified
+                        </span>
+<!-- Mobile Actions -->
+<div class="flex gap-2 lg:hidden">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container"><span class="material-symbols-outlined text-[20px]">download</span></button>
+</div>
+</div>
+<!-- Desktop Actions -->
+<div class="col-span-1 justify-end gap-2 hidden lg:flex opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded hover:bg-surface-container" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded hover:bg-surface-container" title="Download"><span class="material-symbols-outlined text-[20px]">download</span></button>
+</div>
+</div>
+<!-- Row 2 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 px-6 py-4 hover:bg-surface-container/30 transition-colors items-center group">
+<div class="col-span-1 lg:col-span-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-tertiary-container/10 flex items-center justify-center text-tertiary">
+<span class="material-symbols-outlined">receipt_long</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Initial Deposit Receipt</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant lg:hidden mt-1">Receipt • 05 Oct 2023</p>
+</div>
+</div>
+<div class="col-span-1 lg:col-span-3 font-body-sm text-body-sm text-on-surface-variant hidden lg:block">
+                        LOT 7 - Potter's House Phase 2
+                    </div>
+<div class="col-span-1 lg:col-span-2 hidden lg:flex items-center">
+<span class="px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-caps text-label-caps">Receipt</span>
+</div>
+<div class="col-span-1 lg:col-span-2 font-label-caps text-label-caps text-on-surface-variant hidden lg:block">
+                        05 Oct 2023
+                    </div>
+<div class="col-span-1 flex items-center justify-between lg:justify-start">
+<span class="flex items-center gap-1.5 font-label-caps text-label-caps text-[#059669] bg-[#d1fae5] px-2 py-0.5 rounded-full border border-[#a7f3d0]">
+<span class="material-symbols-outlined text-[14px]">check_circle</span>
+                            Verified
+                        </span>
+<!-- Mobile Actions -->
+<div class="flex gap-2 lg:hidden">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container"><span class="material-symbols-outlined text-[20px]">download</span></button>
+</div>
+</div>
+<!-- Desktop Actions -->
+<div class="col-span-1 justify-end gap-2 hidden lg:flex opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded hover:bg-surface-container" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded hover:bg-surface-container" title="Download"><span class="material-symbols-outlined text-[20px]">download</span></button>
+</div>
+</div>
+<!-- Row 3 -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-4 px-6 py-4 hover:bg-surface-container/30 transition-colors items-center group">
+<div class="col-span-1 lg:col-span-3 flex items-center gap-3">
+<div class="w-10 h-10 rounded bg-primary-container/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined">map</span>
+</div>
+<div>
+<p class="font-body-md text-body-md font-medium text-on-surface">Registered Survey Plan</p>
+<p class="font-label-caps text-label-caps text-on-surface-variant lg:hidden mt-1">Survey Plan • 28 Sep 2023</p>
+</div>
+</div>
+<div class="col-span-1 lg:col-span-3 font-body-sm text-body-sm text-on-surface-variant hidden lg:block">
+                        LOT 7 - Potter's House Phase 2
+                    </div>
+<div class="col-span-1 lg:col-span-2 hidden lg:flex items-center">
+<span class="px-2.5 py-1 rounded-md bg-secondary-container text-on-secondary-container font-label-caps text-label-caps">Survey Plan</span>
+</div>
+<div class="col-span-1 lg:col-span-2 font-label-caps text-label-caps text-on-surface-variant hidden lg:block">
+                        28 Sep 2023
+                    </div>
+<div class="col-span-1 flex items-center justify-between lg:justify-start">
+<span class="flex items-center gap-1.5 font-label-caps text-label-caps text-[#d97706] bg-[#fef3c7] px-2 py-0.5 rounded-full border border-[#fde68a]">
+<span class="material-symbols-outlined text-[14px]">pending</span>
+                            Pending
+                        </span>
+<!-- Mobile Actions -->
+<div class="flex gap-2 lg:hidden">
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-2 text-on-surface-variant hover:text-primary transition-colors rounded-full hover:bg-surface-container"><span class="material-symbols-outlined text-[20px]">download</span></button>
+</div>
+</div>
+<!-- Desktop Actions -->
+<div class="col-span-1 justify-end gap-2 hidden lg:flex opacity-0 group-hover:opacity-100 transition-opacity">
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded hover:bg-surface-container" title="View"><span class="material-symbols-outlined text-[20px]">visibility</span></button>
+<button class="p-1.5 text-on-surface-variant hover:text-primary transition-colors rounded hover:bg-surface-container" title="Download"><span class="material-symbols-outlined text-[20px]">download</span></button>
+</div>
+</div>
+</div>
+<!-- Pagination Footer -->
+<div class="px-6 py-4 bg-surface-container-lowest border-t border-outline-variant flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant">Showing 1-3 of 12 documents</span>
+<div class="flex items-center gap-2">
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container disabled:opacity-50" disabled=""><span class="material-symbols-outlined">chevron_left</span></button>
+<button class="p-1 rounded text-on-surface-variant hover:bg-surface-container"><span class="material-symbols-outlined">chevron_right</span></button>
+</div>
+</div>
+</div>
+</main>
+</body></html>

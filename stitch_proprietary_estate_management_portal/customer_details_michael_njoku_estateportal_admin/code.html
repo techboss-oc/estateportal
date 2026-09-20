@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#181c22","inverse-on-surface":"#eff1f3","on-primary-container":"#bcceff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","on-error":"#ffffff","secondary-container":"#dfe2eb","inverse-surface":"#2d3133","surface-container-low":"#f2f4f6","tertiary-container":"#49596f","tertiary-fixed":"#d3e4fe","secondary-fixed-dim":"#c3c6cf","on-surface-variant":"#434653","surface":"#f7f9fb","on-background":"#191c1e","surface-container-high":"#e6e8ea","primary-fixed":"#d9e2ff","on-primary-fixed":"#001945","error":"#ba1a1a","on-surface":"#191c1e","surface-container-highest":"#e0e3e5","on-secondary-container":"#61646c","secondary":"#5b5e66","on-primary-fixed-variant":"#00419c","primary":"#003c90","secondary-fixed":"#dfe2eb","outline":"#737784","surface-bright":"#f7f9fb","error-container":"#ffdad6","inverse-primary":"#b0c6ff","on-primary":"#ffffff","on-secondary-fixed-variant":"#43474e","tertiary":"#324257","surface-tint":"#1d59c1","surface-variant":"#e0e3e5","background":"#f7f9fb","on-tertiary-container":"#bfd0ea","surface-dim":"#d8dadc","surface-container":"#eceef0","primary-fixed-dim":"#b0c6ff","on-secondary":"#ffffff","on-tertiary-fixed":"#0b1c30","on-error-container":"#93000a","primary-container":"#0f52ba","outline-variant":"#c3c6d5","tertiary-fixed-dim":"#b7c8e1","on-tertiary-fixed-variant":"#38485d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"container-max":"1440px","margin-mobile":"16px","margin-desktop":"40px","unit":"8px","gutter":"24px"},"fontFamily":{"label-caps":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"body-md":["Inter"],"body-sm":["Inter"],"display-lg":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"body-lg":["Inter"],"headline-lg-mobile":["Hanken Grotesk"]},"fontSize":{"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low z-50 flex flex-col justify-between p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-8"><div class="flex items-center gap-3 px-2"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">apartment</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-on-surface leading-tight tracking-tight">EstatePortal</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Fintech OS</span></div></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-sm font-semibold rounded-xl shadow-sm"><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="estates" href="#"><span class="material-symbols-outlined text-[20px]">location_city</span><span>Estates</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="plots" href="#"><span class="material-symbols-outlined text-[20px]">map</span><span>Plots</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="allocations" href="#"><span class="material-symbols-outlined text-[20px]">pie_chart</span><span>Allocations</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="documents" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documents</span></a><a aria-current="page" class="flex items-center gap-3 px-4 py-3 transition-colors bg-primary-container text-on-primary font-body-sm font-semibold rounded-xl shadow-sm" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Alexander Sterling</span><span class="font-label-caps text-label-caps text-on-surface-variant truncate">PORTFOLIO DIRECTOR</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></aside><div class="pl-[280px]"><header class="fixed top-0 left-[280px] right-0 z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between"><div class="flex items-center flex-1 max-w-lg"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full pl-10 pr-4 py-2 rounded-xl bg-surface-container-lowest text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-[0_1px_4px_rgba(0,0,0,0.02)]" placeholder="Search plots, parcels, documents, or clients..." type="text"/></div></div><div class="flex items-center gap-4"><button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New Allocation</span></button><button aria-label="Notifications" class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative shadow-[0_1px_4px_rgba(0,0,0,0.02)]" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="w-full max-w-[1440px] mx-auto px-6 lg:px-10 py-8 flex flex-col gap-10">
+<!-- Top Breadcrumb & Metadata Navigation -->
+<div class="flex flex-wrap items-center justify-between gap-4">
+<nav aria-label="Breadcrumbs" class="flex items-center gap-2">
+<a class="font-body-sm text-body-sm text-on-surface-variant hover:text-primary transition-colors flex items-center gap-1.5" href="#">
+<span class="material-symbols-outlined text-[18px]">group</span>
+<span>Customers</span>
+</a>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">chevron_right</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant tracking-wider">CUS-8492</span>
+<span class="material-symbols-outlined text-on-surface-variant text-[16px]">chevron_right</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Michael Njoku</span>
+</nav>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-emerald-600"></span>
+<span>SYSTEM SYNCHRONIZED</span>
+</div>
+<div class="h-4 w-px bg-surface-container-highest"></div>
+<span class="font-label-caps text-label-caps text-on-surface-variant">PORTFOLIO TIER: HIGH NET WORTH</span>
+</div>
+</div>
+<!-- Header Dossier Card -->
+<div class="bg-surface-container-lowest rounded-xl p-8 lg:p-10 shadow-sm relative overflow-hidden flex flex-col gap-8">
+<div class="absolute right-0 top-0 w-96 h-96 bg-gradient-to-bl from-primary/5 via-transparent to-transparent pointer-events-none rounded-full blur-3xl"></div>
+<!-- Top Profile Row -->
+<div class="flex flex-col xl:flex-row xl:items-center justify-between gap-8 z-10">
+<div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+<div class="relative">
+<div class="w-20 h-20 rounded-xl bg-primary-container text-on-primary font-headline-lg text-headline-lg flex items-center justify-center shadow-md">
+              MN
+            </div>
+<div class="absolute -bottom-1 -right-1 bg-surface-container-lowest p-1 rounded-full shadow-sm">
+<span class="material-symbols-outlined text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="flex flex-wrap items-center gap-3">
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">Michael Njoku</h1>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps font-semibold flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">military_tech</span>
+                Tier 3 Investor
+              </span>
+<span class="px-2.5 py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-caps text-label-caps">
+                CUS-8492
+              </span>
+</div>
+<div class="flex flex-wrap items-center gap-4 text-on-surface-variant font-body-sm text-body-sm">
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">calendar_today</span>
+                Member since Jan 18, 2022
+              </span>
+<span>•</span>
+<span class="flex items-center gap-1.5 text-primary">
+<span class="material-symbols-outlined text-[16px]">security</span>
+                BVN &amp; NIMC Authenticated
+              </span>
+<span>•</span>
+<span class="flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">corporate_fare</span>
+                Direct Allocation Class
+              </span>
+</div>
+</div>
+</div>
+<!-- Action Controls -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary-container transition-all shadow-sm" type="button">
+<span class="material-symbols-outlined text-[20px]">add_circle</span>
+<span>Allocate New Plot</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">edit</span>
+<span>Edit Profile</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span>
+<span>Send Encrypted Notice</span>
+</button>
+<div class="relative">
+<button class="w-10 h-10 rounded-xl bg-surface-container-high text-on-surface flex items-center justify-center hover:bg-surface-container-highest transition-colors" id="actionsMenuBtn" type="button">
+<span class="material-symbols-outlined text-[20px]">more_vert</span>
+</button>
+<div class="hidden absolute right-0 mt-2 w-56 bg-surface-container-lowest rounded-xl shadow-xl p-2 z-50 flex flex-col gap-1" id="actionsDropdown">
+<button class="w-full text-left px-3 py-2 text-body-sm font-body-sm rounded-lg hover:bg-surface-container text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">file_download</span> Export Portfolio Audit
+              </button>
+<button class="w-full text-left px-3 py-2 text-body-sm font-body-sm rounded-lg hover:bg-surface-container text-on-surface flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">history</span> Full Event Telemetry
+              </button>
+<div class="h-px bg-surface-container my-1"></div>
+<button class="w-full text-left px-3 py-2 text-body-sm font-body-sm rounded-lg hover:bg-error-container text-error flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">block</span> Freeze Allocations
+              </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Extended Contact Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 pt-6 bg-surface-container-low/60 rounded-xl p-6">
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">mail</span> PRIMARY EMAIL
+          </span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface select-all">michael.njoku@example.com</span>
+<span class="font-label-caps text-label-caps text-emerald-700 flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Verified Channel
+          </span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">call</span> PHONE NUMBER
+          </span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface select-all">+234 803 123 4567</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">GSM / WhatsApp Enabled</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">location_on</span> TAX JURISDICTION &amp; DOMICILE
+          </span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Victoria Island, Lagos</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Secondary: Asaba, Delta State</span>
+</div>
+<div class="flex flex-col gap-1.5">
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center gap-1.5">
+<span class="material-symbols-outlined text-[16px]">badge</span> KYC COMPLIANCE LEVEL
+          </span>
+<span class="font-body-sm text-body-sm font-semibold text-primary flex items-center gap-1">
+            Level 3 Complete
+          </span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">AML Validated Through 2027</span>
+</div>
+</div>
+</div>
+<!-- Financial & Property Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+<!-- Metric 1 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between gap-4 relative overflow-hidden group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Total Portfolio Value</span>
+<div class="w-9 h-9 rounded-xl bg-primary/10 text-primary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">payments</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">₦30,000,000</span>
+<div class="flex items-center gap-2 font-body-sm text-body-sm text-on-surface-variant">
+<span class="text-emerald-700 font-medium flex items-center">
+<span class="material-symbols-outlined text-[16px]">trending_up</span> +14.8%
+            </span>
+<span>Est. baseline gain</span>
+</div>
+</div>
+<div class="w-full bg-surface-container-high h-1.5 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<!-- Metric 2 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Allocated Land</span>
+<div class="w-9 h-9 rounded-xl bg-tertiary/10 text-tertiary flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">layers</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">928 sqm</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">2 distinct titled cadastral plots</span>
+</div>
+<div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant pt-1">
+<span>Potter's House Ph. 2</span>
+<span>100% Assigned</span>
+</div>
+</div>
+<!-- Metric 3 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Escrow Settlement</span>
+<div class="w-9 h-9 rounded-xl bg-emerald-100 text-emerald-800 flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">account_balance</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">100% Settled</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">₦0 Outstanding Liability</span>
+</div>
+<div class="flex items-center gap-1.5 font-label-caps text-label-caps text-emerald-800">
+<span class="material-symbols-outlined text-[16px]">verified</span>
+<span>Dual Ledger Cleared</span>
+</div>
+</div>
+<!-- Metric 4 -->
+<div class="bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-shadow">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Documents on File</span>
+<div class="w-9 h-9 rounded-xl bg-surface-container text-on-surface-variant flex items-center justify-center">
+<span class="material-symbols-outlined text-[20px]">verified_user</span>
+</div>
+</div>
+<div class="flex flex-col gap-1">
+<span class="font-headline-lg text-headline-lg text-on-surface tracking-tight">8 Verified</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">0 pending administrative review</span>
+</div>
+<div class="flex items-center justify-between font-label-caps text-label-caps text-on-surface-variant">
+<span>Cryptographic Hash</span>
+<span class="font-semibold text-primary">VALID</span>
+</div>
+</div>
+</div>
+<!-- Dossier Tabs Navigation -->
+<div class="flex flex-col gap-8">
+<div class="flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+<button class="tab-trigger active px-5 py-3 rounded-xl font-body-sm text-body-sm font-semibold transition-all flex items-center gap-2 bg-primary text-on-primary shadow-sm" data-tab="properties">
+<span class="material-symbols-outlined text-[18px]">real_estate_agent</span>
+<span>Properties (2)</span>
+</button>
+<button class="tab-trigger px-5 py-3 rounded-xl font-body-sm text-body-sm font-medium transition-all flex items-center gap-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-tab="financials">
+<span class="material-symbols-outlined text-[18px]">account_balance_wallet</span>
+<span>Financial &amp; Settlement</span>
+</button>
+<button class="tab-trigger px-5 py-3 rounded-xl font-body-sm text-body-sm font-medium transition-all flex items-center gap-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-tab="documents">
+<span class="material-symbols-outlined text-[18px]">folder_shared</span>
+<span>Documents (8)</span>
+</button>
+<button class="tab-trigger px-5 py-3 rounded-xl font-body-sm text-body-sm font-medium transition-all flex items-center gap-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-tab="audit">
+<span class="material-symbols-outlined text-[18px]">manage_history</span>
+<span>Audit &amp; Activity History</span>
+</button>
+<button class="tab-trigger px-5 py-3 rounded-xl font-body-sm text-body-sm font-medium transition-all flex items-center gap-2 text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface" data-tab="kyc">
+<span class="material-symbols-outlined text-[18px]">fingerprint</span>
+<span>Notes &amp; Internal KYC</span>
+</button>
+</div>
+<!-- TAB 1: PROPERTIES (Main Content View) -->
+<div class="tab-panel flex flex-col gap-10" id="tab-properties">
+<!-- Section: Primary Property Holdings Grid -->
+<div class="flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Allocated Real Assets</h2>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Fully vested parcels tied directly to Michael Njoku’s sovereign investor registry.</p>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant bg-surface-container px-3 py-1.5 rounded-lg">
+              SHOWING 2 OF 2 ALLOCATIONS
+            </span>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+<!-- Property Card 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-all">
+<div>
+<!-- Top Card Image Banner with Badges -->
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="Aerial architectural survey view of an upscale master-planned residential estate in Lagos Nigeria, showcasing neatly subdivided luxury plots, paved access streets, lush greenery, and premium perimeter barriers under clear morning sunlight with deep blue and warm sand tones." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBGCD1ofpe6CxafpbK0Xcpy13FPIsWnYJhylVHjpovbH6E87XLtdJNgdQLSUq8nhZRj-_FDnd_r5MuDvcNZbbDDQhfh3zVZk_XSgPvRFE_T9hTWxPSPnMQzWXVrDstwE8pMCIQhkMZktv33t7ncp6P6X9bQXpatMMT6Lg9T9c_bYNFbZVUPp91-sQ3TCgeObx46tsY63PQ6ox8bPQz2lJjMHYUmwgBABNHigyHQU1xXxXsjK4EP4ff1"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-black/20"></div>
+<div class="absolute top-4 left-4 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface/90 backdrop-blur-md text-on-surface font-label-caps text-label-caps font-semibold shadow-sm">
+                      PH2-L07-2026
+                    </span>
+</div>
+<div class="absolute top-4 right-4 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-emerald-600 text-on-primary font-label-caps text-label-caps font-semibold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Allocated (Final)
+                    </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-surface-container-highest uppercase tracking-wider">Potter's House Phase 2</span>
+<h3 class="font-headline-md text-headline-md text-on-primary leading-tight">LOT 7 — Prime Corner Parcel</h3>
+</div>
+<span class="font-headline-md text-headline-md text-on-primary font-semibold">₦17,450,000</span>
+</div>
+</div>
+<!-- Card Content Matrix -->
+<div class="p-6 flex flex-col gap-6">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 bg-surface-container-low rounded-xl p-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SURFACE AREA</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">464.00 sqm</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ZONING CLASSIFICATION</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Residential Low</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ACQUISITION DATE</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Oct 14, 2023</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center justify-between">
+<span>CADASTRAL GEO-ANCHOR</span>
+<span class="font-mono text-primary">6°25'48.2"N 3°32'10.9"E</span>
+</span>
+<div class="flex items-center gap-2 p-3 bg-surface-container rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Governor's Consent in view; Deed of Assignment sealed and stamped.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Actions Footbar -->
+<div class="px-6 py-4 bg-surface-container-lowest flex items-center justify-between gap-3 shadow-[0_-1px_0_rgba(0,0,0,0.05)]">
+<button class="flex items-center gap-1.5 font-body-sm text-body-sm font-semibold text-primary hover:text-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Manage Allocation</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">map</span>
+<span>Vector Cadastre</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">folder</span>
+<span>Docs (4)</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Property Card 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm flex flex-col justify-between group hover:shadow-md transition-all">
+<div>
+<!-- Top Card Image Banner with Badges -->
+<div class="relative h-60 w-full overflow-hidden bg-surface-container">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" data-alt="High angle cinematic architectural view of a gated masterplan estate in a serene coastal greenbelt with newly laid stone paving, marked boundary pegs, contemporary security outpost, and clear blue daylight in sophisticated architectural aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDCWP27YDSCHQchK62212KVfSrQwiNQQTBdjtQVsTOQhnrchFfIXjjENfy1YJtwZ-jQJxHq0GiHsEw05CoguSujJPkYOuHVLpjBwy4mfQJDEB29K6eTQpPUqxppIcJi1yRNIBvFC1i-ApkDu7X_KZtnbYYkRBz63P_92yMJmltXYmFDltlYirAw0g513SIhPod4d6YCEmGRRASseLYfbL4J2BMna4bPHC8yrruMQsH2DlM3R5G8TosM"/>
+<div class="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-black/20"></div>
+<div class="absolute top-4 left-4 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-surface/90 backdrop-blur-md text-on-surface font-label-caps text-label-caps font-semibold shadow-sm">
+                      PH2-L15-2026
+                    </span>
+</div>
+<div class="absolute top-4 right-4 flex items-center gap-2">
+<span class="px-3 py-1 rounded-full bg-emerald-600 text-on-primary font-label-caps text-label-caps font-semibold shadow-sm flex items-center gap-1">
+<span class="material-symbols-outlined text-[14px]">check_circle</span> Allocated (Final)
+                    </span>
+</div>
+<div class="absolute bottom-4 left-4 right-4 flex items-end justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-surface-container-highest uppercase tracking-wider">Potter's House Phase 2</span>
+<h3 class="font-headline-md text-headline-md text-on-primary leading-tight">LOT 15 — Boulevard Green Lot</h3>
+</div>
+<span class="font-headline-md text-headline-md text-on-primary font-semibold">₦12,550,000</span>
+</div>
+</div>
+<!-- Card Content Matrix -->
+<div class="p-6 flex flex-col gap-6">
+<div class="grid grid-cols-2 sm:grid-cols-3 gap-4 bg-surface-container-low rounded-xl p-4">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">SURFACE AREA</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">464.00 sqm</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ZONING CLASSIFICATION</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Residential Low</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ACQUISITION DATE</span>
+<span class="font-body-md text-body-md font-semibold text-on-surface">Oct 14, 2023</span>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant flex items-center justify-between">
+<span>CADASTRAL GEO-ANCHOR</span>
+<span class="font-mono text-primary">6°25'49.8"N 3°32'14.1"E</span>
+</span>
+<div class="flex items-center gap-2 p-3 bg-surface-container rounded-lg text-body-sm font-body-sm text-on-surface-variant">
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+<span>Deed of Sublease executed. Beacon markers validated by State Surveyor General.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Card Actions Footbar -->
+<div class="px-6 py-4 bg-surface-container-lowest flex items-center justify-between gap-3 shadow-[0_-1px_0_rgba(0,0,0,0.05)]">
+<button class="flex items-center gap-1.5 font-body-sm text-body-sm font-semibold text-primary hover:text-primary-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">tune</span>
+<span>Manage Allocation</span>
+</button>
+<div class="flex items-center gap-2">
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">map</span>
+<span>Vector Cadastre</span>
+</button>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm flex items-center gap-1" type="button">
+<span class="material-symbols-outlined text-[16px]">folder</span>
+<span>Docs (4)</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Interactive Cadastral Context & Geo-Locator -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-primary font-semibold">GEOGRAPHIC SATELLITE CADASTRE</span>
+<h3 class="font-headline-md text-headline-md text-on-surface">Potter's House Phase 2 Sub-Layout</h3>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-lg bg-surface-container text-on-surface font-label-caps text-label-caps flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-primary"></span> LOT 7 &amp; LOT 15 (Active)
+              </span>
+<span class="px-3 py-1 rounded-lg bg-surface-container text-on-surface-variant font-label-caps text-label-caps flex items-center gap-1.5">
+<span class="w-2.5 h-2.5 rounded-sm bg-secondary-fixed-dim"></span> Adjacent Sold Plots
+              </span>
+</div>
+</div>
+<div class="w-full h-72 rounded-xl bg-cover bg-center relative overflow-hidden shadow-inner flex items-center justify-center" data-location="Victoria Island, Lagos" style="">
+<div class="absolute inset-0 bg-primary/20 backdrop-blur-[1px]"></div>
+<div class="relative z-10 bg-surface-container-lowest/90 backdrop-blur-md p-6 rounded-xl shadow-lg flex flex-col md:flex-row items-center gap-6 max-w-xl">
+<div class="w-12 h-12 rounded-xl bg-primary text-on-primary flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-[24px]">satellite_alt</span>
+</div>
+<div class="flex flex-col gap-1 text-center md:text-left">
+<span class="font-headline-md text-headline-md text-on-surface leading-tight">Cadastral Grid Active</span>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Real-time vector GIS overlay showing dual contiguous boundaries. Boundary coordinates reconciled with Lagos State Lands Bureau database.</p>
+</div>
+<button class="px-4 py-2 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-semibold shrink-0 hover:bg-primary-container transition-colors">
+                Launch Map GIS
+              </button>
+</div>
+</div>
+</div>
+<!-- Section: Attached Customer Documents & Files -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col gap-6">
+<div class="flex flex-wrap items-center justify-between gap-4">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Customer Documents &amp; Title Deeds</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Legally binding, cryptographic, and notarized customer filings.</p>
+</div>
+<button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface-container-high text-on-surface font-body-sm text-body-sm font-semibold hover:bg-surface-container-highest transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">upload_file</span>
+<span>+ Upload Additional Document</span>
+</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps">
+<th class="py-3 px-4 rounded-l-lg">DOCUMENT TITLE</th>
+<th class="py-3 px-4">ASSOCIATED ASSET</th>
+<th class="py-3 px-4">STATUS</th>
+<th class="py-3 px-4">DATE UPLOADED</th>
+<th class="py-3 px-4">HASH CHECKSUM</th>
+<th class="py-3 px-4 rounded-r-lg text-right">ACTION</th>
+</tr>
+</thead>
+<tbody class="divide-y-0 font-body-sm text-body-sm">
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-4 px-4 font-semibold text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">description</span>
+<span>Deed of Assignment &amp; C of O</span>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface">LOT 7 — PH2-L07-2026</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant font-mono text-[13px]">14 Oct 2023</td>
+<td class="py-4 px-4 font-mono text-[12px] text-on-surface-variant">0x89e2...410b</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-4 px-4 font-semibold text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">architecture</span>
+<span>Certified Survey Plan</span>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface">LOT 7 — PH2-L07-2026</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant font-mono text-[13px]">14 Oct 2023</td>
+<td class="py-4 px-4 font-mono text-[12px] text-on-surface-variant">0x33cf...fa21</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-4 px-4 font-semibold text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">contract</span>
+<span>Deed of Sublease</span>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface">LOT 15 — PH2-L15-2026</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant font-mono text-[13px]">14 Oct 2023</td>
+<td class="py-4 px-4 font-mono text-[12px] text-on-surface-variant">0x7bc0...1188</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-4 px-4 font-semibold text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[22px]">badge</span>
+<span>Government Issued ID (National Passport)</span>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface">General KYC File</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant font-mono text-[13px]">18 Jan 2022</td>
+<td class="py-4 px-4 font-mono text-[12px] text-on-surface-variant">0x12a9...d4c3</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+<tr class="hover:bg-surface-container/50 transition-colors group">
+<td class="py-4 px-4 font-semibold text-on-surface flex items-center gap-3">
+<span class="material-symbols-outlined text-tertiary text-[22px]">receipt_long</span>
+<span>Proof of Address (Utility Bill)</span>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface">General KYC File</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-100 text-emerald-800 font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">check</span> Verified
+                    </span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant font-mono text-[13px]">18 Jan 2022</td>
+<td class="py-4 px-4 font-mono text-[12px] text-on-surface-variant">0x99fe...a831</td>
+<td class="py-4 px-4 text-right">
+<div class="flex items-center justify-end gap-2">
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container text-on-surface-variant hover:text-primary transition-colors" title="Download">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Section: Customer Activity Audit Trail -->
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Audit Trail &amp; Ledger Events</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Immutable administrative chronological register.</p>
+</div>
+<button class="font-label-caps text-label-caps text-primary hover:underline flex items-center gap-1">
+<span>STREAM TELEMETRY</span>
+<span class="material-symbols-outlined text-[14px]">open_in_new</span>
+</button>
+</div>
+<div class="relative pl-6 flex flex-col gap-8 before:content-[''] before:absolute before:left-2.5 before:top-2 before:bottom-2 before:w-0.5 before:bg-surface-container-high">
+<!-- Event 1 -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[11px] shadow-sm">
+<span class="material-symbols-outlined text-[12px]">done_all</span>
+</div>
+<div class="flex flex-col gap-1 w-full bg-surface-container-low p-4 rounded-xl">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">LOT 7 Allocation Finalized</span>
+<span class="font-mono text-[12px] text-on-surface-variant">Oct 14, 2023 • 11:20 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Cadastral plot PH2-L07-2026 deed assignment executed and co-signed by Sarah Adams (Chief Operating Officer). Registry updated with final seal.</p>
+<div class="flex items-center gap-2 mt-1">
+<span class="font-label-caps text-label-caps text-primary font-medium">SIGNER: SARAH ADAMS (COO)</span>
+<span class="text-on-surface-variant text-[12px]">•</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">IP: 102.89.44.120</span>
+</div>
+</div>
+</div>
+<!-- Event 2 -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-emerald-600 text-on-primary flex items-center justify-center text-[11px] shadow-sm">
+<span class="material-symbols-outlined text-[12px]">credit_card</span>
+</div>
+<div class="flex flex-col gap-1 w-full bg-surface-container-low p-4 rounded-xl">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Escrow Inflow Confirmed (₦15,000,000)</span>
+<span class="font-mono text-[12px] text-on-surface-variant">Oct 12, 2023 • 03:45 PM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Wire transfer acknowledged via First Bank Nigeria Corporate Gateway. Reconciliation cleared across treasury escrow ref #TRX-948102.</p>
+<div class="flex items-center gap-2 mt-1 font-label-caps text-label-caps text-on-surface-variant">
+<span>SETTLEMENT: 100% BALANCE</span>
+<span>•</span>
+<span>AUTOPROCESSOR V4</span>
+</div>
+</div>
+</div>
+<!-- Event 3 -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-tertiary text-on-tertiary flex items-center justify-center text-[11px] shadow-sm">
+<span class="material-symbols-outlined text-[12px]">bookmark</span>
+</div>
+<div class="flex flex-col gap-1 w-full bg-surface-container-low p-4 rounded-xl">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Provisional Reservation Placed</span>
+<span class="font-mono text-[12px] text-on-surface-variant">Oct 10, 2023 • 09:15 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Plot LOT 7 Potter's House Phase 2 placed under 72-hour exclusivity reservation following deposit commitment letter from investor.</p>
+</div>
+</div>
+<!-- Event 4 -->
+<div class="relative flex items-start gap-4">
+<div class="absolute -left-6 top-1 w-5 h-5 rounded-full bg-primary text-on-primary flex items-center justify-center text-[11px] shadow-sm">
+<span class="material-symbols-outlined text-[12px]">person_add</span>
+</div>
+<div class="flex flex-col gap-1 w-full bg-surface-container-low p-4 rounded-xl">
+<div class="flex flex-wrap items-center justify-between gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Account Onboarding &amp; Tier 3 KYC Approved</span>
+<span class="font-mono text-[12px] text-on-surface-variant">Jan 18, 2022 • 10:00 AM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Investor profile initiated. Identity authenticated via Nigerian National Identity Management Commission (NIMC) and Bank Verification Number (BVN) API cross-checks.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 2: Financial & Settlement (Dynamic placeholder panel) -->
+<div class="tab-panel hidden flex flex-col gap-6" id="tab-financials">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Treasury &amp; Escrow Ledger</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Historical transaction ledger and verified fund flows.</p>
+</div>
+<button class="px-4 py-2 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-medium">Download Account Statement</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="p-6 bg-surface-container-low rounded-xl flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">CUMULATIVE CAPITAL INFLOW</span>
+<span class="font-headline-md text-headline-md text-on-surface">₦30,000,000.00</span>
+<span class="text-emerald-700 font-label-caps text-label-caps flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">check_circle</span> 100% Cleared
+              </span>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">ESCROW RETENTION</span>
+<span class="font-headline-md text-headline-md text-on-surface">₦0.00</span>
+<span class="text-on-surface-variant font-label-caps text-label-caps">All tranches disbursed to titles</span>
+</div>
+<div class="p-6 bg-surface-container-low rounded-xl flex flex-col gap-2">
+<span class="font-label-caps text-label-caps text-on-surface-variant">STAMP DUTY &amp; LEGAL TOLLS</span>
+<span class="font-headline-md text-headline-md text-on-surface">₦1,850,000.00</span>
+<span class="text-emerald-700 font-label-caps text-label-caps">Paid &amp; Remitted to State Revenue</span>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 3: Documents (Full View) -->
+<div class="tab-panel hidden flex flex-col gap-6" id="tab-documents">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">All Stored Customer Files</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Complete repository of 8 verified legal items.</p>
+</div>
+<button class="px-4 py-2 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-semibold">+ Add Secure Vault File</button>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+<div class="p-4 bg-surface-container-low rounded-xl flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary text-[32px]">folder_zip</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">Deed_Pack_PH2_L7.zip</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">14.2 MB • Oct 2023</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary text-[32px]">picture_as_pdf</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">Gov_Consent_PH2_L7.pdf</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">4.1 MB • Oct 2023</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl flex flex-col gap-3">
+<span class="material-symbols-outlined text-primary text-[32px]">picture_as_pdf</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">Deed_Sublease_L15.pdf</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">3.8 MB • Oct 2023</span>
+</div>
+</div>
+<div class="p-4 bg-surface-container-low rounded-xl flex flex-col gap-3">
+<span class="material-symbols-outlined text-tertiary text-[32px]">verified</span>
+<div>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface block">KYC_Biometric_Passport.pdf</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">1.9 MB • Jan 2022</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- TAB 4: Audit History -->
+<div class="tab-panel hidden flex flex-col gap-6" id="tab-audit">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col gap-4">
+<h3 class="font-headline-md text-headline-md text-on-surface">Raw Audit Logs &amp; Session Records</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Access the full API transaction register for compliance inspections.</p>
+<div class="bg-surface-container p-4 rounded-xl font-mono text-[13px] text-on-surface-variant flex flex-col gap-2">
+<div>[2023-10-14T11:20:00Z] AUTH_TOKEN_ROTATE: User 's.adams@estateportal.internal' authorized lot allocation LOT_7_PH2</div>
+<div>[2023-10-12T15:45:11Z] ESCROW_WEBHOOK_RECVD: FirstBank payment gateway hash 0x73918a cleared for ₦15,000,000.00</div>
+<div>[2023-10-10T09:15:32Z] PARCEL_RESERVED: Cadastral ref PH2-L07-2026 status changed from AVAILABLE to PENDING_ALLOCATION</div>
+<div>[2022-01-18T10:00:01Z] ONBOARD_VERIFY_SUCCESS: BVN 221****891 NIMC match positive. Investor Level 3 Granted.</div>
+</div>
+</div>
+</div>
+<!-- TAB 5: Notes & Internal KYC -->
+<div class="tab-panel hidden flex flex-col gap-6" id="tab-kyc">
+<div class="bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col gap-6">
+<h3 class="font-headline-md text-headline-md text-on-surface">Internal Admin KYC Notes</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Private team evaluations and relationship manager briefing records.</p>
+<textarea class="w-full h-32 p-4 rounded-xl bg-surface-container-low font-body-sm text-body-sm text-on-surface focus:outline-none focus:ring-2 focus:ring-primary/20 resize-none" placeholder="Add confidential compliance notes regarding Michael Njoku...">High-conviction investor. Expressed keen interest in acquiring adjacent commercial frontage along Potter's House Phase 2 arterial corridor when Phase 3 opens in Q4. Verified source of wealth: Energy infrastructure engineering consultancy.</textarea>
+<div class="flex justify-end">
+<button class="px-5 py-2.5 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary-container transition-colors">
+              Save Compliance Note
+            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Simple Vanilla JS for Tab switching & Dropdown toggle
+  document.addEventListener('DOMContentLoaded', () => {
+    const tabTriggers = document.querySelectorAll('.tab-trigger');
+    const tabPanels = document.querySelectorAll('.tab-panel');
+
+    tabTriggers.forEach(trigger => {
+      trigger.addEventListener('click', () => {
+        const targetTab = trigger.getAttribute('data-tab');
+
+        // Reset all trigger classes
+        tabTriggers.forEach(btn => {
+          btn.classList.remove('bg-primary', 'text-on-primary', 'shadow-sm', 'font-semibold');
+          btn.classList.add('text-on-surface-variant', 'font-medium');
+        });
+
+        // Set active classes on clicked tab
+        trigger.classList.remove('text-on-surface-variant', 'font-medium');
+        trigger.classList.add('bg-primary', 'text-on-primary', 'shadow-sm', 'font-semibold');
+
+        // Hide all panels & show target
+        tabPanels.forEach(panel => {
+          if (panel.id === `tab-${targetTab}`) {
+            panel.classList.remove('hidden');
+          } else {
+            panel.classList.add('hidden');
+          }
+        });
+      });
+    });
+
+    // Toggle actions menu dropdown
+    const actionsMenuBtn = document.getElementById('actionsMenuBtn');
+    const actionsDropdown = document.getElementById('actionsDropdown');
+
+    if (actionsMenuBtn && actionsDropdown) {
+      actionsMenuBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        actionsDropdown.classList.toggle('hidden');
+      });
+
+      document.addEventListener('click', () => {
+        if (!actionsDropdown.classList.contains('hidden')) {
+          actionsDropdown.classList.add('hidden');
+        }
+      });
+    }
+  });
+</script></main></div></body></html>

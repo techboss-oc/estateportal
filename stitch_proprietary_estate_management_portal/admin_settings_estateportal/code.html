@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#181c22","inverse-on-surface":"#eff1f3","on-primary-container":"#bcceff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","on-error":"#ffffff","secondary-container":"#dfe2eb","inverse-surface":"#2d3133","surface-container-low":"#f2f4f6","tertiary-container":"#49596f","tertiary-fixed":"#d3e4fe","secondary-fixed-dim":"#c3c6cf","on-surface-variant":"#434653","surface":"#f7f9fb","on-background":"#191c1e","surface-container-high":"#e6e8ea","primary-fixed":"#d9e2ff","on-primary-fixed":"#001945","error":"#ba1a1a","on-surface":"#191c1e","surface-container-highest":"#e0e3e5","on-secondary-container":"#61646c","secondary":"#5b5e66","on-primary-fixed-variant":"#00419c","primary":"#003c90","secondary-fixed":"#dfe2eb","outline":"#737784","surface-bright":"#f7f9fb","error-container":"#ffdad6","inverse-primary":"#b0c6ff","on-primary":"#ffffff","on-secondary-fixed-variant":"#43474e","tertiary":"#324257","surface-tint":"#1d59c1","surface-variant":"#e0e3e5","background":"#f7f9fb","on-tertiary-container":"#bfd0ea","surface-dim":"#d8dadc","surface-container":"#eceef0","primary-fixed-dim":"#b0c6ff","on-secondary":"#ffffff","on-tertiary-fixed":"#0b1c30","on-error-container":"#93000a","primary-container":"#0f52ba","outline-variant":"#c3c6d5","tertiary-fixed-dim":"#b7c8e1","on-tertiary-fixed-variant":"#38485d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"container-max":"1440px","margin-mobile":"16px","margin-desktop":"40px","unit":"8px","gutter":"24px"},"fontFamily":{"label-caps":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"body-md":["Inter"],"body-sm":["Inter"],"display-lg":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"body-lg":["Inter"],"headline-lg-mobile":["Hanken Grotesk"]},"fontSize":{"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low z-50 flex flex-col justify-between p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-8"><div class="flex items-center gap-3 px-2"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">apartment</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-on-surface leading-tight tracking-tight">EstatePortal</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Fintech OS</span></div></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-sm font-semibold rounded-xl shadow-sm"><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="estates" href="#"><span class="material-symbols-outlined text-[20px]">location_city</span><span>Estates</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="plots" href="#"><span class="material-symbols-outlined text-[20px]">map</span><span>Plots</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="allocations" href="#"><span class="material-symbols-outlined text-[20px]">pie_chart</span><span>Allocations</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="documents" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documents</span></a><a aria-current="page" class="flex items-center gap-3 px-4 py-3 transition-colors bg-primary-container text-on-primary font-body-sm font-semibold rounded-xl shadow-sm" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Alexander Sterling</span><span class="font-label-caps text-label-caps text-on-surface-variant truncate">PORTFOLIO DIRECTOR</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></aside><div class="pl-[280px]"><header class="fixed top-0 left-[280px] right-0 z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between"><div class="flex items-center flex-1 max-w-lg"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full pl-10 pr-4 py-2 rounded-xl bg-surface-container-lowest text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-[0_1px_4px_rgba(0,0,0,0.02)]" placeholder="Search plots, parcels, documents, or clients..." type="text"/></div></div><div class="flex items-center gap-4"><button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New Allocation</span></button><button aria-label="Notifications" class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative shadow-[0_1px_4px_rgba(0,0,0,0.02)]" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<!-- Subtle Ambient Glow Header Backdrop (contained) -->
+<div class="relative w-full px-8 pt-8 pb-4 overflow-hidden">
+<div class="absolute -top-24 right-12 w-96 h-96 rounded-full bg-primary-fixed/40 blur-3xl pointer-events-none"></div>
+<div class="absolute -top-12 right-1/3 w-64 h-64 rounded-full bg-secondary-fixed/50 blur-2xl pointer-events-none"></div>
+<!-- Header Section with Typographic Texture -->
+<div class="relative z-10 flex flex-col md:flex-row md:items-end justify-between gap-6 pb-6">
+<div class="flex flex-col gap-2 max-w-2xl">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest">SYS // CONF-009</span>
+<span class="inline-block w-1.5 h-1.5 rounded-full bg-primary"></span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">Core Engine v4.8.2</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">System Settings</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Configure portal preferences, corporate entity profile, security policies, and notification rules.</p>
+</div>
+<div class="flex items-center gap-3">
+<div class="flex items-center gap-2 px-3 py-1.5 rounded-full bg-surface-container-high text-on-surface-variant shadow-sm">
+<span class="w-2 h-2 rounded-full bg-emerald-600 animate-pulse"></span>
+<span class="font-label-caps text-label-caps uppercase text-on-surface tracking-wider">Sync State: Synchronized</span>
+</div>
+<button class="flex items-center gap-1.5 px-3 py-2 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high text-on-surface transition-colors shadow-sm font-body-sm text-body-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">history</span>
+<span>Version History</span>
+</button>
+</div>
+</div>
+<!-- Navigation Tabs Pill Bar -->
+<div class="relative z-10 flex items-center gap-2 overflow-x-auto pb-2 scrollbar-none">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-medium shadow-sm transition-all shrink-0" type="button">
+<span class="material-symbols-outlined text-[18px]" style="font-variation-settings: 'FILL' 1;">tune</span>
+<span>General Settings</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium transition-all shrink-0 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">shield</span>
+<span>Security &amp; Authentication</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium transition-all shrink-0 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">palette</span>
+<span>Branding &amp; Identity</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium transition-all shrink-0 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">notifications_active</span>
+<span>Notification Rules</span>
+</button>
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-lowest hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface font-body-sm text-body-sm font-medium transition-all shrink-0 shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px]">admin_panel_settings</span>
+<span>Audit &amp; Access Roles</span>
+</button>
+</div>
+</div>
+<!-- Main Settings Content Bento Grid -->
+<div class="px-8 py-6 flex flex-col gap-8 max-w-[1440px] w-full">
+<!-- Top Grid: Corporate Entity & Security Controls -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Card 1: Corporate Profile (8 Columns) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary-fixed/20 rounded-bl-full pointer-events-none"></div>
+<div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-4 pb-6">
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-xl bg-primary-fixed flex items-center justify-center text-primary shadow-sm">
+<span class="material-symbols-outlined text-[26px]">corporate_fare</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">MODULE // 01</span>
+<span class="px-2 py-0.5 rounded text-[11px] font-label-caps font-medium bg-secondary-container text-on-secondary-fixed">ENTITY VERIFIED</span>
+</div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Organization &amp; Real Estate Corporate Profile</h2>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[22px]">badge</span>
+</div>
+<!-- Fields Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 gap-5 pt-2">
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Company Legal Name</label>
+<div class="relative">
+<input class="w-full px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all" type="text" value="Aetheris Real Estate &amp; Asset Management Ltd."/>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-primary text-[18px]">verified</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Corporate Email</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">mail</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all" type="email" value="operations@estateportal.com"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Phone Number</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">call</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all" type="text" value="+234 1 800 4000"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Head Office Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">location_on</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all" type="text" value="Plot 14, Admiralty Way, Lekki Phase 1, Lagos, Nigeria"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Regional Office</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px]">business</span>
+<input class="w-full pl-10 pr-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm focus:outline-none focus:bg-surface-container-lowest focus:ring-2 focus:ring-primary/20 shadow-[0_1px_2px_rgba(0,0,0,0.02)] transition-all" type="text" value="Warri/Asaba Expressway, Delta State"/>
+</div>
+</div>
+<div class="flex flex-col gap-1.5 md:col-span-2">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Currency Configuration</label>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-3 p-4 rounded-xl bg-surface-container-low">
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-primary/10 text-primary font-label-caps font-bold flex items-center justify-center">₦</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Nigerian Naira (NGN)</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Primary Ledger Base</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">radio_button_checked</span>
+</div>
+<div class="flex items-center justify-between p-3 rounded-xl bg-surface-container-lowest shadow-sm">
+<div class="flex items-center gap-3">
+<span class="w-8 h-8 rounded-lg bg-secondary-container text-on-secondary-container font-label-caps font-bold flex items-center justify-center">$</span>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">United States Dollar (USD)</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Secondary Offshore Display</span>
+</div>
+</div>
+<span class="material-symbols-outlined text-primary text-[20px]">check_box</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps">CAC REG: RC-1849204-NG</span>
+<span class="font-label-caps text-label-caps">LAST UPDATED: 12 APR 2025 // 09:14 WAT</span>
+</div>
+</div>
+<!-- Card 2: Security & Access Controls (4 Columns) -->
+<div class="lg:col-span-4 bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-4 pb-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-error-container text-error flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[26px]">download_for_offline</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">MODULE // 02</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Access Controls</h2>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">lock</span>
+</div>
+<!-- Controls List -->
+<div class="flex flex-col gap-5 pt-2">
+<!-- 2FA Toggle -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Enforce Two-Factor (2FA)</span>
+<!-- Custom Functional Toggle -->
+<button aria-pressed="true" class="w-11 h-6 bg-primary rounded-full relative transition-colors focus:outline-none" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-surface-container-high'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('translate-x-0.5');" type="button">
+<span class="w-5 h-5 bg-on-primary rounded-full absolute top-0.5 translate-x-5 shadow-sm transition-transform"></span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Mandatory for all Admin, Auditor, and Cadastral Surveyor role credentials.</p>
+</div>
+<!-- Session Timeout Dropdown -->
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Session Idle Timeout</label>
+<div class="relative">
+<select class="w-full px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer">
+<option selected="">30 minutes of inactivity</option>
+<option>15 minutes of inactivity (High Security)</option>
+<option>1 hour of inactivity</option>
+<option>4 hours of inactivity</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<!-- IP Whitelisting Card -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">IP Whitelisting</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">CAD Layout Upload Gateway</span>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary font-body-sm text-body-sm font-medium transition-all shadow-sm" type="button">Manage IPs</button>
+</div>
+<!-- Customer Self-Registration Toggle -->
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Customer Self-Registration</span>
+<button aria-pressed="true" class="w-11 h-6 bg-primary rounded-full relative transition-colors focus:outline-none" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-surface-container-high'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('translate-x-0.5');" type="button">
+<span class="w-5 h-5 bg-on-primary rounded-full absolute top-0.5 translate-x-5 shadow-sm transition-transform"></span>
+</button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Requires Admin KYC Approval before Plot Reservation capabilities are unlocked.</p>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center gap-2 text-on-surface-variant">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+<span class="font-label-caps text-label-caps">POLICY STRICTNESS: TIER 1</span>
+</div>
+</div>
+</div>
+<!-- Bottom Grid: Cadastral Preferences & Automated Communications -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+<!-- Card 3: Cadastral & GIS Mapping Preferences (6 Columns) -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-4 pb-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-tertiary-fixed text-on-tertiary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[26px]">layers</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">MODULE // 03</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Cadastral &amp; GIS Preferences</h2>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">pin_drop</span>
+</div>
+<!-- Controls -->
+<div class="flex flex-col gap-5 pt-2">
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Coordinate Reference System (CRS)</label>
+<div class="relative">
+<select class="w-full px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer">
+<option selected="">EPSG:4326 - WGS 84 (Global Standard GPS)</option>
+<option>EPSG:32631 - WGS 84 / UTM Zone 31N (Nigeria West / Lagos)</option>
+<option>EPSG:32632 - WGS 84 / UTM Zone 32N (Nigeria Central &amp; East)</option>
+<option>EPSG:26331 - Minna / UTM Zone 31N</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="flex flex-col gap-1.5">
+<label class="font-label-caps text-label-caps uppercase text-on-surface-variant">Default Plot Unit of Measurement</label>
+<div class="relative">
+<select class="w-full px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface font-body-sm text-body-sm appearance-none focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all cursor-pointer">
+<option selected="">Square Meters (sqm)</option>
+<option>Hectares (ha)</option>
+<option>Acres (ac)</option>
+<option>Square Feet (sq ft)</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-1/2 -translate-y-1/2 text-on-surface-variant pointer-events-none text-[20px]">expand_more</span>
+</div>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-3">
+<div class="flex items-center justify-between">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Layout Viewer Engine</span>
+<span class="px-2 py-0.5 rounded font-label-caps text-[11px] bg-primary text-on-primary">HARDWARE ACCELERATED</span>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-lowest flex items-center gap-3 shadow-sm">
+<span class="material-symbols-outlined text-primary text-[22px]">satellite_alt</span>
+<span class="font-body-sm text-body-sm text-on-surface font-medium">Vector Canvas with High-Resolution Aerial Satellite Overlay</span>
+</div>
+</div>
+<!-- Mini Visual Map Canvas Metric Preview -->
+<div class="w-full h-28 rounded-xl bg-surface-container relative overflow-hidden flex items-center justify-between px-6">
+<!-- Visual Cadastral Vector Wireframe -->
+<svg class="absolute inset-0 w-full h-full opacity-25 text-primary" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="24" id="grid-cadastre" patternunits="userSpaceOnUse" width="24">
+<path d="M 24 0 L 0 0 0 24" fill="none" stroke="currentColor" stroke-width="0.7"></path>
+</pattern>
+</defs>
+<rect fill="url(#grid-cadastre)" height="100%" width="100%"></rect>
+<polygon fill="currentColor" fill-opacity="0.2" points="40,20 180,30 220,95 80,85" stroke="currentColor" stroke-width="1.5"></polygon>
+<polygon fill="currentColor" fill-opacity="0.1" points="230,35 340,25 380,85 240,90" stroke="currentColor" stroke-width="1.5"></polygon>
+</svg>
+<div class="relative z-10 flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">GEODETIC DATUM ENGINE</span>
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">WGS84 Ellipsoid Precision</span>
+</div>
+<div class="relative z-10 flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary shadow-sm font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[16px]">check_circle</span>
+<span>CALIBRATED</span>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps">LATENCY TOLERANCE: &lt; 40MS</span>
+<span class="font-label-caps text-label-caps">GPU ACCEL: ENABLED</span>
+</div>
+</div>
+<!-- Card 4: Automated Customer Communications (6 Columns) -->
+<div class="lg:col-span-6 bg-surface-container-lowest rounded-xl p-8 shadow-sm flex flex-col justify-between relative overflow-hidden">
+<div>
+<!-- Card Header -->
+<div class="flex items-start justify-between gap-4 pb-6">
+<div class="flex items-center gap-3">
+<div class="w-12 h-12 rounded-xl bg-secondary-fixed text-on-secondary-fixed flex items-center justify-center shadow-sm">
+<span class="material-symbols-outlined text-[26px]">forward_to_inbox</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps uppercase text-on-surface-variant">MODULE // 04</span>
+<h2 class="font-headline-md text-headline-md text-on-surface">Customer Communications</h2>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline text-[20px]">hub</span>
+</div>
+<!-- Notification Rule Items -->
+<div class="flex flex-col gap-4 pt-2">
+<!-- SMS on plot allocation -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-start gap-3 max-w-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">sms</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Send instant SMS on plot allocation</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Dispatches parcel ID and coordinates directly to client mobile.</span>
+</div>
+</div>
+<button aria-pressed="true" class="w-11 h-6 bg-primary rounded-full relative transition-colors focus:outline-none shrink-0" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-surface-container-high'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('translate-x-0.5');" type="button">
+<span class="w-5 h-5 bg-on-primary rounded-full absolute top-0.5 translate-x-5 shadow-sm transition-transform"></span>
+</button>
+</div>
+<!-- Email PDF deeds immediately -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-start gap-3 max-w-sm">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">picture_as_pdf</span>
+</div>
+<div class="flex flex-col">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Email PDF deeds immediately upon verification</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Attaches digitally stamped Deed of Assignment and Survey plan.</span>
+</div>
+</div>
+<button aria-pressed="true" class="w-11 h-6 bg-primary rounded-full relative transition-colors focus:outline-none shrink-0" onclick="this.classList.toggle('bg-primary'); this.classList.toggle('bg-surface-container-high'); const dot = this.querySelector('span'); dot.classList.toggle('translate-x-5'); dot.classList.toggle('translate-x-0.5');" type="button">
+<span class="w-5 h-5 bg-on-primary rounded-full absolute top-0.5 translate-x-5 shadow-sm transition-transform"></span>
+</button>
+</div>
+<!-- Payment confirmation webhook -->
+<div class="p-4 rounded-xl bg-surface-container-low flex items-center justify-between">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-lowest flex items-center justify-center text-primary shrink-0 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">webhook</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Payment confirmation webhook notification</span>
+<span class="px-2 py-0.5 rounded text-[10px] font-label-caps font-medium bg-emerald-100 text-emerald-800">ACTIVE</span>
+</div>
+<span class="font-label-caps text-label-caps text-on-surface-variant truncate max-w-xs">https://api.estateportal.com/v1/webhooks/escrow</span>
+</div>
+</div>
+<button class="px-3 py-1.5 rounded-lg bg-surface-container-lowest text-primary hover:bg-primary hover:text-on-primary font-body-sm text-body-sm font-medium transition-all shadow-sm shrink-0" type="button">Configure</button>
+</div>
+<!-- Notification Dispatch Rate Mini-Metric -->
+<div class="grid grid-cols-2 gap-3 pt-1">
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">DELIVERY RATE (30D)</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">99.84%</span>
+<span class="font-label-caps text-label-caps text-emerald-700 font-medium">Optimal</span>
+</div>
+</div>
+<div class="p-3 rounded-xl bg-surface-container-low flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant">AVG DISPATCH LATENCY</span>
+<div class="flex items-baseline gap-2 mt-1">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">1.2s</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">Global CDN</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-6 pt-4 flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps">CHANNELS: SMS // EMAIL // WEBHOOK</span>
+<span class="font-label-caps text-label-caps">GATEWAY: LIVE</span>
+</div>
+</div>
+</div>
+<!-- Supplementary Informative Card: System Infrastructure & Diagnostic Health -->
+<div class="w-full bg-surface-container-lowest rounded-xl p-6 shadow-sm flex flex-col md:flex-row items-center justify-between gap-6">
+<div class="flex items-center gap-4">
+<div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm shrink-0">
+<span class="material-symbols-outlined text-[20px]">dns</span>
+</div>
+<div class="flex flex-col">
+<div class="flex items-center gap-2">
+<span class="font-body-sm text-body-sm font-semibold text-on-surface">Aetheris Distributed Node Cluster</span>
+<span class="px-2 py-0.2 rounded font-label-caps text-[11px] bg-secondary-container text-on-secondary-fixed">REGION: AF-SOUTH-1</span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">All cryptographic ledger state machines and cadastral geometries are verified in compliance with ISO/IEC 27001 real estate digital escrow directives.</span>
+</div>
+</div>
+<div class="flex items-center gap-3 shrink-0">
+<button class="px-4 py-2 rounded-xl bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm font-medium" type="button">
+          Run Diagnostics
+        </button>
+</div>
+</div>
+<!-- Bottom Fixed / Sticky Floating Action Bar -->
+<div class="sticky bottom-6 z-30 w-full p-4 rounded-xl bg-surface/90 backdrop-blur-xl shadow-lg flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="flex items-center gap-3">
+<span class="w-2.5 h-2.5 rounded-full bg-primary animate-ping"></span>
+<span class="font-body-sm text-body-sm font-medium text-on-surface">Unsaved local adjustments: <span class="font-semibold text-primary">None</span></span>
+</div>
+<div class="flex items-center gap-3 w-full sm:w-auto justify-end">
+<button class="px-5 py-2.5 rounded-xl bg-surface-container hover:bg-surface-container-high text-on-surface transition-all font-body-sm text-body-sm font-medium shadow-sm" type="button">
+          Reset to Default
+        </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-primary text-on-primary hover:bg-primary-container font-body-sm text-body-sm font-medium transition-all shadow-md" onclick="const toast = document.getElementById('save-toast'); toast.classList.remove('hidden'); setTimeout(() =&gt; toast.classList.add('hidden'), 3000);" type="button">
+<span class="material-symbols-outlined text-[18px]">check</span>
+<span>Save Configuration Changes</span>
+</button>
+</div>
+</div>
+<!-- Subtle Toast Feedback Alert Notification -->
+<div class="hidden fixed bottom-24 right-10 z-50 flex items-center gap-3 px-5 py-3 rounded-xl bg-inverse-surface text-inverse-on-surface shadow-xl transition-all" id="save-toast">
+<span class="material-symbols-outlined text-primary-fixed text-[20px]">task_alt</span>
+<span class="font-body-sm text-body-sm font-medium">System configuration changes successfully committed.</span>
+</div>
+</div>
+</div></main></div></body></html>

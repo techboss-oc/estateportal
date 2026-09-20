@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Estate Layout Management - Admin</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts: Inter and Hanken Grotesk and JetBrains Mono -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Configuration -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#dfe2eb",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#bfd0ea",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#003c90",
+                        "inverse-primary": "#b0c6ff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#1d59c1",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-secondary-fixed": "#181c22",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary-fixed": "#d9e2ff",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#dfe2eb",
+                        "tertiary-fixed": "#d3e4fe",
+                        "outline-variant": "#c3c6d5",
+                        "tertiary-container": "#49596f",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "on-secondary-container": "#61646c",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#5b5e66",
+                        "outline": "#737784",
+                        "primary-container": "#0f52ba",
+                        "secondary-fixed-dim": "#c3c6cf",
+                        "on-surface-variant": "#434653",
+                        "tertiary": "#324257",
+                        "on-primary-container": "#bcceff",
+                        "on-primary-fixed-variant": "#00419c",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed": "#001945",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#43474e",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1e",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        /* Custom Styles for Map interactions */
+        .plot-polygon {
+            fill: #e0e3e5; /* surface-variant */
+            stroke: #ffffff;
+            stroke-width: 1;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+        .plot-polygon:hover {
+            fill: rgba(0, 60, 144, 0.2); /* primary color at 20% opacity */
+        }
+        .plot-polygon.selected {
+            stroke: #003c90; /* primary */
+            stroke-width: 2;
+            fill: rgba(0, 60, 144, 0.1);
+            filter: drop-shadow(0 0 8px rgba(0, 60, 144, 0.4)); /* Inner Glow effect translated to drop-shadow for SVG */
+        }
+        .plot-polygon.allocated {
+            fill: #c3c6d5; /* outline-variant */
+            cursor: not-allowed;
+        }
+        
+        /* Grid Background for Canvas */
+        .canvas-grid {
+            background-size: 40px 40px;
+            background-image:
+                linear-gradient(to right, rgba(115, 119, 132, 0.1) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(115, 119, 132, 0.1) 1px, transparent 1px);
+        }
+        
+        /* Glassmorphism utility */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #d8dadc;
+            border-radius: 9999px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #c3c6d5;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md overflow-hidden antialiased flex">
+<!-- JSON Component: SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[240px] z-40 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border-r border-outline-variant dark:border-outline flex flex-col py-gutter px-4">
+<!-- Header -->
+<div class="mb-8 flex items-center justify-between">
+<div>
+<h1 class="font-display-lg text-headline-md font-bold text-primary dark:text-inverse-primary">EstatePortal</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Customer Account</p>
+</div>
+<img class="w-8 h-8 rounded-full object-cover" data-alt="A small, professional, minimalist avatar placeholder for a user profile in a sleek digital environment. Soft, high-key white lighting. Clean, abstract, geometric representation of a human silhouette in varying shades of slate gray and deep primary blue. A high-end fintech aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCocVhUCainl3locU1b2V7xXZuvn8SfzBU9uF0ediKqO2tC0fPkODjQvDzsQyb0CqCb8kS5lbeVFYyKOd7GSel2hsjaDK7PYxZO5QpNiJ29RS1N8fhngcw1l7T1-u-TW0eIUSbS_E1DbPSRDG8aHW3KLy92rqx7jxl-N6jzb6rZcd429twTAx5MkubU7hd7Tr6BJe3N4q3oWqyJyCHWYTvkjHUGvE578NYebNhpebnQeilhq6JRq7Mq"/>
+</div>
+<!-- Primary CTA -->
+<button class="w-full bg-primary text-on-primary py-2 px-4 rounded-lg font-label-caps mb-6 hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 shadow-sm flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">add</span>
+            New Inquiry
+        </button>
+<!-- Navigation Links -->
+<div class="flex-1 overflow-y-auto">
+<ul class="space-y-1">
+<!-- Inactive Tab -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 hover:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="font-body-md">Dashboard</span>
+</a>
+</li>
+<!-- Active Tab (Intent Mapping: Estate Layout Management falls under My Properties) -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-primary dark:text-inverse-primary font-bold border-l-4 border-primary bg-primary-fixed/30 dark:bg-primary-container/20 scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">domain</span>
+<span class="font-body-md">My Properties</span>
+</a>
+</li>
+<!-- Inactive Tabs -->
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 hover:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span class="font-body-md">Payments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 hover:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">description</span>
+<span class="font-body-md">Documents</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 hover:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span class="font-body-md">Support</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 hover:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span class="font-body-md">Settings</span>
+</a>
+</li>
+</ul>
+</div>
+<!-- Footer Links -->
+<div class="pt-4 border-t border-outline-variant dark:border-outline">
+<ul class="space-y-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 hover:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">help</span>
+<span class="font-body-md">Help Center</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 hover:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span class="font-body-md">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Wrapper -->
+<div class="ml-[240px] w-[calc(100%-240px)] flex flex-col h-screen">
+<!-- JSON Component: TopAppBar -->
+<header class="docked full-width top-0 sticky z-30 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-gutter h-16">
+<!-- Left Side: Search Bar -->
+<div class="flex-1 flex items-center">
+<div class="relative w-64">
+<span class="material-symbols-outlined absolute left-3 top-1/2 transform -translate-y-1/2 text-outline">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-full text-body-sm focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition-all placeholder:text-outline text-on-surface" placeholder="Search layouts, plots..." type="text"/>
+</div>
+</div>
+<!-- Brand Logo (Hidden per JSON style_brand_logo: "hidden") -->
+<div class="hidden font-headline-md text-headline-md text-primary dark:text-inverse-primary">
+                EstatePortal
+            </div>
+<!-- Right Side: Actions -->
+<div class="flex-1 flex justify-end items-center gap-4">
+<button class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full p-2 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full p-2 transition-all">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<button class="bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-label-caps hover:bg-primary transition-colors text-body-sm flex items-center gap-2 shadow-sm">
+                    Quick Action
+                </button>
+<img alt="Administrator Profile Image" class="w-10 h-10 rounded-full border border-outline-variant object-cover" data-alt="A clear, high-resolution, head-and-shoulders portrait of a professional administrator. Shot with soft, flattering studio lighting against a minimal, bright white background. The subject exudes confidence and competence. Clean, modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDS-z78iKTeuRHzm3DNnuuSRRDOFthQW7U1JXKgWmEGEHCYSuAApjVBjshGFezQB7JbnFVP8uNlnLZUZxPnOANsqQfyBfgsCWTZgv1PUu3Jk0rXdhFcS1NXdXpexTLV0cGuj4-PwaYXW4CiSAK-esT6Rq9nlJfz7I4Sq0-4yarmJ6yZwAmCtyBM7VzHVfXiT8GF8q1jrFQeiW9UBITQn8wP3U8_Pj8Sr3STI5lu1I0e73wLDr24q7AQ"/>
+</div>
+</header>
+<!-- Editor Workspace (GIS/AutoCAD Style) -->
+<main class="flex-1 flex overflow-hidden bg-surface-container-lowest relative">
+<!-- Tool Ribbon (Left) -->
+<aside class="w-16 bg-surface border-r border-outline-variant flex flex-col items-center py-4 gap-4 z-10 shadow-sm relative">
+<button aria-label="Select Tool" class="p-2 rounded-lg bg-primary-fixed/50 text-primary hover:bg-primary-fixed transition-colors group relative">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">near_me</span>
+<!-- Tooltip -->
+<span class="absolute left-full ml-2 px-2 py-1 bg-inverse-surface text-inverse-on-surface text-label-caps rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Select (V)</span>
+</button>
+<button aria-label="Add Plot" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors group relative">
+<span class="material-symbols-outlined">polyline</span>
+<span class="absolute left-full ml-2 px-2 py-1 bg-inverse-surface text-inverse-on-surface text-label-caps rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Draw Plot (P)</span>
+</button>
+<button aria-label="Edit Nodes" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors group relative">
+<span class="material-symbols-outlined">edit_square</span>
+<span class="absolute left-full ml-2 px-2 py-1 bg-inverse-surface text-inverse-on-surface text-label-caps rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Edit Nodes (A)</span>
+</button>
+<hr class="w-8 border-outline-variant my-2"/>
+<button aria-label="Pan Tool" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors group relative">
+<span class="material-symbols-outlined">pan_tool</span>
+<span class="absolute left-full ml-2 px-2 py-1 bg-inverse-surface text-inverse-on-surface text-label-caps rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Pan (Space)</span>
+</button>
+<div class="flex flex-col gap-1 mt-auto">
+<button aria-label="Zoom In" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">zoom_in</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors text-label-caps">
+                        100%
+                    </button>
+<button aria-label="Zoom Out" class="p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined">zoom_out</span>
+</button>
+</div>
+</aside>
+<!-- Main Canvas Area -->
+<div class="flex-1 relative overflow-hidden canvas-grid cursor-crosshair" id="editor-canvas">
+<!-- Base Map / Blueprint Underlay (Simulated) -->
+<div class="absolute inset-0 opacity-20 pointer-events-none" data-alt="A minimalist architectural site plan blueprint of a residential estate viewed from directly above. Rendered in crisp, thin lines on a stark white background. Abstract and structural, featuring geometric plot divisions and subtle road layouts. High key, modern tech aesthetic." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbe2rFh8T7dJuXZPKq55IVBwtSXb0UfQoD_fywd_VyHpokD-1HcieQfVbzAibc9r3kC_qxkYUtStuh3eUGO2SG1IieznDrPuvaXoPqClcscUQnKstJqhm-DIBB_pFpFsde8Ob-iaXDzxUylobA8lD2n_90tKyaVmOH7CBT9Dvq__7B2pUddsIp96yg_rtqR8SW4Q9Z-Tp_BKtN9mtkSezTro4EnhTK0btmQFDJCNcU1o_FhsFPh24i')"></div>
+<!-- SVG Polygon Layer -->
+<svg class="absolute inset-0 z-0" height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<pattern height="10" id="diagonal-stripe" patternunits="userSpaceOnUse" width="10">
+<line opacity="0.5" stroke="#c3c6d5" stroke-width="1" x1="0" x2="10" y1="10" y2="0"></line>
+</pattern>
+</defs>
+<!-- Plot 1: Allocated -->
+<polygon class="plot-polygon allocated" fill="url(#diagonal-stripe)" points="100,100 250,100 250,200 100,200"></polygon>
+<text fill="#737784" font-family="JetBrains Mono" font-size="12" text-anchor="middle" x="175" y="155">LOT 1</text>
+<!-- Plot 2: Available -->
+<polygon class="plot-polygon" points="260,100 400,120 380,220 260,200"></polygon>
+<text fill="#434653" font-family="JetBrains Mono" font-size="12" text-anchor="middle" x="325" y="165">LOT 2</text>
+<!-- Plot 3: Selected -->
+<polygon class="plot-polygon selected" id="selected-plot" points="100,210 250,210 270,350 80,330"></polygon>
+<text fill="#003c90" font-family="JetBrains Mono" font-size="12" font-weight="bold" text-anchor="middle" x="175" y="285">LOT 7</text>
+<!-- Editing Nodes for Selected Plot -->
+<g id="edit-nodes">
+<circle class="cursor-pointer hover:r-6 transition-all" cx="100" cy="210" fill="#ffffff" r="4" stroke="#003c90" stroke-width="2"></circle>
+<circle class="cursor-pointer hover:r-6 transition-all" cx="250" cy="210" fill="#ffffff" r="4" stroke="#003c90" stroke-width="2"></circle>
+<circle class="cursor-pointer hover:r-6 transition-all" cx="270" cy="350" fill="#ffffff" r="4" stroke="#003c90" stroke-width="2"></circle>
+<circle class="cursor-pointer hover:r-6 transition-all" cx="80" cy="330" fill="#ffffff" r="4" stroke="#003c90" stroke-width="2"></circle>
+</g>
+</svg>
+<!-- Floating Canvas Info -->
+<div class="absolute bottom-4 left-4 glass-panel px-3 py-1.5 rounded text-label-caps text-on-surface-variant border border-outline-variant/30 flex items-center gap-4">
+<span>X: 124.5, Y: 302.1</span>
+<span class="w-px h-3 bg-outline-variant"></span>
+<span>CRS: EPSG:4326</span>
+</div>
+</div>
+<!-- Plot Details Sidebar (Right) - Glassmorphic Side Drawer -->
+<aside class="w-[400px] border-l border-outline-variant shadow-lg flex flex-col z-20 absolute right-0 top-0 h-full glass-panel transition-transform duration-300 transform translate-x-0">
+<!-- Header -->
+<div class="px-6 py-5 border-b border-outline-variant flex justify-between items-center bg-surface/50">
+<div>
+<h2 class="font-headline-md text-headline-md text-on-surface">Plot Details</h2>
+<p class="text-label-caps text-on-surface-variant mt-1">ID: PLT-992-B</p>
+</div>
+<button class="text-on-surface-variant hover:text-on-surface rounded-full p-1 hover:bg-surface-container-high transition-colors">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<!-- Content Form -->
+<div class="flex-1 overflow-y-auto px-6 py-6 space-y-6">
+<!-- Status Pill -->
+<div class="flex items-center justify-between">
+<span class="text-label-caps text-on-surface-variant">CURRENT STATUS</span>
+<span class="px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed-variant font-label-caps flex items-center gap-1.5 border border-primary-fixed-dim/50 shadow-sm">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+                            Available
+                        </span>
+</div>
+<!-- Input Fields -->
+<div class="space-y-4">
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1.5">Plot Number</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-label-caps" type="text" value="LOT 7"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1.5">Area (sqm)</label>
+<input class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all font-label-caps text-right" type="number" value="464.5"/>
+</div>
+<div>
+<label class="block text-label-caps text-on-surface-variant mb-1.5">Zoning</label>
+<select class="w-full bg-surface-container-lowest border border-outline-variant rounded-lg px-3 py-2 text-body-md text-on-surface focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all">
+<option>Residential</option>
+<option>Commercial</option>
+<option>Mixed Use</option>
+</select>
+</div>
+</div>
+</div>
+<!-- Mini Map Preview (Bento-style card) -->
+<div class="border border-outline-variant rounded-xl overflow-hidden bg-surface-container-lowest">
+<div class="px-4 py-2 border-b border-outline-variant bg-surface-container-low flex justify-between items-center">
+<span class="text-label-caps text-on-surface-variant">GEOMETRY</span>
+<button class="text-primary hover:text-primary-container text-label-caps transition-colors">Edit</button>
+</div>
+<div class="h-32 bg-surface-dim relative flex items-center justify-center canvas-grid">
+<svg height="60%" preserveaspectratio="xMidYMid meet" viewbox="0 0 100 100" width="60%">
+<polygon fill="rgba(0, 60, 144, 0.1)" points="10,10 90,10 80,90 20,80" stroke="#003c90" stroke-width="2"></polygon>
+</svg>
+</div>
+<div class="p-3 bg-surface-container-lowest">
+<div class="text-[10px] font-label-caps text-on-surface-variant leading-relaxed font-mono">
+                                [(100.0, 210.0), (250.0, 210.0),<br/> (270.0, 350.0), (80.0, 330.0)]
+                            </div>
+</div>
+</div>
+<!-- Attributes Table (High Density) -->
+<div>
+<div class="flex justify-between items-center mb-2">
+<span class="text-label-caps text-on-surface-variant">CUSTOM ATTRIBUTES</span>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+</div>
+<div class="border border-outline-variant rounded-lg overflow-hidden bg-surface-container-lowest">
+<table class="w-full text-left text-body-sm">
+<tbody>
+<tr class="border-b border-outline-variant hover:bg-surface-container-low transition-colors group">
+<td class="py-2 px-3 text-on-surface-variant font-medium">Elevation</td>
+<td class="py-2 px-3 text-on-surface font-label-caps">12m ASL</td>
+<td class="py-2 px-3 text-right w-8 opacity-0 group-hover:opacity-100"><button class="text-error"><span class="material-symbols-outlined text-[16px]">delete</span></button></td>
+</tr>
+<tr class="hover:bg-surface-container-low transition-colors group">
+<td class="py-2 px-3 text-on-surface-variant font-medium">Soil Type</td>
+<td class="py-2 px-3 text-on-surface font-label-caps">Clay Loam</td>
+<td class="py-2 px-3 text-right w-8 opacity-0 group-hover:opacity-100"><button class="text-error"><span class="material-symbols-outlined text-[16px]">delete</span></button></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<!-- Footer Actions -->
+<div class="p-4 border-t border-outline-variant bg-surface/80 flex gap-3">
+<button class="flex-1 py-2.5 px-4 rounded-lg border border-outline text-on-surface font-label-caps hover:bg-surface-container-highest transition-colors flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">delete</span>
+                        Delete Plot
+                    </button>
+<button class="flex-1 py-2.5 px-4 rounded-lg bg-primary text-on-primary font-label-caps hover:bg-primary-container transition-colors shadow-sm relative group overflow-hidden">
+<span class="relative z-10 flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-[18px]">save</span>
+                            Save Layout
+                        </span>
+<!-- Subtle hover effect -->
+<div class="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
+</button>
+</div>
+</aside>
+</main>
+</div>
+</body></html>

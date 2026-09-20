@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#181c22","inverse-on-surface":"#eff1f3","on-primary-container":"#bcceff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","on-error":"#ffffff","secondary-container":"#dfe2eb","inverse-surface":"#2d3133","surface-container-low":"#f2f4f6","tertiary-container":"#49596f","tertiary-fixed":"#d3e4fe","secondary-fixed-dim":"#c3c6cf","on-surface-variant":"#434653","surface":"#f7f9fb","on-background":"#191c1e","surface-container-high":"#e6e8ea","primary-fixed":"#d9e2ff","on-primary-fixed":"#001945","error":"#ba1a1a","on-surface":"#191c1e","surface-container-highest":"#e0e3e5","on-secondary-container":"#61646c","secondary":"#5b5e66","on-primary-fixed-variant":"#00419c","primary":"#003c90","secondary-fixed":"#dfe2eb","outline":"#737784","surface-bright":"#f7f9fb","error-container":"#ffdad6","inverse-primary":"#b0c6ff","on-primary":"#ffffff","on-secondary-fixed-variant":"#43474e","tertiary":"#324257","surface-tint":"#1d59c1","surface-variant":"#e0e3e5","background":"#f7f9fb","on-tertiary-container":"#bfd0ea","surface-dim":"#d8dadc","surface-container":"#eceef0","primary-fixed-dim":"#b0c6ff","on-secondary":"#ffffff","on-tertiary-fixed":"#0b1c30","on-error-container":"#93000a","primary-container":"#0f52ba","outline-variant":"#c3c6d5","tertiary-fixed-dim":"#b7c8e1","on-tertiary-fixed-variant":"#38485d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"container-max":"1440px","margin-mobile":"16px","margin-desktop":"40px","unit":"8px","gutter":"24px"},"fontFamily":{"label-caps":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"body-md":["Inter"],"body-sm":["Inter"],"display-lg":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"body-lg":["Inter"],"headline-lg-mobile":["Hanken Grotesk"]},"fontSize":{"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><main class="w-full min-h-screen bg-surface flex items-center justify-center"><div class="flex flex-col w-full">
+<!-- Main Container -->
+<div class="max-w-[1440px] w-full mx-auto px-4 sm:px-6 lg:px-10 py-8 flex flex-col gap-10">
+<!-- Top Navigation & Breadcrumb -->
+<nav aria-label="Breadcrumb" class="flex flex-wrap items-center justify-between gap-4 pb-2">
+<div class="flex items-center gap-3">
+<a class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface text-body-sm font-body-sm group" href="#">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant group-hover:-translate-x-0.5 transition-transform">arrow_back</span>
+<span>My Properties</span>
+</a>
+<span class="text-outline-variant font-label-caps text-label-caps">/</span>
+<span class="text-on-surface-variant text-body-sm font-body-sm">Potter's House Phase 2</span>
+<span class="text-outline-variant font-label-caps text-label-caps">/</span>
+<span class="text-primary font-body-sm font-medium">LOT 7</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-surface-container-high text-on-surface-variant font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px] text-tertiary">lock</span>
+          ESCROW SECURED
+        </span>
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary/10 text-primary font-label-caps text-label-caps">
+<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+          CADASTRAL VALIDATED
+        </span>
+</div>
+</nav>
+<!-- Header Section -->
+<section class="flex flex-col lg:flex-row lg:items-end justify-between gap-6 pb-2">
+<div class="flex flex-col gap-3 max-w-3xl">
+<div class="flex flex-wrap items-center gap-3">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-caps text-label-caps">
+<span class="material-symbols-outlined text-[14px]">verified</span>
+            Allocated &amp; Verified
+          </span>
+<span class="text-outline font-label-caps text-label-caps tracking-wider">PH2-L07-2026</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface tracking-tight">
+          LOT 7 — Potter's House Phase 2
+        </h1>
+<p class="font-body-md text-body-md text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-primary">location_on</span>
+          Residential Zone A · Asaba-Ibusa Expressway Corridor, Delta State
+        </p>
+</div>
+<!-- Quick Actions Toolbar -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-container-highest transition-all text-on-surface font-body-sm text-body-sm shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">calendar_month</span>
+          Schedule Site Visit
+        </button>
+<button class="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-high hover:bg-surface-container-highest transition-all text-on-surface font-body-sm text-body-sm shadow-sm">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">share</span>
+          Share Certificate
+        </button>
+<button class="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary hover:bg-primary-container transition-all text-on-primary font-body-sm text-body-sm shadow-md shadow-primary/20">
+<span class="material-symbols-outlined text-[18px]">download</span>
+          Download Ownership Deed Package
+        </button>
+</div>
+</section>
+<!-- Property Overview Grid (4 Stat Cards) -->
+<section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Stat 1 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Land Area</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">square_foot</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-lg text-headline-lg text-on-surface">464.00</span>
+<span class="font-label-caps text-label-caps text-outline">SQM</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Approx. 5,000 sq ft (50ft × 100ft)</p>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Stat 2 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Allocation Date</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">event_available</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">Oct 14, 2023</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1.5">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+            Holding tenure: 1+ Year Active
+          </p>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary-container h-full rounded-full" style="width: 78%;"></div>
+</div>
+</div>
+<!-- Stat 3 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Cadastral Reference</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">grid_4x4</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-2">
+<span class="font-headline-md text-headline-md text-on-surface">PLT-992-B</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px] text-primary">check_circle</span>
+            Beacon Verified (PB-01 to 04)
+          </p>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 100%;"></div>
+</div>
+</div>
+<!-- Stat 4 -->
+<div class="relative overflow-hidden rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col justify-between gap-4 group hover:shadow-md transition-all">
+<div class="flex items-center justify-between">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Current Valuation</span>
+<div class="w-10 h-10 rounded-lg bg-surface-container flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-[20px]">trending_up</span>
+</div>
+</div>
+<div>
+<div class="flex items-baseline gap-1">
+<span class="font-headline-md text-headline-md text-on-surface">₦18,500,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-primary font-medium mt-1 flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">north_east</span>
+            +6.2% appreciation since purchase
+          </p>
+</div>
+<div class="w-full bg-surface-container-high h-1 rounded-full overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 86%;"></div>
+</div>
+</div>
+</section>
+<!-- Main Content Area: 2/3 and 1/3 layout -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+<!-- Left Column: Primary Content (8 Cols) -->
+<div class="lg:col-span-8 flex flex-col gap-8">
+<!-- Interactive Cadastral Layout Visual Card -->
+<div class="rounded-xl bg-surface-container-lowest p-6 sm:p-8 shadow-sm flex flex-col gap-6">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Geospatial Registry</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">Cadastral Layout &amp; Orientation</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="px-3 py-1 rounded-md bg-surface-container font-label-caps text-label-caps text-on-surface-variant">
+                EPSG:4326 WGS-84
+              </span>
+<button class="p-2 rounded-lg bg-surface-container hover:bg-surface-container-high transition-colors text-on-surface" id="fullscreenCadastralBtn" title="Toggle Layout View">
+<span class="material-symbols-outlined text-[20px]">fullscreen</span>
+</button>
+</div>
+</div>
+<!-- Cadastral Graphic Viewport -->
+<div class="relative w-full rounded-xl bg-surface-container-low overflow-hidden p-4 sm:p-6 select-none">
+<!-- Background grid pattern -->
+<div class="absolute inset-0 opacity-20 bg-[radial-gradient(#003c90_1px,transparent_1px)] [background-size:16px_16px]"></div>
+<!-- Header inside viewport -->
+<div class="relative z-10 flex items-center justify-between mb-4">
+<div class="flex items-center gap-3">
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur text-on-surface font-label-caps text-label-caps shadow-sm">
+                  ZONE A · BLOCK 04
+                </span>
+<span class="px-2.5 py-1 rounded bg-surface-container-lowest/90 backdrop-blur text-on-surface-variant font-label-caps text-label-caps shadow-sm">
+                  15m ACCESS BOULEVARD FRONTAGE
+                </span>
+</div>
+<!-- Compass Rose -->
+<div class="w-10 h-10 rounded-full bg-surface-container-lowest/90 backdrop-blur flex items-center justify-center shadow-sm">
+<div class="flex flex-col items-center">
+<span class="font-label-caps text-[9px] text-primary font-bold">N</span>
+<span class="material-symbols-outlined text-[18px] text-primary -my-1">navigation</span>
+</div>
+</div>
+</div>
+<!-- Visual Cadastral Vector Scheme -->
+<div class="relative w-full aspect-[16/9] min-h-[300px] flex items-center justify-center z-10">
+<svg class="w-full h-full drop-shadow-md" fill="none" viewbox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+<!-- Adjoining Roadway -->
+<rect fill="#dfe2eb" height="60" rx="6" width="720" x="40" y="40"></rect>
+<line stroke="#737784" stroke-dasharray="10 8" stroke-width="2" x1="50" x2="750" y1="70" y2="70"></line>
+<text fill="#434653" font-family="JetBrains Mono" font-size="11" font-weight="500" text-anchor="middle" x="400" y="75">ADJOINING ACCESS ROADWAY (15.0m DUAL PAVED BOULEVARD)</text>
+<!-- Adjoining Plot Left (LOT 6) -->
+<rect fill="#e6e8ea" height="260" rx="8" stroke="#c3c6d5" stroke-width="1.5" width="180" x="70" y="130"></rect>
+<text fill="#737784" font-family="Hanken Grotesk" font-size="16" font-weight="600" text-anchor="middle" x="160" y="250">LOT 06</text>
+<text fill="#737784" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="160" y="275">464.00 m²</text>
+<text fill="#737784" font-family="Inter" font-size="11" text-anchor="middle" x="160" y="295">ALLOCATED</text>
+<!-- ACTIVE PLOT (LOT 7) Highlighted -->
+<rect fill="#003c90" fill-opacity="0.08" height="260" rx="8" stroke="#003c90" stroke-width="2.5" width="260" x="270" y="130"></rect>
+<!-- Corner Beacon Pins -->
+<!-- PB-01 (Top-Left) -->
+<circle cx="270" cy="130" fill="#003c90" r="6"></circle>
+<circle cx="270" cy="130" r="10" stroke="#003c90" stroke-opacity="0.4" stroke-width="1.5"></circle>
+<text fill="#003c90" font-family="JetBrains Mono" font-size="10" font-weight="600" x="282" y="145">PB-01 [100.0, 210.0]</text>
+<!-- PB-02 (Top-Right) -->
+<circle cx="530" cy="130" fill="#003c90" r="6"></circle>
+<circle cx="530" cy="130" r="10" stroke="#003c90" stroke-opacity="0.4" stroke-width="1.5"></circle>
+<text fill="#003c90" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="end" x="518" y="145">PB-02 [270.0, 210.0]</text>
+<!-- PB-03 (Bottom-Right) -->
+<circle cx="530" cy="390" fill="#003c90" r="6"></circle>
+<circle cx="530" cy="390" r="10" stroke="#003c90" stroke-opacity="0.4" stroke-width="1.5"></circle>
+<text fill="#003c90" font-family="JetBrains Mono" font-size="10" font-weight="600" text-anchor="end" x="518" y="380">PB-03 [270.0, 350.0]</text>
+<!-- PB-04 (Bottom-Left) -->
+<circle cx="270" cy="390" fill="#003c90" r="6"></circle>
+<circle cx="270" cy="390" r="10" stroke="#003c90" stroke-opacity="0.4" stroke-width="1.5"></circle>
+<text fill="#003c90" font-family="JetBrains Mono" font-size="10" font-weight="600" x="282" y="380">PB-04 [100.0, 350.0]</text>
+<!-- Lot 7 Interior Badge -->
+<rect fill="#ffffff" fill-opacity="0.95" height="95" rx="6" width="120" x="340" y="210"></rect>
+<text fill="#003c90" font-family="Hanken Grotesk" font-size="18" font-weight="700" text-anchor="middle" x="400" y="240">LOT 7</text>
+<text fill="#191c1e" font-family="JetBrains Mono" font-size="12" font-weight="600" text-anchor="middle" x="400" y="260">464.00 SQM</text>
+<text fill="#003c90" font-family="JetBrains Mono" font-size="10" font-weight="500" text-anchor="middle" x="400" y="280">RESIDENTIAL A</text>
+<text fill="#434653" font-family="Inter" font-size="9" text-anchor="middle" x="400" y="295">VERIFIED PEGS</text>
+<!-- Adjoining Plot Right (LOT 8) -->
+<rect fill="#e6e8ea" height="260" rx="8" stroke="#c3c6d5" stroke-width="1.5" width="180" x="550" y="130"></rect>
+<text fill="#737784" font-family="Hanken Grotesk" font-size="16" font-weight="600" text-anchor="middle" x="640" y="250">LOT 08</text>
+<text fill="#737784" font-family="JetBrains Mono" font-size="11" text-anchor="middle" x="640" y="275">464.00 m²</text>
+<text fill="#737784" font-family="Inter" font-size="11" text-anchor="middle" x="640" y="295">ALLOCATED</text>
+<!-- Dimension lines -->
+<path d="M 270 410 L 530 410" marker-end="url(#dot)" marker-start="url(#dot)" stroke="#003c90" stroke-width="1"></path>
+<text fill="#003c90" font-family="JetBrains Mono" font-size="10" text-anchor="middle" x="400" y="425">WIDTH: 15.24m (50 FT)</text>
+</svg>
+</div>
+<!-- Footer Details inside Viewport -->
+<div class="relative z-10 mt-3 pt-3 bg-surface-container-lowest/80 backdrop-blur rounded-lg p-3 flex flex-wrap items-center justify-between gap-2 text-on-surface-variant font-label-caps text-label-caps">
+<div class="flex items-center gap-4">
+<span>COORD RANGE: [100.0, 210.0] → [270.0, 350.0]</span>
+<span class="hidden sm:inline">·</span>
+<span class="hidden sm:inline">DATUM: MINNA / UTM ZONE 31N</span>
+</div>
+<span class="text-primary font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+                Surveyor Gen. Certified
+              </span>
+</div>
+</div>
+<div class="flex flex-wrap items-center justify-between gap-4 pt-1">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-primary text-[20px]">info</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Boundary monuments physically inspected on site with high-precision GPS.</span>
+</div>
+<button class="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-primary text-on-primary font-body-sm text-body-sm hover:bg-primary-container transition-colors">
+<span class="material-symbols-outlined text-[18px]">travel_explore</span>
+              Inspect in Interactive Layout View
+            </button>
+</div>
+</div>
+<!-- Property Lifecycle Timeline Tracker -->
+<div class="rounded-xl bg-surface-container-lowest p-6 sm:p-8 shadow-sm flex flex-col gap-6">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Asset Provenance</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">Property Lifecycle &amp; Verification Flow</h2>
+</div>
+<span class="px-3 py-1 rounded-full bg-surface-container-high font-label-caps text-label-caps text-on-surface-variant">
+              5 of 6 Completed
+            </span>
+</div>
+<!-- Timeline Container -->
+<div class="relative pl-6 sm:pl-8 space-y-8 before:absolute before:left-3 before:top-3 before:bottom-3 before:w-0.5 before:bg-primary/20">
+<!-- Step 1 -->
+<div class="relative flex items-start gap-4 group">
+<div class="absolute -left-6 sm:-left-8 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[14px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-body-lg text-on-surface font-semibold">1. Provisional Reservation</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-caps text-[10px] text-on-surface-variant">HOLD 48H</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Initial allocation lock verified and escrow opened.</p>
+</div>
+<span class="font-label-caps text-label-caps text-outline whitespace-nowrap">Oct 10, 2023</span>
+</div>
+</div>
+<!-- Step 2 -->
+<div class="relative flex items-start gap-4 group">
+<div class="absolute -left-6 sm:-left-8 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[14px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-body-lg text-on-surface font-semibold">2. Full Payment Confirmed</h3>
+<span class="px-2 py-0.5 rounded bg-primary/10 font-label-caps text-[10px] text-primary">₦15,000,000</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Full property consideration cleared through Zenith Bank Escrow account.</p>
+</div>
+<span class="font-label-caps text-label-caps text-outline whitespace-nowrap">Oct 12, 2023</span>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative flex items-start gap-4 group">
+<div class="absolute -left-6 sm:-left-8 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[14px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-body-lg text-on-surface font-semibold">3. Physical Survey &amp; Beacon Pegging</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-caps text-[10px] text-on-surface-variant">TEAM ALPHA</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Registered surveyor deployed; physical concrete beacon pins PB-01 to 04 erected.</p>
+</div>
+<span class="font-label-caps text-label-caps text-outline whitespace-nowrap">Oct 13, 2023</span>
+</div>
+</div>
+<!-- Step 4 -->
+<div class="relative flex items-start gap-4 group">
+<div class="absolute -left-6 sm:-left-8 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[14px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-body-lg text-on-surface font-semibold">4. Plot Allocation &amp; Gazetting</h3>
+<span class="px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed font-label-caps text-[10px]">EXECUTED</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Formal allocation certificate endorsed by Sarah Adams, Chief Operations Officer.</p>
+</div>
+<span class="font-label-caps text-label-caps text-outline whitespace-nowrap">Oct 14, 2023</span>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="relative flex items-start gap-4 group">
+<div class="absolute -left-6 sm:-left-8 w-6 h-6 rounded-full bg-primary text-on-primary flex items-center justify-center text-[14px]">
+<span class="material-symbols-outlined text-[14px]">check</span>
+</div>
+<div class="w-full bg-surface-container-low rounded-xl p-4 flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-body-lg text-on-surface font-semibold">5. Title Deed Issuance</h3>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-caps text-[10px] text-on-surface">DIGITAL C of O</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Deed of Sublease finalized with digital certificate signature &amp; QR seal.</p>
+</div>
+<span class="font-label-caps text-label-caps text-outline whitespace-nowrap">Oct 20, 2023</span>
+</div>
+</div>
+<!-- Step 6 (Current Step) -->
+<div class="relative flex items-start gap-4 group">
+<div class="absolute -left-6 sm:-left-8 w-6 h-6 rounded-full bg-primary/20 text-primary border-2 border-primary flex items-center justify-center text-[14px] animate-pulse">
+<span class="material-symbols-outlined text-[14px]">architecture</span>
+</div>
+<div class="w-full bg-surface-container rounded-xl p-5 shadow-sm flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+<div>
+<div class="flex items-center gap-2">
+<h3 class="font-headline-md text-body-lg text-on-surface font-bold">6. Development Approval</h3>
+<span class="px-2.5 py-0.5 rounded-full bg-primary text-on-primary font-label-caps text-[10px]">CURRENT ACTION</span>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Ready for architectural drawings submission &amp; Estate Engineering clearance.</p>
+</div>
+<button class="inline-flex items-center gap-1.5 px-4 py-2 rounded-lg bg-primary hover:bg-primary-container transition-colors text-on-primary font-body-sm text-body-sm shrink-0">
+<span>Submit Plan</span>
+<span class="material-symbols-outlined text-[16px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Property Specifications & Utilities Grid -->
+<div class="rounded-xl bg-surface-container-lowest p-6 sm:p-8 shadow-sm flex flex-col gap-6">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Engineering Matrix</span>
+<h2 class="font-headline-md text-headline-md text-on-surface mt-1">Specifications &amp; Utilities Status</h2>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Land Topography</span>
+<span class="material-symbols-outlined text-[20px] text-primary">landscape</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Flat Tableland</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">100% dry terrain, zero fill required.</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Soil Analysis</span>
+<span class="material-symbols-outlined text-[20px] text-primary">nature</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Firm Clay Loam</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Bearing capacity ~185 kN/m².</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Permitted Zoning</span>
+<span class="material-symbols-outlined text-[20px] text-primary">domain</span>
+</div>
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">2-Storey Villa</span>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Detached residential typology.</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Power Connection</span>
+<span class="material-symbols-outlined text-[20px] text-primary">bolt</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">33kV Underground</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Substation grid conduit laid.</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Water Supply</span>
+<span class="material-symbols-outlined text-[20px] text-primary">water_drop</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Estate Reticulation</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Tapped to central treatment plant.</span>
+</div>
+<div class="p-4 rounded-xl bg-surface-container-low flex flex-col gap-2">
+<div class="flex items-center justify-between text-on-surface-variant">
+<span class="font-label-caps text-label-caps uppercase">Drainage System</span>
+<span class="material-symbols-outlined text-[20px] text-primary">waves</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-headline-md text-body-lg text-on-surface font-semibold">Underground Ducts</span>
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Constructed reinforced curbs.</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Sidebar / Documents & Liaison (4 Cols) -->
+<div class="lg:col-span-4 flex flex-col gap-8">
+<!-- Verified Property Documents -->
+<div class="rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Vault</span>
+<h2 class="font-headline-md text-body-lg text-on-surface font-bold mt-0.5">Verified Documents</h2>
+</div>
+<span class="px-2 py-0.5 rounded bg-surface-container font-label-caps text-label-caps text-on-surface-variant">4 Records</span>
+</div>
+<div class="flex flex-col gap-3">
+<!-- Document 1 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">description</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Deed of Sublease &amp; C of O</h4>
+<p class="font-label-caps text-[11px] text-on-surface-variant mt-0.5">PDF · 5.1 MB · Gazetted</p>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary" title="Download Document">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Document 2 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">architecture</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Registered Cadastral Survey</h4>
+<p class="font-label-caps text-[11px] text-on-surface-variant mt-0.5">PDF · 8.9 MB · Plan #CSP-2023-992</p>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary" title="Download Document">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Document 3 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">mark_email_read</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Physical Allocation Letter</h4>
+<p class="font-label-caps text-[11px] text-on-surface-variant mt-0.5">PDF · 2.4 MB · Verified</p>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary" title="Download Document">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+<!-- Document 4 -->
+<div class="p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-start justify-between gap-3 group">
+<div class="flex items-start gap-3">
+<div class="w-9 h-9 rounded-lg bg-surface-container-highest flex items-center justify-center text-primary shrink-0 mt-0.5">
+<span class="material-symbols-outlined text-[20px]">receipt_long</span>
+</div>
+<div>
+<h4 class="font-body-md text-body-sm font-semibold text-on-surface group-hover:text-primary transition-colors">Official Treasury Receipt</h4>
+<p class="font-label-caps text-[11px] text-on-surface-variant mt-0.5">PDF · 410 KB · Settled</p>
+</div>
+</div>
+<div class="flex items-center gap-1 shrink-0">
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-on-surface-variant hover:text-on-surface" title="View Document">
+<span class="material-symbols-outlined text-[18px]">visibility</span>
+</button>
+<button class="p-1.5 rounded-lg hover:bg-surface-container-high text-primary" title="Download Document">
+<span class="material-symbols-outlined text-[18px]">download</span>
+</button>
+</div>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-surface-container text-on-surface hover:bg-surface-container-high transition-colors font-body-sm text-body-sm flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[18px]">folder_zip</span>
+            Download Entire Archive (.ZIP)
+          </button>
+</div>
+<!-- Assigned Estate Liaison / Relationship Officer -->
+<div class="rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col gap-5">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-caps text-label-caps text-primary uppercase">Dedicated Concierge</span>
+<h2 class="font-headline-md text-body-lg text-on-surface font-bold mt-0.5">Portfolio Manager</h2>
+</div>
+<span class="w-2.5 h-2.5 rounded-full bg-primary" title="Online Active"></span>
+</div>
+<div class="flex items-center gap-4">
+<img class="w-16 h-16 rounded-full object-cover shadow-sm ring-2 ring-primary/20 shrink-0" data-alt="Professional studio portrait of Amara Okafor, an executive Nigerian female real estate portfolio manager with sleek dark hair, wearing a navy tailored blazer against a minimalist architectural background, high key soft cinematic lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCXFlHk2JUMPMqXQubdfaf_OZ-aiC1jwpP4XhEW8sXi9iMgoTP82wzWGpo9MbtMqjS6cEM5WHpY-OX5N2L5xny-m39xV-QVVIQmzKL6Sad3s8Ek69TBI7B2j4-cRxzuNKDy3zKr7WfuXvkWMTojadRmuEuGoQlmpvcwGlwEbpnUNJT7oI39T12sEsxJDwXQxiw-ppcYpMKjkqiw0ruOrE09wsZrR2OlVEI3A5iwsaLcyVg2rbWMTe5g"/>
+<div class="min-w-0">
+<h3 class="font-headline-md text-headline-md text-on-surface truncate">Amara Okafor</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Senior Portfolio Officer</p>
+<span class="inline-flex items-center gap-1 text-primary font-label-caps text-[11px] mt-1">
+<span class="material-symbols-outlined text-[14px]">stars</span>
+                Delta State Lead
+              </span>
+</div>
+</div>
+<div class="p-3.5 rounded-xl bg-surface-container-low flex flex-col gap-2.5 text-body-sm">
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">call</span>
+                Direct Line
+              </span>
+<a class="font-label-caps text-label-caps text-primary hover:underline" href="tel:+2348023349901">+234 802 334 9901</a>
+</div>
+<div class="flex items-center justify-between text-on-surface">
+<span class="text-on-surface-variant flex items-center gap-2">
+<span class="material-symbols-outlined text-[16px] text-outline">mail</span>
+                Email
+              </span>
+<a class="font-body-sm text-body-sm text-primary hover:underline truncate ml-2" href="mailto:amara.o@estateportal.com">amara.o@estateportal.com</a>
+</div>
+</div>
+<button class="w-full py-2.5 rounded-lg bg-primary text-on-primary hover:bg-primary-container transition-colors font-body-sm text-body-sm flex items-center justify-center gap-2 shadow-sm">
+<span class="material-symbols-outlined text-[18px]">chat</span>
+            Send Direct Message
+          </button>
+</div>
+<!-- Quick Access Actions -->
+<div class="rounded-xl bg-surface-container-lowest p-6 shadow-sm flex flex-col gap-4">
+<h3 class="font-headline-md text-body-lg text-on-surface font-bold">Ownership Actions</h3>
+<div class="flex flex-col gap-2.5">
+<button class="w-full p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between text-left group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">engineering</span>
+<div>
+<div class="font-body-sm text-body-sm font-semibold text-on-surface">Request Dev Clearance</div>
+<p class="font-label-caps text-[11px] text-on-surface-variant">Submit site work notifications</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between text-left group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">pin_drop</span>
+<div>
+<div class="font-body-sm text-body-sm font-semibold text-on-surface">Request Site Peg Verification</div>
+<p class="font-label-caps text-[11px] text-on-surface-variant">Physical re-measurement by field team</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</button>
+<button class="w-full p-3.5 rounded-xl bg-surface-container-low hover:bg-surface-container transition-colors flex items-center justify-between text-left group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary text-[22px]">swap_horiz</span>
+<div>
+<div class="font-body-sm text-body-sm font-semibold text-on-surface">Transfer Equity or Assignee</div>
+<p class="font-label-caps text-[11px] text-on-surface-variant">Initiate legal change of title deed</p>
+</div>
+</div>
+<span class="material-symbols-outlined text-outline group-hover:translate-x-1 transition-transform text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interaction: Cadastral view full toggle feedback
+  const fullscreenCadastralBtn = document.getElementById('fullscreenCadastralBtn');
+  if (fullscreenCadastralBtn) {
+    fullscreenCadastralBtn.addEventListener('click', () => {
+      const icon = fullscreenCadastralBtn.querySelector('span');
+      if (icon.innerText === 'fullscreen') {
+        icon.innerText = 'fullscreen_exit';
+      } else {
+        icon.innerText = 'fullscreen';
+      }
+    });
+  }
+</script></main></body></html>

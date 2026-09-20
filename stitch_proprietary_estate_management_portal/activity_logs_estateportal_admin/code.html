@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Activity Logs - EstatePortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "on-primary-container": "#bcceff",
+                      "on-error": "#ffffff",
+                      "inverse-on-surface": "#eff1f3",
+                      "tertiary-container": "#49596f",
+                      "on-surface": "#191c1e",
+                      "secondary-fixed-dim": "#c3c6cf",
+                      "primary": "#003c90",
+                      "surface-tint": "#1d59c1",
+                      "on-secondary-fixed": "#181c22",
+                      "surface-container-low": "#f2f4f6",
+                      "surface-container-highest": "#e0e3e5",
+                      "on-tertiary-container": "#bfd0ea",
+                      "surface-container-high": "#e6e8ea",
+                      "inverse-primary": "#b0c6ff",
+                      "on-secondary": "#ffffff",
+                      "secondary-container": "#dfe2eb",
+                      "tertiary": "#324257",
+                      "secondary": "#5b5e66",
+                      "on-tertiary-fixed": "#0b1c30",
+                      "on-secondary-container": "#61646c",
+                      "inverse-surface": "#2d3133",
+                      "surface-variant": "#e0e3e5",
+                      "surface": "#f7f9fb",
+                      "on-surface-variant": "#434653",
+                      "secondary-fixed": "#dfe2eb",
+                      "on-primary": "#ffffff",
+                      "error": "#ba1a1a",
+                      "surface-dim": "#d8dadc",
+                      "on-tertiary-fixed-variant": "#38485d",
+                      "on-error-container": "#93000a",
+                      "primary-fixed": "#d9e2ff",
+                      "on-primary-fixed-variant": "#00419c",
+                      "surface-container-lowest": "#ffffff",
+                      "primary-fixed-dim": "#b0c6ff",
+                      "error-container": "#ffdad6",
+                      "surface-bright": "#f7f9fb",
+                      "tertiary-fixed": "#d3e4fe",
+                      "on-secondary-fixed-variant": "#43474e",
+                      "tertiary-fixed-dim": "#b7c8e1",
+                      "surface-container": "#eceef0",
+                      "background": "#f7f9fb",
+                      "on-primary-fixed": "#001945",
+                      "outline": "#737784",
+                      "on-background": "#191c1e",
+                      "on-tertiary": "#ffffff",
+                      "primary-container": "#0f52ba",
+                      "outline-variant": "#c3c6d5"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.25rem",
+                      "lg": "0.5rem",
+                      "xl": "0.75rem",
+                      "full": "9999px"
+              },
+              "spacing": {
+                      "margin-desktop": "40px",
+                      "gutter": "24px",
+                      "container-max": "1440px",
+                      "unit": "8px",
+                      "margin-mobile": "16px"
+              },
+              "fontFamily": {
+                      "headline-lg": ["Hanken Grotesk"],
+                      "body-sm": ["Inter"],
+                      "headline-md": ["Hanken Grotesk"],
+                      "label-caps": ["JetBrains Mono"],
+                      "display-lg": ["Hanken Grotesk"],
+                      "body-lg": ["Inter"],
+                      "body-md": ["Inter"],
+                      "headline-lg-mobile": ["Hanken Grotesk"]
+              },
+              "fontSize": {
+                      "headline-lg": ["32px", {"lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                      "body-sm": ["14px", {"lineHeight": "20px", "fontWeight": "400"}],
+                      "headline-md": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                      "label-caps": ["12px", {"lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                      "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                      "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                      "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                      "headline-lg-mobile": ["24px", {"lineHeight": "32px", "fontWeight": "600"}]
+              }
+            },
+          }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(12px);
+            border: 1px solid theme('colors.outline-variant');
+        }
+        
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .material-symbols-outlined.filled {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex antialiased">
+<!-- SideNavBar -->
+<nav class="fixed left-0 top-0 h-full w-[240px] z-40 flex flex-col py-gutter px-4 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border-r border-outline-variant dark:border-outline">
+<div class="mb-10 px-2 flex items-center gap-3">
+<div class="w-10 h-10 rounded-full bg-primary flex items-center justify-center text-on-primary font-headline-md font-bold">EP</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary dark:text-inverse-primary leading-none">EstatePortal</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant dark:text-surface-variant mt-1">Customer Account</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary rounded-full py-3 px-4 font-body-md text-body-md font-semibold mb-8 hover:bg-primary-container hover:text-on-primary-container transition-colors duration-200 flex items-center justify-center gap-2 shadow-sm shadow-primary/15">
+<span class="material-symbols-outlined">add</span> New Inquiry
+        </button>
+<ul class="flex flex-col gap-2 flex-grow">
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 font-body-md text-body-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform duration-150" data-icon="dashboard">dashboard</span>
+                    Dashboard
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 font-body-md text-body-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform duration-150" data-icon="domain">domain</span>
+                    My Properties
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 font-body-md text-body-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform duration-150" data-icon="payments">payments</span>
+                    Payments
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 font-body-md text-body-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform duration-150" data-icon="description">description</span>
+                    Documents
+                </a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 font-body-md text-body-md group" href="#">
+<span class="material-symbols-outlined group-hover:scale-110 transition-transform duration-150" data-icon="support_agent">support_agent</span>
+                    Support
+                </a>
+</li>
+<li>
+<!-- Activity Logs logically falls under Settings in the provided nav structure, so we highlight Settings -->
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-primary dark:text-inverse-primary font-bold border-l-4 border-primary bg-primary-fixed/30 dark:bg-primary-container/20 transition-transform duration-150 scale-[0.98] font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined filled" data-icon="settings">settings</span>
+                    Settings
+                </a>
+</li>
+</ul>
+<div class="mt-auto border-t border-outline-variant/30 pt-4 flex flex-col gap-2">
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-primary dark:hover:text-inverse-primary hover:bg-surface-container-low dark:hover:bg-surface-container-highest transition-colors duration-200 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="help">help</span>
+                Help Center
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-on-surface-variant dark:text-surface-variant hover:text-error dark:hover:text-error hover:bg-error-container/20 transition-colors duration-200 font-body-md text-body-md" href="#">
+<span class="material-symbols-outlined" data-icon="logout">logout</span>
+                Logout
+            </a>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-[240px] flex flex-col min-h-screen max-w-[calc(100%-240px)]">
+<!-- TopAppBar -->
+<header class="docked full-width top-0 sticky z-30 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border-b border-outline-variant dark:border-outline flex justify-between items-center w-full px-gutter h-16">
+<div class="flex-1 max-w-xl">
+<div class="relative w-full max-w-md">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full bg-surface-container-low border-none rounded-full py-2 pl-10 pr-4 text-body-md focus:ring-1 focus:ring-primary focus:bg-surface transition-all placeholder:text-on-surface-variant/70" placeholder="Search logs, resources, or IPs..." type="text"/>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="flex items-center gap-2">
+<button class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full p-2 transition-all group">
+<span class="material-symbols-outlined group-hover:opacity-80 group-active:scale-95 transition-all" data-icon="notifications">notifications</span>
+</button>
+<button class="text-on-surface-variant dark:text-surface-variant hover:bg-surface-container-high dark:hover:bg-surface-container-highest rounded-full p-2 transition-all group">
+<span class="material-symbols-outlined group-hover:opacity-80 group-active:scale-95 transition-all" data-icon="apps">apps</span>
+</button>
+</div>
+<div class="h-6 w-px bg-outline-variant/50"></div>
+<button class="flex items-center gap-2 text-primary font-body-md text-body-md font-medium hover:bg-primary-fixed/50 rounded-full px-4 py-1.5 transition-colors">
+                    Quick Action
+                    <span class="material-symbols-outlined text-[18px]">bolt</span>
+</button>
+<div class="w-9 h-9 rounded-full overflow-hidden border border-outline-variant shadow-sm">
+<img alt="Administrator Profile Image" class="w-full h-full object-cover" data-alt="A professional headshot portrait of an administrator in a modern office setting. Bright, clear lighting, modern minimalist aesthetic, neutral background. High-quality professional photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCD6BqWkiTDhFfKAm9l_53Pcez_4CASCxDZ1iidrV2QpvONdYgI7tSZP-QGdxHxpdVQ2sHYzi9YOvL2pLXXDb1H_LbTJ38XNb9nevYQzgbR4w17JNbkTfPxmAF7bctCDLgRgIDSXJELSTN2PycNlLlkb6HUFES1duviIDvA63pSXiCK9i7l0Pj7SGCddItlDNAIIXccgo5JXM8e3xx9emCZaDWZDzw1yhrHssqq5Y3hNkQXeP5ySWEG"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="p-8 pb-20 flex-1 max-w-7xl mx-auto w-full flex flex-col gap-8">
+<!-- Page Header -->
+<div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div>
+<h2 class="font-display-lg text-display-lg text-on-background">System Activity logs</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mt-2 max-w-2xl">Comprehensive audit trail of all platform interactions, configuration changes, and access events.</p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface border border-outline-variant rounded-lg font-label-caps text-label-caps text-on-surface flex items-center gap-2 hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">download</span> EXPORT CSV
+                    </button>
+<button class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-caps text-label-caps flex items-center gap-2 hover:bg-primary-container hover:text-on-primary-container shadow-sm shadow-primary/20 transition-colors">
+<span class="material-symbols-outlined text-[18px]">filter_list</span> ADVANCED FILTER
+                    </button>
+</div>
+</div>
+<!-- Activity Table Container (Glassmorphism & High-Density) -->
+<div class="bg-surface border border-outline-variant rounded-xl overflow-hidden shadow-sm flex flex-col">
+<!-- Table Controls -->
+<div class="px-6 py-4 border-b border-outline-variant bg-surface-container-lowest flex flex-wrap gap-4 items-center justify-between">
+<div class="flex gap-2 items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Timeframe:</span>
+<select class="text-body-sm py-1.5 pl-3 pr-8 rounded-md border-outline-variant bg-surface focus:ring-primary focus:border-primary">
+<option>Last 24 Hours</option>
+<option>Last 7 Days</option>
+<option selected="">Last 30 Days</option>
+<option>Custom Range</option>
+</select>
+</div>
+<div class="flex gap-2 items-center">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Entity Type:</span>
+<div class="flex bg-surface-container-low p-1 rounded-lg">
+<button class="px-3 py-1 text-body-sm font-medium rounded-md bg-surface shadow-sm text-primary">All</button>
+<button class="px-3 py-1 text-body-sm font-medium rounded-md text-on-surface-variant hover:text-on-surface transition-colors">Admins</button>
+<button class="px-3 py-1 text-body-sm font-medium rounded-md text-on-surface-variant hover:text-on-surface transition-colors">Customers</button>
+<button class="px-3 py-1 text-body-sm font-medium rounded-md text-on-surface-variant hover:text-on-surface transition-colors">System</button>
+</div>
+</div>
+</div>
+<!-- The Table -->
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low border-b border-outline-variant">
+<th class="py-3 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold">Timestamp</th>
+<th class="py-3 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold">User / Entity</th>
+<th class="py-3 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold">Action</th>
+<th class="py-3 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold">Resource</th>
+<th class="py-3 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold">IP Address</th>
+<th class="py-3 px-6 font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider font-semibold text-right">Details</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/40">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="py-3 px-6 whitespace-nowrap">
+<div class="font-label-caps text-label-caps text-on-surface">2023-10-27 14:32:01</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-primary-fixed text-primary font-bold flex items-center justify-center text-xs">SA</div>
+<div>
+<div class="font-body-sm text-body-sm font-medium text-on-surface">Sarah Adams</div>
+<div class="font-label-caps text-[10px] text-on-surface-variant">Admin</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-caps text-[11px] font-medium border border-secondary-fixed/50">
+<span class="material-symbols-outlined text-[14px]">edit_document</span>
+                                        UPDATED STATUS
+                                    </span>
+</td>
+<td class="py-3 px-6">
+<div class="font-body-sm text-body-sm text-on-surface font-medium">Plot #402, Greenfield Est.</div>
+<div class="font-label-caps text-[10px] text-outline">EST-8842-A</div>
+</td>
+<td class="py-3 px-6">
+<div class="font-label-caps text-label-caps text-on-surface-variant">192.168.1.45</div>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="text-primary hover:bg-primary-fixed rounded-full p-1.5 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="py-3 px-6 whitespace-nowrap">
+<div class="font-label-caps text-label-caps text-on-surface">2023-10-27 13:15:44</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant font-bold flex items-center justify-center text-xs border border-outline-variant">SYSTEM</div>
+<div>
+<div class="font-body-sm text-body-sm font-medium text-on-surface">Automated Billing</div>
+<div class="font-label-caps text-[10px] text-on-surface-variant">Service</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-primary-fixed/50 text-on-primary-fixed font-label-caps text-[11px] font-medium border border-primary-fixed">
+<span class="material-symbols-outlined text-[14px]">receipt_long</span>
+                                        GENERATED INVOICE
+                                    </span>
+</td>
+<td class="py-3 px-6">
+<div class="font-body-sm text-body-sm text-on-surface font-medium">Monthly Maintenance Fee</div>
+<div class="font-label-caps text-[10px] text-outline">INV-2023-10-992</div>
+</td>
+<td class="py-3 px-6">
+<div class="font-label-caps text-label-caps text-on-surface-variant">-</div>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="text-primary hover:bg-primary-fixed rounded-full p-1.5 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50 transition-colors group">
+<td class="py-3 px-6 whitespace-nowrap">
+<div class="font-label-caps text-label-caps text-on-surface">2023-10-27 11:02:18</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-3">
+<img alt="Customer Profile" class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A portrait of a male customer in a bright, modern setting. Professional yet casual attire. High resolution, clear lighting, minimalist background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBY38NH8F6kqhMkkT0cDgeHCwTHgt1-e43_j4eK-sHjpd0HmMRRPvp3poTkI24lV2tTbHPZd8bCo4VO7Wz8yBxfheSHV8njQ4dZBHoCoUKuFKxD7FUYeHnq3Z_k4I7ykC8F1yy4Mx5vXDb7U4us9XUU00yCdfGy2EPVz0VTGP-9XUs4H8O7ObWzFJwjjJHFk1saKoKITPuQR1kf1xLz7IQU2GFjE34LSOti7vD0wtGVrpuuI8fT06jo"/>
+<div>
+<div class="font-body-sm text-body-sm font-medium text-on-surface">Michael Chen</div>
+<div class="font-label-caps text-[10px] text-on-surface-variant">Customer</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-tertiary-fixed text-on-tertiary-fixed font-label-caps text-[11px] font-medium border border-tertiary-fixed-dim">
+<span class="material-symbols-outlined text-[14px]">login</span>
+                                        AUTHENTICATED
+                                    </span>
+</td>
+<td class="py-3 px-6">
+<div class="font-body-sm text-body-sm text-on-surface font-medium">Customer Portal</div>
+<div class="font-label-caps text-[10px] text-outline">Session: 88a1b2c</div>
+</td>
+<td class="py-3 px-6">
+<div class="font-label-caps text-label-caps text-on-surface-variant">203.0.113.84</div>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="text-primary hover:bg-primary-fixed rounded-full p-1.5 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</td>
+</tr>
+<!-- Row 4 (Error state example) -->
+<tr class="hover:bg-slate-50 transition-colors group bg-error-container/5">
+<td class="py-3 px-6 whitespace-nowrap">
+<div class="font-label-caps text-label-caps text-error font-medium">2023-10-27 09:45:11</div>
+</td>
+<td class="py-3 px-6">
+<div class="flex items-center gap-3">
+<div class="w-8 h-8 rounded-full bg-surface-variant text-on-surface-variant font-bold flex items-center justify-center text-xs border border-outline-variant">UNK</div>
+<div>
+<div class="font-body-sm text-body-sm font-medium text-on-surface">Unknown Origin</div>
+<div class="font-label-caps text-[10px] text-error">Failed Auth</div>
+</div>
+</div>
+</td>
+<td class="py-3 px-6">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-error-container text-on-error-container font-label-caps text-[11px] font-medium border border-error/20">
+<span class="material-symbols-outlined text-[14px]">block</span>
+                                        ACCESS DENIED
+                                    </span>
+</td>
+<td class="py-3 px-6">
+<div class="font-body-sm text-body-sm text-on-surface font-medium">Admin API Endpoint</div>
+<div class="font-label-caps text-[10px] text-outline">/api/v1/users/export</div>
+</td>
+<td class="py-3 px-6">
+<div class="font-label-caps text-label-caps text-error font-medium">45.22.19.102</div>
+</td>
+<td class="py-3 px-6 text-right">
+<button class="text-error hover:bg-error-container rounded-full p-1.5 transition-colors opacity-0 group-hover:opacity-100 focus:opacity-100">
+<span class="material-symbols-outlined text-[20px]">chevron_right</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<div class="px-6 py-4 border-t border-outline-variant flex items-center justify-between bg-surface-container-lowest">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Showing <strong class="text-on-surface">1-4</strong> of <strong class="text-on-surface">1,248</strong> entries</span>
+<div class="flex gap-1">
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface-variant opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-8 h-8 flex items-center justify-center rounded bg-primary text-on-primary font-label-caps text-label-caps font-medium">1</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps font-medium transition-colors">2</button>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:bg-surface-container-low font-label-caps text-label-caps font-medium transition-colors">3</button>
+<span class="w-8 h-8 flex items-center justify-center text-on-surface-variant font-label-caps text-label-caps">...</span>
+<button class="w-8 h-8 flex items-center justify-center rounded border border-outline-variant text-on-surface hover:bg-surface-container-low transition-colors">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

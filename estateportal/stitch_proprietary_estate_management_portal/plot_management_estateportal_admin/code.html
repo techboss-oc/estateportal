@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"on-secondary-fixed":"#181c22","inverse-on-surface":"#eff1f3","on-primary-container":"#bcceff","surface-container-lowest":"#ffffff","on-tertiary":"#ffffff","on-error":"#ffffff","secondary-container":"#dfe2eb","inverse-surface":"#2d3133","surface-container-low":"#f2f4f6","tertiary-container":"#49596f","tertiary-fixed":"#d3e4fe","secondary-fixed-dim":"#c3c6cf","on-surface-variant":"#434653","surface":"#f7f9fb","on-background":"#191c1e","surface-container-high":"#e6e8ea","primary-fixed":"#d9e2ff","on-primary-fixed":"#001945","error":"#ba1a1a","on-surface":"#191c1e","surface-container-highest":"#e0e3e5","on-secondary-container":"#61646c","secondary":"#5b5e66","on-primary-fixed-variant":"#00419c","primary":"#003c90","secondary-fixed":"#dfe2eb","outline":"#737784","surface-bright":"#f7f9fb","error-container":"#ffdad6","inverse-primary":"#b0c6ff","on-primary":"#ffffff","on-secondary-fixed-variant":"#43474e","tertiary":"#324257","surface-tint":"#1d59c1","surface-variant":"#e0e3e5","background":"#f7f9fb","on-tertiary-container":"#bfd0ea","surface-dim":"#d8dadc","surface-container":"#eceef0","primary-fixed-dim":"#b0c6ff","on-secondary":"#ffffff","on-tertiary-fixed":"#0b1c30","on-error-container":"#93000a","primary-container":"#0f52ba","outline-variant":"#c3c6d5","tertiary-fixed-dim":"#b7c8e1","on-tertiary-fixed-variant":"#38485d"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"container-max":"1440px","margin-mobile":"16px","margin-desktop":"40px","unit":"8px","gutter":"24px"},"fontFamily":{"label-caps":["JetBrains Mono"],"headline-lg":["Hanken Grotesk"],"body-md":["Inter"],"body-sm":["Inter"],"display-lg":["Hanken Grotesk"],"headline-md":["Hanken Grotesk"],"body-lg":["Inter"],"headline-lg-mobile":["Hanken Grotesk"]},"fontSize":{"label-caps":["12px",{"lineHeight":"16px","letterSpacing":"0.05em","fontWeight":"500"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.01em","fontWeight":"600"}],"body-md":["16px",{"lineHeight":"24px","fontWeight":"400"}],"body-sm":["14px",{"lineHeight":"20px","fontWeight":"400"}],"display-lg":["48px",{"lineHeight":"56px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-md":["24px",{"lineHeight":"32px","fontWeight":"600"}],"body-lg":["18px",{"lineHeight":"28px","fontWeight":"400"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","fontWeight":"600"}]}}}}</script></head><body class="bg-surface font-body-md text-body-md text-on-surface antialiased"><aside class="fixed left-0 top-0 h-full w-[280px] bg-surface-container-low z-50 flex flex-col justify-between p-6 shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="flex flex-col gap-8"><div class="flex items-center gap-3 px-2"><div class="w-10 h-10 rounded-xl bg-primary flex items-center justify-center text-on-primary shadow-sm"><span class="material-symbols-outlined text-[24px]">apartment</span></div><div class="flex flex-col"><span class="font-headline-md text-headline-md text-on-surface leading-tight tracking-tight">EstatePortal</span><span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider">Fintech OS</span></div></div><nav class="flex flex-col gap-1" data-active-classes="bg-primary-container text-on-primary font-body-sm font-semibold rounded-xl shadow-sm"><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[20px]">grid_view</span><span>Dashboard</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="estates" href="#"><span class="material-symbols-outlined text-[20px]">location_city</span><span>Estates</span></a><a aria-current="page" class="flex items-center gap-3 px-4 py-3 transition-colors bg-primary-container text-on-primary font-body-sm font-semibold rounded-xl shadow-sm" data-path="plots" href="#"><span class="material-symbols-outlined text-[20px]">map</span><span>Plots</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="customers" href="#"><span class="material-symbols-outlined text-[20px]">group</span><span>Customers</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="allocations" href="#"><span class="material-symbols-outlined text-[20px]">pie_chart</span><span>Allocations</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="documents" href="#"><span class="material-symbols-outlined text-[20px]">folder_shared</span><span>Documents</span></a><a class="flex items-center gap-3 px-4 py-3 rounded-xl text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors font-body-sm text-body-sm" data-path="settings" href="#"><span class="material-symbols-outlined text-[20px]">settings</span><span>Settings</span></a></nav></div><div class="flex items-center gap-3 p-3 rounded-xl bg-surface-container-lowest shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="w-9 h-9 rounded-full bg-primary flex items-center justify-center shrink-0"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div><div class="flex flex-col min-w-0 flex-1"><span class="font-body-sm text-body-sm font-semibold text-on-surface truncate">Alexander Sterling</span><span class="font-label-caps text-label-caps text-on-surface-variant truncate">PORTFOLIO DIRECTOR</span></div><span class="material-symbols-outlined text-on-surface-variant text-[18px]">unfold_more</span></div></aside><div class="pl-[280px]"><header class="fixed top-0 left-[280px] right-0 z-40 bg-surface/80 backdrop-blur-xl shadow-[0_1px_8px_rgba(0,0,0,0.04)]"><div class="h-16 w-full px-gutter flex items-center justify-between"><div class="flex items-center flex-1 max-w-lg"><div class="relative w-full"><span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span><input class="w-full pl-10 pr-4 py-2 rounded-xl bg-surface-container-lowest text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all shadow-[0_1px_4px_rgba(0,0,0,0.02)]" placeholder="Search plots, parcels, documents, or clients..." type="text"/></div></div><div class="flex items-center gap-4"><button class="flex items-center gap-2 px-4 py-2 rounded-xl bg-primary text-on-primary font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors shadow-sm" type="button"><span class="material-symbols-outlined text-[18px]">add</span><span>New Allocation</span></button><button aria-label="Notifications" class="w-10 h-10 rounded-xl bg-surface-container-lowest flex items-center justify-center text-on-surface-variant hover:text-on-surface hover:bg-surface-container-high transition-colors relative shadow-[0_1px_4px_rgba(0,0,0,0.02)]" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-2.5 right-2.5 w-2 h-2 rounded-full bg-error"></span></button><div class="h-6 w-px bg-surface-container-highest"></div><div class="w-8 h-8 rounded-full bg-primary flex items-center justify-center"><span class="material-symbols-outlined text-on-primary text-[18px]">person</span></div></div></div></header><main class="w-full pt-16 bg-surface min-h-screen"><div class="flex flex-col w-full">
+<div class="p-8 max-w-[1440px] mx-auto w-full flex flex-col gap-8">
+<!-- Title & Top Summary Header -->
+<div class="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+<div class="flex flex-col gap-1.5">
+<div class="flex items-center gap-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest px-2 py-0.5 rounded bg-primary-fixed text-on-primary-fixed">Core Asset Ledger</span>
+<span class="text-outline-variant font-label-caps text-label-caps">/</span>
+<span class="font-label-caps text-label-caps text-on-surface-variant">GEO-PARCELS</span>
+</div>
+<h1 class="font-headline-lg text-headline-lg text-on-surface font-bold tracking-tight">Plot Inventory &amp; Management</h1>
+<p class="font-body-md text-body-md text-on-surface-variant">Monitor status, zoning, and customer allocations across all development phases.</p>
+</div>
+<!-- Action Buttons -->
+<div class="flex flex-wrap items-center gap-3">
+<button class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">file_download</span>
+<span>Export CSV</span>
+</button>
+<button class="flex items-center gap-2 px-3.5 py-2.5 rounded-xl bg-surface-container-lowest text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-high transition-colors shadow-sm" type="button">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">rule_settings</span>
+<span>Batch Status Update</span>
+</button>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-primary-container text-on-primary font-body-sm text-body-sm font-semibold hover:bg-primary transition-all shadow-md" type="button">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Add New Plot</span>
+</button>
+</div>
+</div>
+<!-- Summary Metric Cards -->
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+<!-- Total Plots -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between h-[152px]">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Total Land Parcels</span>
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight mt-1">1,450</span>
+</div>
+<div class="w-10 h-10 rounded-xl bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined text-[22px]">grid_goldenratio</span>
+</div>
+</div>
+<div class="flex items-center gap-1.5 text-on-surface-variant font-body-sm text-body-sm">
+<span class="material-symbols-outlined text-[16px] text-primary">domain</span>
+<span>Across 12 active estates</span>
+</div>
+</div>
+<!-- Available Plots -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between h-[152px]">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Available Allocation</span>
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight mt-1">420</span>
+</div>
+<span class="px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-surface-container-high text-on-surface flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+            28.9%
+          </span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary h-1.5 rounded-full w-[28.9%]"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Ready for immediate contract binding</span>
+</div>
+<!-- Allocated Plots -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between h-[152px]">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Fully Allocated</span>
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight mt-1">890</span>
+</div>
+<span class="px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-primary-container"></span>
+            61.4%
+          </span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-primary-container h-1.5 rounded-full w-[61.4%]"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Assigned to verified buyers</span>
+</div>
+<!-- Reserved Plots -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm relative overflow-hidden flex flex-col justify-between h-[152px]">
+<div class="flex items-start justify-between">
+<div class="flex flex-col">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Reserved / In-Escrow</span>
+<span class="font-display-lg text-display-lg font-bold text-on-surface tracking-tight mt-1">140</span>
+</div>
+<span class="px-2.5 py-1 rounded-full font-label-caps text-label-caps bg-secondary-container text-on-secondary-container flex items-center gap-1">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+            9.7%
+          </span>
+</div>
+<div class="w-full bg-surface-container-high rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary h-1.5 rounded-full w-[9.7%]"></div>
+</div>
+<span class="font-body-sm text-body-sm text-on-surface-variant truncate">Pending documentation / KYC</span>
+</div>
+</div>
+<!-- Filter Toolbar Section -->
+<div class="bg-surface-container-lowest p-4 rounded-xl shadow-sm flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4">
+<div class="flex flex-wrap items-center gap-3 flex-1">
+<!-- Search Input -->
+<div class="relative flex-1 min-w-[260px] max-w-md">
+<span class="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[20px]">search</span>
+<input class="w-full pl-10 pr-4 py-2 rounded-lg bg-surface-container-low text-body-sm font-body-sm text-on-surface placeholder:text-on-surface-variant focus:outline-none focus:bg-surface-container-lowest shadow-inner transition-all" placeholder="Search by plot number, reference, or customer..." type="text"/>
+</div>
+<!-- Estate Selector -->
+<div class="relative">
+<select class="appearance-none pl-3.5 pr-8 py-2 rounded-lg bg-surface-container-low text-body-sm font-body-sm font-medium text-on-surface focus:outline-none cursor-pointer">
+<option>All Estates</option>
+<option>Potter's House Phase 2</option>
+<option>Aurora Heights</option>
+<option>Azure Cove</option>
+<option>Silver Creek Reserve</option>
+<option>The Zenith Residences</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Status Selector -->
+<div class="relative">
+<select class="appearance-none pl-3.5 pr-8 py-2 rounded-lg bg-surface-container-low text-body-sm font-body-sm font-medium text-on-surface focus:outline-none cursor-pointer">
+<option>All Statuses</option>
+<option>Available</option>
+<option>Allocated</option>
+<option>Reserved</option>
+<option>Pending KYC</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">expand_more</span>
+</div>
+<!-- Size Range Filter -->
+<div class="relative">
+<select class="appearance-none pl-3.5 pr-8 py-2 rounded-lg bg-surface-container-low text-body-sm font-body-sm font-medium text-on-surface focus:outline-none cursor-pointer">
+<option>Plot Size (All)</option>
+<option>&lt; 300 sqm</option>
+<option>300 - 500 sqm</option>
+<option>500 - 800 sqm</option>
+<option>&gt; 800 sqm</option>
+</select>
+<span class="material-symbols-outlined absolute right-2.5 top-1/2 -translate-y-1/2 text-on-surface-variant text-[18px] pointer-events-none">filter_list</span>
+</div>
+</div>
+<!-- Quick Metrics View Toggle & Total Counter -->
+<div class="flex items-center justify-between lg:justify-end gap-3 shrink-0">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase">Matches: <strong class="text-on-surface font-semibold">1,450 plots</strong></span>
+<div class="flex items-center rounded-lg bg-surface-container-low p-0.5">
+<button aria-label="Table View" class="p-1.5 rounded-md bg-surface-container-lowest text-primary shadow-xs" type="button">
+<span class="material-symbols-outlined text-[18px]">table_rows</span>
+</button>
+<button aria-label="Cadastral Map View" class="p-1.5 rounded-md text-on-surface-variant hover:text-on-surface transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">map</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Data Table Container -->
+<div class="bg-surface-container-lowest rounded-xl shadow-sm overflow-hidden">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container-low text-on-surface-variant font-label-caps text-label-caps uppercase tracking-wider">
+<th class="py-3.5 pl-6 pr-3 w-10" scope="col">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</th>
+<th class="py-3.5 px-4" scope="col">Plot Identifier</th>
+<th class="py-3.5 px-4" scope="col">Estate Name</th>
+<th class="py-3.5 px-4" scope="col">Size</th>
+<th class="py-3.5 px-4" scope="col">Zoning / Category</th>
+<th class="py-3.5 px-4" scope="col">Current Status</th>
+<th class="py-3.5 px-4" scope="col">Assigned Stakeholder</th>
+<th class="py-3.5 px-4" scope="col">Allocated Date</th>
+<th class="py-3.5 pl-4 pr-6 text-right" scope="col">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-transparent font-body-sm text-body-sm text-on-surface">
+<!-- Row 1 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps font-semibold text-primary">
+                LOT 7
+              </td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                Potter's House Phase 2
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                464 sqm
+              </td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-[12px] font-medium">Residential</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Allocated
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-caps text-[11px] font-bold flex items-center justify-center">
+                    MN
+                  </div>
+<span class="font-medium text-on-surface truncate">Michael Njoku</span>
+</div>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                Oct 14, 2023
+              </td>
+<td class="py-4 pl-4 pr-6 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-primary font-body-sm text-body-sm font-medium transition-colors" type="button">View</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Edit</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Transfer</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps font-semibold text-primary">
+                LOT 8
+              </td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                Potter's House Phase 2
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                464 sqm
+              </td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-[12px] font-medium">Residential</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-container-high text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Available
+                </span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant italic">
+                — Unallocated
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                —
+              </td>
+<td class="py-4 pl-4 pr-6 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors shadow-xs" type="button">Allocate</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Edit</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps font-semibold text-primary">
+                LOT 9
+              </td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                Potter's House Phase 2
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                333 sqm
+              </td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-[12px] font-medium">Commercial</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-secondary-container text-on-secondary-container">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                  Reserved
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-[18px] text-on-surface-variant">business</span>
+<span class="font-medium text-on-surface truncate">Sterling Capital Partners</span>
+</div>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                Oct 20, 2023
+              </td>
+<td class="py-4 pl-4 pr-6 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-primary font-body-sm text-body-sm font-medium transition-colors" type="button">View</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Review Hold</button>
+</div>
+</td>
+</tr>
+<!-- Row 4 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps font-semibold text-primary">
+                LOT 15
+              </td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                Potter's House Phase 2
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                464 sqm
+              </td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-[12px] font-medium">Residential</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Allocated
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-primary-container text-on-primary font-label-caps text-[11px] font-bold flex items-center justify-center">
+                    MN
+                  </div>
+<span class="font-medium text-on-surface truncate">Michael Njoku</span>
+</div>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                Oct 14, 2023
+              </td>
+<td class="py-4 pl-4 pr-6 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-primary font-body-sm text-body-sm font-medium transition-colors" type="button">View</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Edit</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Transfer</button>
+</div>
+</td>
+</tr>
+<!-- Row 5 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps font-semibold text-primary">
+                UNIT A-402
+              </td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                The Zenith Residences
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                125 sqm
+              </td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-[12px] font-medium">Luxury Penthouse</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-primary-fixed text-on-primary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Allocated
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-tertiary-container text-on-tertiary font-label-caps text-[11px] font-bold flex items-center justify-center">
+                    DA
+                  </div>
+<span class="font-medium text-on-surface truncate">David Adeleke</span>
+</div>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                Sep 28, 2023
+              </td>
+<td class="py-4 pl-4 pr-6 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-primary font-body-sm text-body-sm font-medium transition-colors" type="button">View</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Edit</button>
+</div>
+</td>
+</tr>
+<!-- Row 6 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps font-semibold text-primary">
+                LOT 45
+              </td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                Silver Creek Reserve
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                850 sqm
+              </td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-[12px] font-medium">Premium Estate</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-tertiary-fixed text-on-tertiary-fixed">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span>
+                  Pending KYC
+                </span>
+</td>
+<td class="py-4 px-4">
+<div class="flex items-center gap-2.5">
+<div class="w-7 h-7 rounded-full bg-surface-variant text-on-surface-variant font-label-caps text-[11px] font-bold flex items-center justify-center">
+                    AB
+                  </div>
+<span class="font-medium text-on-surface truncate">Amina Bello</span>
+</div>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                Nov 02, 2023
+              </td>
+<td class="py-4 pl-4 pr-6 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-2.5 py-1 rounded bg-tertiary text-on-tertiary font-body-sm text-body-sm font-medium hover:bg-tertiary-container transition-colors shadow-xs" type="button">Review KYC</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Allocate</button>
+</div>
+</td>
+</tr>
+<!-- Row 7 -->
+<tr class="hover:bg-surface-container transition-colors group">
+<td class="py-4 pl-6 pr-3">
+<input class="rounded accent-primary w-4 h-4 cursor-pointer" type="checkbox"/>
+</td>
+<td class="py-4 px-4 font-label-caps text-label-caps font-semibold text-primary">
+                LOT 102
+              </td>
+<td class="py-4 px-4 font-medium text-on-surface">
+                Aurora Heights
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                520 sqm
+              </td>
+<td class="py-4 px-4">
+<span class="px-2.5 py-1 rounded bg-surface-container-high text-on-surface text-[12px] font-medium">Residential Villa</span>
+</td>
+<td class="py-4 px-4">
+<span class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full font-label-caps text-label-caps bg-surface-container-high text-on-surface">
+<span class="w-1.5 h-1.5 rounded-full bg-primary"></span>
+                  Available
+                </span>
+</td>
+<td class="py-4 px-4 text-on-surface-variant italic">
+                — Unallocated
+              </td>
+<td class="py-4 px-4 font-label-caps text-label-caps text-on-surface-variant">
+                —
+              </td>
+<td class="py-4 pl-4 pr-6 text-right">
+<div class="inline-flex items-center gap-1.5">
+<button class="px-3 py-1 rounded bg-primary text-on-primary font-body-sm text-body-sm font-medium hover:bg-primary-container transition-colors shadow-xs" type="button">Allocate</button>
+<button class="px-2.5 py-1 rounded hover:bg-surface-container-highest text-on-surface-variant font-body-sm text-body-sm transition-colors" type="button">Edit</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Table Footer & Pagination -->
+<div class="px-6 py-4 bg-surface-container-lowest flex flex-col sm:flex-row items-center justify-between gap-4">
+<div class="text-on-surface-variant font-body-sm text-body-sm">
+          Showing <span class="font-semibold text-on-surface">1-7</span> of <span class="font-semibold text-on-surface">1,450</span> plots
+        </div>
+<div class="flex items-center gap-1.5">
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-outline-variant cursor-not-allowed" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_left</span>
+</button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg bg-primary text-on-primary font-body-sm text-body-sm font-semibold shadow-xs" type="button">
+            1
+          </button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium transition-colors" type="button">
+            2
+          </button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium transition-colors" type="button">
+            3
+          </button>
+<span class="px-2 font-label-caps text-label-caps text-on-surface-variant">...</span>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container font-body-sm text-body-sm font-medium transition-colors" type="button">
+            208
+          </button>
+<button class="w-9 h-9 flex items-center justify-center rounded-lg text-on-surface hover:bg-surface-container transition-colors" type="button">
+<span class="material-symbols-outlined text-[18px]">chevron_right</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Architectural Insights Bento Section -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6 pt-4">
+<!-- Fast Plot Registration Blueprint Banner -->
+<div class="lg:col-span-2 bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col md:flex-row items-center gap-6 relative overflow-hidden">
+<div class="w-full md:w-1/2 h-44 rounded-lg overflow-hidden bg-surface-container-high relative">
+<img class="w-full h-full object-cover" data-alt="High precision digital blueprint overlay of an urban real estate development master plan with glowing cadastral boundaries, zoning grids, modern architectural drafting on high end architectural studio desk." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAt5sstnLhX118lhvEjZWfWlQISq4qbNVADXfXgJbqEJvu6JWHGG50iQtI1gg-0S20c7Ms3Ui1ton1DOeHSgUHIxShMCk69OO6NxmvOi2-IK6GB8D4DE_LSLmm9JXWNXs0XzfTcDLSW9PPavagTqO2lZPXdlv8KDicCOay3yvjZIpwNDYnknDK5kU--HKeXl4zF3tQYuy_BWeB85H4gQa249bYyZBCrv6GtGuwDUJojxKbOQQ8NfVVB"/>
+<div class="absolute inset-0 bg-gradient-to-t from-inverse-surface/60 to-transparent flex items-end p-3">
+<span class="font-label-caps text-label-caps text-surface-container-lowest uppercase tracking-wider">Potter's House Phase II • Sector 4</span>
+</div>
+</div>
+<div class="flex flex-col justify-center flex-1 gap-2">
+<span class="font-label-caps text-label-caps text-primary uppercase tracking-widest">Master Plan Synchronized</span>
+<h3 class="font-headline-md text-headline-md font-semibold text-on-surface">Rapid Allocation Engine</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Execute batch assignment deeds, verify survey beacons, and automatically emit electronic C of O documentation within seconds.</p>
+<div class="flex items-center gap-3 pt-2">
+<button class="px-4 py-2 rounded-lg bg-surface-container-high text-on-surface font-body-sm text-body-sm font-medium hover:bg-surface-container-highest transition-colors" type="button">Download Survey Map</button>
+<button class="px-4 py-2 rounded-lg text-primary font-body-sm text-body-sm font-semibold hover:underline" type="button">GIS Coordinates</button>
+</div>
+</div>
+</div>
+<!-- Real Estate Settlement Timeline -->
+<div class="bg-surface-container-lowest p-6 rounded-xl shadow-sm flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<h4 class="font-headline-md text-[18px] font-semibold text-on-surface">Zoning Breakdown</h4>
+<span class="material-symbols-outlined text-on-surface-variant text-[20px]">donut_small</span>
+</div>
+<div class="py-3 flex flex-col gap-3">
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary"></span>
+<span>Residential Core</span>
+</span>
+<span class="font-label-caps text-label-caps font-semibold">68%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-primary-container"></span>
+<span>Commercial Strip</span>
+</span>
+<span class="font-label-caps text-label-caps font-semibold">18%</span>
+</div>
+<div class="flex items-center justify-between text-body-sm font-body-sm">
+<span class="flex items-center gap-2">
+<span class="w-2.5 h-2.5 rounded-full bg-tertiary"></span>
+<span>Green Infrastructure</span>
+</span>
+<span class="font-label-caps text-label-caps font-semibold">14%</span>
+</div>
+</div>
+<div class="p-3 rounded-lg bg-surface-container-low flex items-center justify-between">
+<span class="font-body-sm text-body-sm text-on-surface-variant">Approved by State Cadastre</span>
+<span class="material-symbols-outlined text-primary text-[18px]">verified</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+  // Micro-interactions for Plot Management
+  document.addEventListener('DOMContentLoaded', () => {
+    // Master checkbox select all toggle
+    const selectAllCheckbox = document.querySelector('thead input[type="checkbox"]');
+    const rowCheckboxes = document.querySelectorAll('tbody input[type="checkbox"]');
+
+    if (selectAllCheckbox) {
+      selectAllCheckbox.addEventListener('change', (e) => {
+        rowCheckboxes.forEach(cb => {
+          cb.checked = e.target.checked;
+        });
+      });
+    }
+
+    // Row selection highlights
+    rowCheckboxes.forEach(cb => {
+      cb.addEventListener('change', () => {
+        const tr = cb.closest('tr');
+        if (cb.checked) {
+          tr.classList.add('bg-surface-container-high/60');
+        } else {
+          tr.classList.remove('bg-surface-container-high/60');
+        }
+      });
+    });
+  });
+</script></main></div></body></html>

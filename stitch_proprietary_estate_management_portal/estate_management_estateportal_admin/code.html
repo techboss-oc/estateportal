@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Estate Management | EstatePortal</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&amp;family=Hanken+Grotesk:wght@500;600;700&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eff1f3",
+                        "on-surface-variant": "#434653",
+                        "inverse-surface": "#2d3133",
+                        "surface-container-highest": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "primary": "#003c90",
+                        "on-primary-fixed-variant": "#00419c",
+                        "outline": "#737784",
+                        "on-primary-fixed": "#001945",
+                        "surface-container": "#eceef0",
+                        "secondary": "#5b5e66",
+                        "surface-dim": "#d8dadc",
+                        "tertiary-container": "#49596f",
+                        "error": "#ba1a1a",
+                        "on-secondary": "#ffffff",
+                        "primary-container": "#0f52ba",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed": "#181c22",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "inverse-primary": "#b0c6ff",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "background": "#f7f9fb",
+                        "on-tertiary": "#ffffff",
+                        "tertiary": "#324257",
+                        "on-tertiary-container": "#bfd0ea",
+                        "on-primary-container": "#bcceff",
+                        "secondary-container": "#dfe2eb",
+                        "on-secondary-fixed-variant": "#43474e",
+                        "surface": "#f7f9fb",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "surface-tint": "#1d59c1",
+                        "on-background": "#191c1e",
+                        "on-error": "#ffffff",
+                        "primary-fixed": "#d9e2ff",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-variant": "#e0e3e5",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "secondary-fixed-dim": "#c3c6cf",
+                        "outline-variant": "#c3c6d5",
+                        "secondary-fixed": "#dfe2eb",
+                        "on-secondary-container": "#61646c",
+                        "surface-container-low": "#f2f4f6",
+                        "surface-container-lowest": "#ffffff",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "surface-bright": "#f7f9fb"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "margin-desktop": "40px",
+                        "container-max": "1440px",
+                        "unit": "8px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "label-caps": ["JetBrains Mono"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "display-lg": ["Hanken Grotesk"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 4px 6px -1px rgba(0, 60, 144, 0.05), 0 2px 4px -1px rgba(0, 60, 144, 0.03);
+        }
+        .status-pill {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex overflow-x-hidden">
+<!-- SideNavBar (Shared Component) -->
+<nav class="fixed left-0 top-0 h-full w-[240px] z-40 border-r border-outline-variant bg-surface/80 backdrop-blur-xl flex flex-col py-gutter px-4 hidden md:flex">
+<div class="mb-8 px-2 flex items-center space-x-3">
+<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">domain</span>
+</div>
+<div>
+<h1 class="font-headline-md text-headline-md font-bold text-primary">EstatePortal</h1>
+<p class="font-label-caps text-label-caps text-on-surface-variant">Admin Account</p>
+</div>
+</div>
+<button class="w-full bg-primary text-on-primary rounded-lg py-3 px-4 flex items-center justify-center space-x-2 font-body-md font-medium hover:bg-on-primary-fixed-variant transition-colors mb-8 shadow-sm">
+<span class="material-symbols-outlined text-[20px]">add</span>
+<span>New Estate</span>
+</button>
+<ul class="flex-1 space-y-2">
+<li>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+<span>Dashboard</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-primary font-bold border-l-4 border-primary bg-primary-fixed/30 active:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">domain</span>
+<span>My Properties</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">payments</span>
+<span>Payments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">description</span>
+<span>Documents</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">support_agent</span>
+<span>Support</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-4 py-3 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined">settings</span>
+<span>Settings</span>
+</a>
+</li>
+</ul>
+<ul class="mt-auto space-y-2 pt-4 border-t border-outline-variant">
+<li>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-surface-container-low transition-colors duration-200 font-body-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span>Help Center</span>
+</a>
+</li>
+<li>
+<a class="flex items-center space-x-3 px-4 py-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error-container/30 transition-colors duration-200 font-body-sm" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span>Logout</span>
+</a>
+</li>
+</ul>
+</nav>
+<!-- Main Content Canvas -->
+<main class="flex-1 md:ml-[240px] flex flex-col min-h-screen">
+<!-- TopAppBar (Shared Component) -->
+<header class="flex justify-between items-center w-full px-gutter h-16 max-w-[calc(100%-240px)] docked full-width top-0 sticky z-30 border-b border-outline-variant bg-surface/80 backdrop-blur-xl">
+<div class="flex-1 flex items-center">
+<div class="relative w-64 md:w-96 hidden md:block">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-on-surface-variant">search</span>
+<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border-none rounded-full font-body-sm focus:ring-1 focus:ring-primary focus:outline-none transition-all placeholder:text-on-surface-variant" placeholder="Search estates, plots..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-all">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-on-surface-variant hover:bg-surface-container-high rounded-full p-2 transition-all">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<button class="hidden md:flex items-center space-x-2 bg-primary-container text-on-primary-container px-4 py-2 rounded-lg font-body-sm font-medium hover:opacity-90 transition-opacity">
+<span class="material-symbols-outlined text-[18px]">add_circle</span>
+<span>Quick Action</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant cursor-pointer">
+<img alt="Administrator Profile Image" class="w-full h-full object-cover" data-alt="A professional headshot of a corporate administrator in a modern office setting. Light mode aesthetic, sharp focus, professional lighting. Clean, minimal background." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAEOc4AbDQ-x98JZUW0yQvsaOqSth62v9gacQRZ6JEfDlmqNLnkHpR9_muaWkhBgk-ShKwbIi6ySyTL2F9nU41YDhuCaOypLzbutoNwvlbi1qHmXgbRKEcWhs2QPmEj7WkKF90_WRkODZusLihHdIpIUN3YnNRndrzK4NxJ6c5WBKuEz4mYVj7x9yeSi411Dn4qoz7vo-trd_Exr09H-_tgMPDJP7yOoNIwxpHTGRWAXjJUsspNI8ul"/>
+</div>
+</div>
+</header>
+<!-- Page Content -->
+<div class="flex-1 p-margin-mobile md:p-margin-desktop max-w-container-max mx-auto w-full">
+<!-- Header Section -->
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-8 space-y-4 md:space-y-0">
+<div>
+<h2 class="font-headline-lg-mobile md:font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface mb-2">Estate Portfolio</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">Manage and monitor all active developments.</p>
+</div>
+<div class="flex items-center space-x-3">
+<div class="flex bg-surface-container-low rounded-lg p-1 border border-outline-variant/50">
+<button class="px-3 py-1.5 rounded-md bg-white shadow-sm text-primary font-medium flex items-center">
+<span class="material-symbols-outlined text-[18px] mr-1">grid_view</span> Grid
+                        </button>
+<button class="px-3 py-1.5 rounded-md text-on-surface-variant hover:text-primary transition-colors flex items-center">
+<span class="material-symbols-outlined text-[18px] mr-1">view_list</span> List
+                        </button>
+</div>
+<button class="bg-primary text-on-primary px-5 py-2.5 rounded-lg font-body-md font-medium hover:bg-on-primary-fixed-variant transition-colors shadow-[0_4px_12px_rgba(0,60,144,0.2)] flex items-center">
+<span class="material-symbols-outlined mr-2">domain_add</span>
+                        Create Estate
+                    </button>
+</div>
+</div>
+<!-- Dashboard Summary Metrics (Bento-ish) -->
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter mb-12">
+<div class="glass-panel rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[100px]">real_estate_agent</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Total Estates</p>
+<h3 class="font-display-lg text-display-lg text-primary">12</h3>
+<div class="mt-4 flex items-center text-emerald-600 font-body-sm font-medium">
+<span class="material-symbols-outlined text-[16px] mr-1">trending_up</span>
+<span>+2 this quarter</span>
+</div>
+</div>
+<div class="glass-panel rounded-xl p-6 relative overflow-hidden group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[100px]">landscape</span>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1 uppercase">Total Plots</p>
+<h3 class="font-display-lg text-display-lg text-on-surface">1,450</h3>
+<div class="w-full bg-surface-container-highest h-1.5 rounded-full mt-4 overflow-hidden">
+<div class="bg-primary h-full w-[68%]"></div>
+</div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mt-2">68% Allocated (986)</p>
+</div>
+<div class="glass-panel rounded-xl p-6 relative overflow-hidden group md:col-span-2 bg-gradient-to-br from-primary-fixed/20 to-transparent">
+<p class="font-label-caps text-label-caps text-primary mb-1 uppercase">Portfolio Health</p>
+<div class="flex items-end space-x-6 mt-2">
+<div>
+<h3 class="font-headline-md text-headline-md text-on-surface">Strong</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Overall occupancy trending upwards across premium tiers.</p>
+</div>
+<div class="flex-1 h-12 flex items-end space-x-2">
+<!-- Faux chart bars -->
+<div class="flex-1 bg-primary/20 hover:bg-primary/40 transition-colors h-[40%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/30 hover:bg-primary/50 transition-colors h-[60%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/40 hover:bg-primary/60 transition-colors h-[50%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary/60 hover:bg-primary/80 transition-colors h-[80%] rounded-t-sm"></div>
+<div class="flex-1 bg-primary hover:bg-primary transition-colors h-[100%] rounded-t-sm relative group cursor-pointer">
+<div class="absolute -top-8 left-1/2 -translate-x-1/2 bg-inverse-surface text-inverse-on-surface text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">Q4: Peak</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Estate Grid -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 group flex flex-col">
+<div class="h-48 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A sweeping aerial view of a modern luxury residential estate in a lush green environment. High-end architectural visualization, sunny day, clear blue sky. Wide avenues and geometric plot layouts. Minimalist modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDrs4VdUmCgUqKBAq1_7bATZvKmMAJwem6FtdCgjBV_drxJGJrTpE7dJa_WzIv0S46SVYBf1pgXQCUfXSlNZv1rFE6NIdAu4d6_RWF0ruqlUnRz2aXI4SoKZvrgSDSnV9lXXERj2C-8cn76TM8nCtznTJGSq_ShFEWDAs9k6NOdu00pwYo_XfFWMkmops9dvh1WyX7rgrQ74CL7xIfzGBIFChx-cQJXFmvBJG-a4wa1vjsCgCG8j4qZ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 right-4 status-pill px-3 py-1 rounded-full flex items-center shadow-sm">
+<div class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></div>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">Active</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<h3 class="font-headline-md text-headline-md text-white drop-shadow-md">Aurora Heights</h3>
+<p class="font-body-sm text-white/90 flex items-center mt-1">
+<span class="material-symbols-outlined text-[16px] mr-1">location_on</span>
+                                Northridge District
+                            </p>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Plots Allocated</p>
+<p class="font-headline-md text-headline-md text-on-surface">240<span class="text-on-surface-variant text-body-sm font-normal">/300</span></p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Occupancy</p>
+<p class="font-headline-md text-headline-md text-primary">80%</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-100 grid grid-cols-3 gap-2">
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">edit</span> Edit
+                            </button>
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">map</span> Plots
+                            </button>
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">folder</span> Docs
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 group flex flex-col">
+<div class="h-48 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A serene waterfront residential development at golden hour. Modern minimalist villas along a manicured coastline. High-end architectural rendering, sophisticated lighting, premium real estate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNBVm8TicS_PRuwyXdVLDAsR9H2IvSlRPrp21SbI9GAKBqFa6IyGqpuYAsMLpPwXR6I-MXhAlNnaMfWUYmcDKV93CRLnWPV4ch_Gqs1RRjnoMq7KClvKt_p4KjiRfjQCzRxZFiVReRPBzIi-ohgLS4au0485zDUh710dK6A8mOa0GW8gSSlyf2ak--4IduDQMKhzCAlssrmOVhAVWP7PiewKB2QF7XtpWjE3TC08a221NMVLyqz38r"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 right-4 status-pill px-3 py-1 rounded-full flex items-center shadow-sm">
+<div class="w-2 h-2 rounded-full bg-blue-500 mr-2"></div>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">Development</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<h3 class="font-headline-md text-headline-md text-white drop-shadow-md">Azure Cove</h3>
+<p class="font-body-sm text-white/90 flex items-center mt-1">
+<span class="material-symbols-outlined text-[16px] mr-1">location_on</span>
+                                Coastal Region
+                            </p>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Plots Allocated</p>
+<p class="font-headline-md text-headline-md text-on-surface">45<span class="text-on-surface-variant text-body-sm font-normal">/150</span></p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Occupancy</p>
+<p class="font-headline-md text-headline-md text-primary">30%</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-100 grid grid-cols-3 gap-2">
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">edit</span> Edit
+                            </button>
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">map</span> Plots
+                            </button>
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">folder</span> Docs
+                            </button>
+</div>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-white rounded-xl border border-slate-200 overflow-hidden hover:shadow-[0_8px_30px_rgb(0,0,0,0.04)] transition-all duration-300 group flex flex-col">
+<div class="h-48 w-full relative overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ease-in-out" data-alt="A lush, dense suburban eco-estate featuring green roofs and heavily wooded plots. Modern sustainable architecture. Overcast soft lighting, moody yet premium atmosphere. Minimalist structural design amidst nature." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrxQhW5ULDRwG_ieC2gwvz729HdEx3rEICdqd4aagTvvBEem4fBkYdir5pi-pPh-s744gcVKr_JuyZkJzN_RlWtq0-MMKUs831ZGd_UGpxwMRkZtGA4u59AGB-WB2W-qS-LNmAUbzO_nwBKN-lWNPZwYIYJjIUjjpoIVptdjb_q6P_s01tcaRYxgr6dKEr35Df_ABcxsKb5IDS-rzmZ9HklodtknnKLVsAUy403wL-ABr22EkOQkGw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+<div class="absolute top-4 right-4 status-pill px-3 py-1 rounded-full flex items-center shadow-sm">
+<div class="w-2 h-2 rounded-full bg-emerald-500 mr-2"></div>
+<span class="font-label-caps text-label-caps text-on-surface font-semibold">Active</span>
+</div>
+<div class="absolute bottom-4 left-4">
+<h3 class="font-headline-md text-headline-md text-white drop-shadow-md">Verdant Grove</h3>
+<p class="font-body-sm text-white/90 flex items-center mt-1">
+<span class="material-symbols-outlined text-[16px] mr-1">location_on</span>
+                                Valley Sector
+                            </p>
+</div>
+</div>
+<div class="p-6 flex-1 flex flex-col">
+<div class="grid grid-cols-2 gap-4 mb-6">
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Plots Allocated</p>
+<p class="font-headline-md text-headline-md text-on-surface">195<span class="text-on-surface-variant text-body-sm font-normal">/200</span></p>
+</div>
+<div>
+<p class="font-label-caps text-label-caps text-on-surface-variant mb-1">Occupancy</p>
+<p class="font-headline-md text-headline-md text-primary">97.5%</p>
+</div>
+</div>
+<div class="mt-auto pt-4 border-t border-slate-100 grid grid-cols-3 gap-2">
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">edit</span> Edit
+                            </button>
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">map</span> Plots
+                            </button>
+<button class="col-span-1 py-2 text-center text-on-surface-variant hover:text-primary hover:bg-primary-fixed/20 rounded-md transition-colors font-body-sm font-medium border border-transparent hover:border-primary/20 flex flex-col items-center justify-center">
+<span class="material-symbols-outlined text-[20px] mb-1">folder</span> Docs
+                            </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+</body></html>

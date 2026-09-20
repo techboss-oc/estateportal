@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Estate Details - Potter's House Phase 2</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "inverse-on-surface": "#eff1f3",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed": "#dfe2eb",
+                        "on-surface": "#191c1e",
+                        "on-tertiary-container": "#bfd0ea",
+                        "on-tertiary": "#ffffff",
+                        "primary": "#003c90",
+                        "inverse-primary": "#b0c6ff",
+                        "surface-variant": "#e0e3e5",
+                        "surface-tint": "#1d59c1",
+                        "on-secondary": "#ffffff",
+                        "surface-bright": "#f7f9fb",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-secondary-fixed": "#181c22",
+                        "surface-container-lowest": "#ffffff",
+                        "surface-dim": "#d8dadc",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "primary-fixed": "#d9e2ff",
+                        "surface": "#f7f9fb",
+                        "secondary-container": "#dfe2eb",
+                        "tertiary-fixed": "#d3e4fe",
+                        "outline-variant": "#c3c6d5",
+                        "tertiary-container": "#49596f",
+                        "on-error": "#ffffff",
+                        "on-primary": "#ffffff",
+                        "surface-container": "#eceef0",
+                        "primary-fixed-dim": "#b0c6ff",
+                        "on-secondary-container": "#61646c",
+                        "surface-container-low": "#f2f4f6",
+                        "secondary": "#5b5e66",
+                        "outline": "#737784",
+                        "primary-container": "#0f52ba",
+                        "secondary-fixed-dim": "#c3c6cf",
+                        "on-surface-variant": "#434653",
+                        "tertiary": "#324257",
+                        "on-primary-container": "#bcceff",
+                        "on-primary-fixed-variant": "#00419c",
+                        "error": "#ba1a1a",
+                        "surface-container-highest": "#e0e3e5",
+                        "background": "#f7f9fb",
+                        "on-primary-fixed": "#001945",
+                        "error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#43474e",
+                        "on-error-container": "#93000a",
+                        "on-background": "#191c1e",
+                        "surface-container-high": "#e6e8ea"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "unit": "8px",
+                        "container-max": "1440px",
+                        "margin-desktop": "40px",
+                        "margin-mobile": "16px"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Hanken Grotesk"],
+                        "body-sm": ["Inter"],
+                        "body-md": ["Inter"],
+                        "headline-lg": ["Hanken Grotesk"],
+                        "label-caps": ["JetBrains Mono"],
+                        "headline-md": ["Hanken Grotesk"],
+                        "body-lg": ["Inter"],
+                        "headline-lg-mobile": ["Hanken Grotesk"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "body-sm": ["14px", { "lineHeight": "20px", "fontWeight": "400" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "label-caps": ["12px", { "lineHeight": "16px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-lg-mobile": ["24px", { "lineHeight": "32px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; background-color: #f7f9fb; }
+        .glass-panel { background: rgba(255, 255, 255, 0.8); backdrop-filter: blur(12px); border: 1px solid #c3c6d5; }
+        .map-container { position: relative; overflow: hidden; background: #e0e3e5; border-radius: 0.75rem; border: 1px solid #c3c6d5; }
+        
+        /* Map Plot Styles */
+        .plot { transition: all 0.3s ease; stroke: #ffffff; stroke-width: 1.5; cursor: pointer; }
+        .plot:hover { opacity: 0.8; }
+        
+        .plot.available { fill: #d3e4fe; } /* Soft blue */
+        .plot.allocated { fill: #c3c6cf; } /* Light gray */
+        .plot.reserved { fill: #dfe2eb; }  /* Secondary gray */
+        .plot.owned { fill: #003c90; stroke: #b0c6ff; stroke-width: 2; animation: pulseGlow 2s infinite alternate; }
+        
+        @keyframes pulseGlow {
+            0% { filter: drop-shadow(0 0 2px rgba(0, 60, 144, 0.4)); transform: scale(1); transform-origin: center; }
+            100% { filter: drop-shadow(0 0 8px rgba(0, 60, 144, 0.8)); transform: scale(1.02); transform-origin: center; }
+        }
+
+        .plot-label { font-family: 'JetBrains Mono', monospace; font-size: 10px; font-weight: 500; fill: #434653; pointer-events: none; text-anchor: middle; alignment-baseline: middle; }
+        .plot.owned .plot-label { fill: #ffffff; }
+    </style>
+</head>
+<body class="bg-background text-on-background flex min-h-screen">
+<!-- SideNavBar -->
+<nav class="hidden md:flex flex-col h-screen py-gutter px-4 bg-surface/80 dark:bg-inverse-surface/80 backdrop-blur-xl border-r border-outline-variant dark:border-outline fixed left-0 top-0 w-[240px] z-40">
+<div class="mb-8 px-2">
+<h1 class="font-display-lg text-headline-md font-bold text-primary dark:text-inverse-primary">EstatePortal</h1>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Customer Account</p>
+</div>
+<div class="mb-8 px-2">
+<button class="w-full bg-primary text-on-primary font-body-md text-body-md py-2.5 rounded-lg font-medium hover:bg-primary-container hover:text-on-primary-container transition-colors shadow-sm">
+                New Inquiry
+            </button>
+</div>
+<ul class="flex flex-col gap-1 flex-1 overflow-y-auto">
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">dashboard</span>
+<span class="font-body-md text-body-md">Dashboard</span>
+</a>
+</li>
+<li>
+<!-- Active State matching Intent 'My Estates'/'My Properties' -->
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-primary font-bold border-l-4 border-primary bg-primary-fixed/30 active:scale-[0.98] transition-transform duration-150" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">domain</span>
+<span class="font-body-md text-body-md">My Properties</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">payments</span>
+<span class="font-body-md text-body-md">Payments</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">description</span>
+<span class="font-body-md text-body-md">Documents</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">support_agent</span>
+<span class="font-body-md text-body-md">Support</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">settings</span>
+<span class="font-body-md text-body-md">Settings</span>
+</a>
+</li>
+</ul>
+<div class="mt-auto pt-4 border-t border-outline-variant">
+<ul class="flex flex-col gap-1">
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">help</span>
+<span class="font-body-sm text-body-sm">Help Center</span>
+</a>
+</li>
+<li>
+<a class="flex items-center gap-3 px-3 py-2 rounded-lg text-on-surface-variant hover:bg-error/10 hover:text-error transition-colors duration-200" href="#">
+<span class="material-symbols-outlined text-[20px]">logout</span>
+<span class="font-body-sm text-body-sm">Logout</span>
+</a>
+</li>
+</ul>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="flex-1 ml-0 md:ml-[240px] flex flex-col min-h-screen">
+<!-- TopAppBar -->
+<header class="flex justify-between items-center w-full px-gutter h-16 bg-surface/80 backdrop-blur-xl border-b border-outline-variant sticky top-0 z-30">
+<div class="flex items-center gap-4">
+<a class="flex items-center justify-center w-10 h-10 rounded-full hover:bg-surface-container-high transition-colors text-on-surface-variant" href="#">
+<span class="material-symbols-outlined">arrow_back</span>
+</a>
+<div>
+<h2 class="font-headline-md text-headline-md text-primary font-bold hidden md:block">Potter's House Phase 2</h2>
+<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-primary font-bold md:hidden">Potter's House</h2>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden lg:flex relative bg-surface-container-low rounded-full px-4 py-2 items-center border border-outline-variant focus-within:border-primary transition-colors">
+<span class="material-symbols-outlined text-outline text-[20px] mr-2">search</span>
+<input class="bg-transparent border-none outline-none font-body-sm text-body-sm text-on-surface w-48 placeholder-outline focus:ring-0" placeholder="Search plots..." type="text"/>
+</div>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-surface-container-high text-on-surface-variant transition-colors">
+<span class="material-symbols-outlined">apps</span>
+</button>
+<div class="w-8 h-8 rounded-full overflow-hidden border border-outline-variant ml-2">
+<img alt="Administrator Profile Image" class="w-full h-full object-cover" data-alt="A highly detailed professional portrait of a tech-savvy real estate administrator in a modern light-mode office setting. Soft, natural high-key lighting illuminating a clean, minimalist aesthetic with crisp white walls and subtle steel blue accents. The mood is confident, approachable, and authoritative." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkXJNnCNGbH0KCIlT_zrTOCssfT2x27s3LBpXXk59z3s3jUxNZujxNwY_f9AxqYBdbh4_AmREc2Z5VG-K2l-bm3H6HNpIskqZ3vcJ4ld7PGvF2SJnU7dA-8Uxgugb1WCe6EzXls8FSO9ddT-hfQQ9NdISloPOczSm15Go_VmAx8LAZwMzCgca6jE6bWJckm0q4PVylSBu-YHN-MlJT8MeltMvmDSsPEtIiscn7_FDHIcRSez3nlOvH"/>
+</div>
+</div>
+</div>
+</header>
+<div class="p-gutter flex-1 flex flex-col lg:flex-row gap-gutter w-full max-w-container-max mx-auto">
+<!-- Left Column: Map & Overview -->
+<div class="flex-1 flex flex-col gap-gutter">
+<!-- Overview Stats Bento -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Estate Location</span>
+<div class="flex items-end justify-between">
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Ibusa, Delta State</span>
+<span class="material-symbols-outlined text-primary" style="font-variation-settings: 'FILL' 1;">location_on</span>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Plot Statistics</span>
+<div class="flex gap-6">
+<div>
+<span class="font-headline-lg text-headline-lg text-on-surface block">21</span>
+<span class="font-body-sm text-body-sm text-outline">Total Plots</span>
+</div>
+<div class="border-l border-outline-variant pl-6">
+<span class="font-headline-lg text-headline-lg text-primary block font-bold">2</span>
+<span class="font-body-sm text-body-sm text-primary-container">Your Plots</span>
+</div>
+</div>
+</div>
+<div class="glass-panel p-6 rounded-xl flex flex-col justify-between shadow-[0_4px_24px_rgba(0,0,0,0.02)]">
+<span class="font-label-caps text-label-caps text-on-surface-variant uppercase tracking-wider mb-2">Estate Status</span>
+<div class="flex items-center gap-3">
+<div class="w-3 h-3 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]"></div>
+<span class="font-headline-md text-headline-md text-on-surface font-semibold">Active / Allocated</span>
+</div>
+</div>
+</div>
+<!-- Interactive Map Section -->
+<div class="glass-panel rounded-xl flex-1 min-h-[500px] flex flex-col overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.04)]">
+<div class="p-4 border-b border-outline-variant flex justify-between items-center bg-surface-bright/50">
+<h3 class="font-body-lg text-body-lg font-semibold text-on-surface">Interactive Site Plan</h3>
+<div class="flex gap-4">
+<button class="p-1.5 rounded bg-surface hover:bg-surface-container border border-outline-variant transition-colors text-on-surface-variant" title="Zoom In">
+<span class="material-symbols-outlined text-[18px]">add</span>
+</button>
+<button class="p-1.5 rounded bg-surface hover:bg-surface-container border border-outline-variant transition-colors text-on-surface-variant" title="Zoom Out">
+<span class="material-symbols-outlined text-[18px]">remove</span>
+</button>
+<button class="p-1.5 rounded bg-surface hover:bg-surface-container border border-outline-variant transition-colors text-on-surface-variant" title="Reset View">
+<span class="material-symbols-outlined text-[18px]">fit_screen</span>
+</button>
+</div>
+</div>
+<div class="relative flex-1 bg-surface-container-highest/30 map-container p-4">
+<!-- Abstract Vector Site Plan using inline SVG for high fidelity control -->
+<svg class="w-full h-full object-contain" preserveaspectratio="xMidYMid meet" viewbox="0 0 800 500">
+<!-- Road Network -->
+<path d="M 100,50 L 100,450 M 100,250 L 700,250 M 700,50 L 700,450 M 400,50 L 400,250" fill="none" stroke="#f2f4f6" stroke-linecap="round" stroke-width="24"></path>
+<path d="M 100,50 L 100,450 M 100,250 L 700,250 M 700,50 L 700,450 M 400,50 L 400,250" fill="none" stroke="#e6e8ea" stroke-dasharray="8 8" stroke-linecap="round" stroke-width="20"></path>
+<!-- Block A (Top Left) -->
+<g transform="translate(140, 70)">
+<rect class="plot allocated" height="70" rx="4" width="100" x="0" y="0"></rect>
+<text class="plot-label" x="50" y="35">LOT 1</text>
+<rect class="plot available" height="70" rx="4" width="100" x="110" y="0"></rect>
+<text class="plot-label" x="160" y="35">LOT 2</text>
+<rect class="plot reserved" height="70" rx="4" width="100" x="0" y="80"></rect>
+<text class="plot-label" x="50" y="115">LOT 3</text>
+<rect class="plot allocated" height="70" rx="4" width="100" x="110" y="80"></rect>
+<text class="plot-label" x="160" y="115">LOT 4</text>
+</g>
+<!-- Block B (Top Right) -->
+<g transform="translate(440, 70)">
+<rect class="plot available" height="70" rx="4" width="100" x="0" y="0"></rect>
+<text class="plot-label" x="50" y="35">LOT 5</text>
+<rect class="plot available" height="70" rx="4" width="100" x="110" y="0"></rect>
+<text class="plot-label" x="160" y="35">LOT 6</text>
+<!-- Highlighted Owned Plot -->
+<rect class="plot owned" height="70" id="lot-7" rx="4" width="100" x="0" y="80"></rect>
+<text class="plot-label" x="50" y="115">LOT 7</text>
+<rect class="plot allocated" height="70" rx="4" width="100" x="110" y="80"></rect>
+<text class="plot-label" x="160" y="115">LOT 8</text>
+</g>
+<!-- Block C (Bottom) -->
+<g transform="translate(140, 290)">
+<rect class="plot available" height="120" rx="4" width="80" x="0" y="0"></rect>
+<text class="plot-label" x="40" y="60">LOT 9</text>
+<rect class="plot reserved" height="120" rx="4" width="80" x="90" y="0"></rect>
+<text class="plot-label" x="130" y="60">LOT 10</text>
+<rect class="plot allocated" height="120" rx="4" width="80" x="180" y="0"></rect>
+<text class="plot-label" x="220" y="60">LOT 11</text>
+<rect class="plot available" height="120" rx="4" width="80" x="270" y="0"></rect>
+<text class="plot-label" x="310" y="60">LOT 12</text>
+<rect class="plot allocated" height="120" rx="4" width="80" x="360" y="0"></rect>
+<text class="plot-label" x="400" y="60">LOT 13</text>
+<rect class="plot available" height="120" rx="4" width="80" x="450" y="0"></rect>
+<text class="plot-label" x="490" y="60">LOT 14</text>
+<!-- Second Highlighted Owned Plot -->
+<rect class="plot owned" height="100" rx="4" width="80" x="450" y="-120"></rect>
+<text class="plot-label" x="490" y="-70">LOT 15</text>
+</g>
+<!-- Map Context Details -->
+<text fill="#737784" font-family="Inter" font-size="12" text-anchor="middle" transform="rotate(-90 30,250)" x="30" y="250">Main Access Road</text>
+<circle cx="750" cy="50" fill="#f7f9fb" r="15" stroke="#c3c6d5"></circle>
+<path d="M 750,40 L 750,60 M 745,45 L 750,35 L 755,45" fill="none" stroke="#737784" stroke-width="2"></path>
+<text fill="#737784" font-family="Inter" font-size="10" text-anchor="middle" x="750" y="75">N</text>
+</svg>
+</div>
+<!-- Map Legend -->
+<div class="p-4 bg-surface-bright/80 border-t border-outline-variant flex flex-wrap gap-6 justify-center">
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-primary border border-inverse-primary shadow-[0_0_4px_rgba(0,60,144,0.4)]"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Your Property</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-[#c3c6cf] border border-white"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Allocated</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-[#d3e4fe] border border-white"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Available</span>
+</div>
+<div class="flex items-center gap-2">
+<div class="w-4 h-4 rounded-sm bg-[#dfe2eb] border border-white"></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant">Reserved</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Context Side Panel -->
+<aside class="w-full lg:w-[380px] flex flex-col gap-4">
+<div class="glass-panel rounded-xl overflow-hidden shadow-[0_8px_32px_rgba(0,0,0,0.06)] sticky top-[88px]">
+<!-- Property Image / Header -->
+<div class="h-48 relative bg-surface-container">
+<img alt="Plot Location View" class="w-full h-full object-cover" data-alt="A high-quality aerial drone photograph of a flat, prime real estate land parcel ready for development. The terrain is neatly demarcated with white corner pegs, set against a backdrop of lush green foliage and a clear blue sky in bright daylight. The image conveys premium investment potential and pristine modern land management." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAtnjeVaAmW-eICVA37Ky2lM2bwijkTTTnvVmuN5BqYELmmm4KrBNSt04vDgZy6LROrZoWL9Mr7HOYeGqzFuW9i_cxQzGYtNrNgGL-5U2iWMVvfWZ-KCzE7GND70U7MblezpHRhF_BiSDEzc68q5PqWgsSMipHBHgaLDGpvPWpknbXnNX3fsVE1w8YT3QUP5lgHqgLwXMeE1aBkdnUaYkJAWUWQzZHgm68MVhwBAsSWjHomJX1_rvxN"/>
+<div class="absolute top-4 right-4 bg-surface/90 backdrop-blur-md px-3 py-1 rounded-full border border-outline-variant flex items-center gap-1.5 shadow-sm">
+<div class="w-2 h-2 rounded-full bg-primary animate-pulse"></div>
+<span class="font-label-caps text-label-caps font-bold text-primary">YOUR PLOT</span>
+</div>
+<div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-4 pt-12">
+<h3 class="font-headline-md text-headline-md text-white font-bold">LOT 7</h3>
+<p class="font-body-sm text-body-sm text-white/80">Block B, Northern Sector</p>
+</div>
+</div>
+<!-- Plot Details -->
+<div class="p-6">
+<div class="flex flex-col gap-5">
+<!-- Key Value Pairs -->
+<div class="grid grid-cols-2 gap-y-4 gap-x-2">
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Plot Size</span>
+<span class="font-body-md text-body-md text-on-surface font-medium flex items-center gap-1">
+<span class="material-symbols-outlined text-[18px] text-outline">square_foot</span> 464 sqm
+                                    </span>
+</div>
+<div>
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Status</span>
+<span class="font-body-md text-body-md text-on-surface font-medium">Allocated</span>
+</div>
+<div class="col-span-2 border-t border-outline-variant pt-4 mt-2">
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Reference ID</span>
+<span class="font-label-caps text-body-md text-on-surface bg-surface-container-low px-2 py-1 rounded inline-block tracking-wider">PH2-L07-2026</span>
+</div>
+<div class="col-span-2">
+<span class="block font-label-caps text-label-caps text-on-surface-variant mb-1">Allocation Date</span>
+<span class="font-body-md text-body-md text-on-surface">Oct 14, 2023</span>
+</div>
+</div>
+<hr class="border-outline-variant"/>
+<!-- Actions -->
+<div class="flex flex-col gap-3">
+<button class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary font-body-md text-body-md py-3 rounded-lg font-medium hover:bg-primary-container transition-colors shadow-sm">
+<span class="material-symbols-outlined text-[20px]">file_download</span>
+                                    Download Allocation Letter
+                                </button>
+<button class="w-full flex items-center justify-center gap-2 bg-surface text-primary border border-primary/30 font-body-md text-body-md py-3 rounded-lg font-medium hover:bg-primary-fixed/20 transition-colors">
+<span class="material-symbols-outlined text-[20px]">folder_open</span>
+                                    View Documents
+                                </button>
+</div>
+<p class="font-body-sm text-body-sm text-on-surface-variant text-center mt-2 flex items-center justify-center gap-1">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+                                Ownership Verified
+                            </p>
+</div>
+</div>
+</div>
+</aside>
+</div>
+</main>
+<script>
+        // Simple micro-interaction for map plots
+        document.addEventListener('DOMContentLoaded', () => {
+            const plots = document.querySelectorAll('.plot');
+            const sidePanelLotName = document.querySelector('aside h3');
+            
+            plots.forEach(plot => {
+                plot.addEventListener('click', (e) => {
+                    const lotName = plot.nextElementSibling.textContent;
+                    
+                    // Add subtle click effect
+                    plot.style.transform = 'scale(0.98)';
+                    setTimeout(() => plot.style.transform = '', 150);
+                    
+                    // In a real app, this would fetch data and update the side panel
+                    // Here we just demo the interaction if it's an owned plot
+                    if(plot.classList.contains('owned')) {
+                        sidePanelLotName.textContent = lotName;
+                        sidePanelLotName.style.opacity = '0';
+                        setTimeout(() => {
+                            sidePanelLotName.style.opacity = '1';
+                            sidePanelLotName.style.transition = 'opacity 0.3s ease';
+                        }, 50);
+                    }
+                });
+            });
+        });
+    </script>
+</body></html>
