@@ -96,16 +96,20 @@
         }
         .navbar-links a:hover { color: var(--gold-light); }
         .navbar-actions { display: flex; align-items: center; gap: 1rem; }
-        .btn-ghost {
+        .btn-login {
             font-size: 0.8rem;
             font-weight: 600;
-            letter-spacing: 0.06em;
+            letter-spacing: 0.08em;
             text-transform: uppercase;
-            color: var(--slate);
+            color: var(--gold);
+            border: 1.5px solid var(--gold);
+            padding: 0.55rem 1.4rem;
+            border-radius: 3px;
             text-decoration: none;
-            transition: color 0.2s;
+            transition: background 0.2s, color 0.2s;
+            display: inline-block;
         }
-        .btn-ghost:hover { color: var(--white); }
+        .btn-login:hover { background: var(--gold); color: var(--navy); }
         .btn-primary {
             font-size: 0.8rem;
             font-weight: 600;
@@ -529,11 +533,50 @@
         }
         @media (max-width: 768px) {
             .navbar-links { display: none; }
+            .navbar { padding: 0 1rem; }
+            .navbar-brand { font-size: 1rem; }
             .features-grid { grid-template-columns: 1fr; }
             .steps-wrap { grid-template-columns: 1fr; }
             .cta-band-inner { flex-direction: column; text-align: center; }
-            .stats-bar { grid-template-columns: repeat(2, 1fr); position: static; }
-            .hero { min-height: auto; padding-bottom: 0; }
+            /* Stats bar: come out of absolute, sit below hero content */
+            .stats-bar {
+                position: static;
+                grid-template-columns: repeat(2, 1fr);
+                border-top: 1px solid rgba(201, 168, 76, 0.2);
+            }
+            .stat-item {
+                padding: 1.2rem 1rem;
+                text-align: center;
+                border-right: 1px solid rgba(201, 168, 76, 0.15);
+                border-bottom: 1px solid rgba(201, 168, 76, 0.1);
+            }
+            .stat-item:nth-child(2) { border-right: none; }
+            .stat-item:nth-child(3) { border-bottom: none; }
+            .stat-item:nth-child(4) { border-right: none; border-bottom: none; }
+            .stat-number { font-size: 1.5rem; }
+            .stat-label { font-size: 0.65rem; }
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                flex-direction: column;
+                padding-bottom: 0;
+            }
+            .hero-inner { padding: 6rem 1.2rem 3rem; flex: 1; }
+            .hero-title { font-size: 2rem; }
+            .hero-sub { font-size: 0.95rem; }
+            .section { padding: 4rem 1.2rem; }
+            .hero-bg::after {
+                background: linear-gradient(
+                    to bottom,
+                    rgba(13, 27, 42, 0.9) 0%,
+                    rgba(13, 27, 42, 0.75) 100%
+                );
+            }
+        }
+        @media (max-width: 420px) {
+            .stat-number { font-size: 1.3rem; }
+            .btn-login { font-size: 0.72rem; padding: 0.5rem 1rem; }
+            .btn-primary { font-size: 0.72rem; padding: 0.5rem 1rem; }
         }
     </style>
 </head>
@@ -562,7 +605,7 @@
             @auth
                 <a href="{{ url('/dashboard') }}" class="btn-primary">Dashboard</a>
             @else
-                <a href="{{ route('login') }}" class="btn-ghost">Sign In</a>
+                <a href="{{ route('login') }}" class="btn-login">Login</a>
                 @if (Route::has('register'))
                     <a href="{{ route('register') }}" class="btn-primary">Register Now</a>
                 @endif
