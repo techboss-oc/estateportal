@@ -1,4 +1,13 @@
 <IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews -Indexes
+    </IfModule>
+
     RewriteEngine On
-    RewriteRule ^(.*)$ public/$1 [L]
+
+    # Prevent infinite loops
+    RewriteCond %{REQUEST_URI} !^/public/
+
+    # Send all requests to the public layout
+    RewriteRule ^(.*)$ public/$1 [L,QSA]
 </IfModule>
