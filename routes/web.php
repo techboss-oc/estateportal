@@ -8,6 +8,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Temporary route to create storage symlink on cPanel
+Route::get('/create-symlink', function () {
+    \Illuminate\Support\Facades\Artisan::call('storage:link');
+    return 'Symlink created successfully! You can now safely delete this route.';
+});
+
 // Authentication Routes
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');

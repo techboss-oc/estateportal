@@ -27,7 +27,8 @@
     </x-slot>
 
     <!-- Canvas SVG overlay -->
-    <div class="absolute inset-0 pointer-events-none opacity-10 bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbe2rFh8T7dJuXZPKq55IVBwtSXb0UfQoD_fywd_VyHpokD-1HcieQfVbzAibc9r3kC_qxkYUtStuh3eUGO2SG1IieznDrPuvaXoPqClcscUQnKstJqhm-DIBB_pFpFsde8Ob-iaXDzxUylobA8lD2n_90tKyaVmOH7CBT9Dvq__7B2pUddsIp96yg_rtqR8SW4Q9Z-Tp_BKtN9mtkSezTro4EnhTK0btmQFDJCNcU1o_FhsFPh24i')] bg-cover bg-center"></div>
+    <!-- Canvas Background Image (Estate Site Plan) -->
+    <div class="absolute inset-0 pointer-events-none bg-[url('https://lh3.googleusercontent.com/aida-public/AB6AXuCbe2rFh8T7dJuXZPKq55IVBwtSXb0UfQoD_fywd_VyHpokD-1HcieQfVbzAibc9r3kC_qxkYUtStuh3eUGO2SG1IieznDrPuvaXoPqClcscUQnKstJqhm-DIBB_pFpFsde8Ob-iaXDzxUylobA8lD2n_90tKyaVmOH7CBT9Dvq__7B2pUddsIp96yg_rtqR8SW4Q9Z-Tp_BKtN9mtkSezTro4EnhTK0btmQFDJCNcU1o_FhsFPh24i')] bg-cover bg-center bg-no-repeat"></div>
     
     <svg class="absolute inset-0 z-0 h-full w-full" xmlns="http://www.w3.org/2000/svg">
         <defs>

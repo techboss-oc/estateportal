@@ -111,6 +111,7 @@
         }
     </script>
     <style>
+        [x-cloak] { display: none !important; }
         .glass-panel {
             background: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(12px);
