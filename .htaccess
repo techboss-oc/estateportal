@@ -5,9 +5,12 @@
 
     RewriteEngine On
 
-    # Prevent infinite loops
-    RewriteCond %{REQUEST_URI} !^/public/
+    # Direct static assets to the public folder if they exist
+    RewriteCond %{DOCUMENT_ROOT}/public%{REQUEST_URI} -f
+    RewriteRule ^(.*)$ public/$1 [L]
 
-    # Send all requests to the public layout
-    RewriteRule ^(.*)$ public/$1 [L,QSA]
+    # Send all other requests to the local root index.php
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
 </IfModule>
