@@ -14,6 +14,19 @@ Route::get('/create-symlink', function () {
     return 'Symlink created successfully! You can now safely delete this route.';
 });
 
+// Serve storage files directly via PHP (for cPanel deployments without symlink)
+Route::get('/storage/{path}', function (string $path) {
+    $fullPath = storage_path('app/public/' . $path);
+
+    if (!file_exists($fullPath) || is_dir($fullPath)) {
+        abort(404);
+    }
+
+    return response()->file($fullPath, [
+        'Cache-Control' => 'public, max-age=86400',
+    ]);
+})->where('path', '.*');
+
 // Authentication Routes
 Route::middleware('guest')->group(function () {
     Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
