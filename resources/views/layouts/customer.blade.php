@@ -198,7 +198,7 @@
         </header>
         
         <!-- Dashboard Canvas -->
-        <div class="flex-1 p-gutter max-w-container-max mx-auto w-full flex flex-col gap-6 lg:gap-8 pb-12">
+        <div class="flex-1 px-4 md:px-gutter py-6 max-w-container-max mx-auto w-full flex flex-col gap-6 lg:gap-8 pb-32 md:pb-12">
             @if(session('success'))
                 <div class="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded relative" role="alert">
                   <span class="block sm:inline">{{ session('success') }}</span>
@@ -214,5 +214,38 @@
             @yield('content')
         </div>
     </main>
+
+    <!-- Sticky Bottom Navigation (Mobile Only) -->
+    <nav class="md:hidden fixed bottom-0 left-0 w-full z-40 bg-surface/90 dark:bg-inverse-surface/90 backdrop-blur-xl border-t border-outline-variant shadow-[0_-4px_20px_-10px_rgba(0,0,0,0.1)]">
+        <div class="flex justify-around items-center h-16 px-2">
+            <a href="{{ route('customer.dashboard') }}" class="flex flex-col items-center justify-center w-full h-full gap-1 {{ request()->routeIs('customer.dashboard') ? 'text-primary' : 'text-on-surface-variant' }}">
+                <div class="relative px-4 py-0.5 rounded-full {{ request()->routeIs('customer.dashboard') ? 'bg-primary-fixed/50' : '' }}">
+                    <span class="material-symbols-outlined text-[24px]" {!! request()->routeIs('customer.dashboard') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>dashboard</span>
+                </div>
+                <span class="text-[10px] font-medium tracking-wide">Home</span>
+            </a>
+            
+            <a href="{{ route('customer.properties.index') }}" class="flex flex-col items-center justify-center w-full h-full gap-1 {{ request()->routeIs('customer.properties.*') ? 'text-primary' : 'text-on-surface-variant' }}">
+                <div class="relative px-4 py-0.5 rounded-full {{ request()->routeIs('customer.properties.*') ? 'bg-primary-fixed/50' : '' }}">
+                    <span class="material-symbols-outlined text-[24px]" {!! request()->routeIs('customer.properties.*') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>domain</span>
+                </div>
+                <span class="text-[10px] font-medium tracking-wide">Properties</span>
+            </a>
+            
+            <a href="{{ route('customer.map.index') }}" class="flex flex-col items-center justify-center w-full h-full gap-1 {{ request()->routeIs('customer.map.*') ? 'text-primary' : 'text-on-surface-variant' }}">
+                <div class="relative px-4 py-0.5 rounded-full {{ request()->routeIs('customer.map.*') ? 'bg-primary-fixed/50' : '' }}">
+                    <span class="material-symbols-outlined text-[24px]" {!! request()->routeIs('customer.map.*') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>map</span>
+                </div>
+                <span class="text-[10px] font-medium tracking-wide">Estates</span>
+            </a>
+            
+            <a href="{{ route('customer.profile.edit') }}" class="flex flex-col items-center justify-center w-full h-full gap-1 {{ request()->routeIs('customer.profile.*') ? 'text-primary' : 'text-on-surface-variant' }}">
+                <div class="relative px-4 py-0.5 rounded-full {{ request()->routeIs('customer.profile.*') ? 'bg-primary-fixed/50' : '' }}">
+                    <span class="material-symbols-outlined text-[24px]" {!! request()->routeIs('customer.profile.*') ? 'style="font-variation-settings: \'FILL\' 1;"' : '' !!}>person</span>
+                </div>
+                <span class="text-[10px] font-medium tracking-wide">Profile</span>
+            </a>
+        </div>
+    </nav>
 </div>
 @endsection
