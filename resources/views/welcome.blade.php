@@ -603,7 +603,7 @@
     <div class="navbar-actions">
         @if (Route::has('login'))
             @auth
-                <a href="{{ url('/dashboard') }}" class="btn-primary">Dashboard</a>
+                <a href="{{ Auth::user()->isAdmin() ? route('admin.dashboard') : route('customer.dashboard') }}" class="btn-primary">Dashboard</a>
             @else
                 <a href="{{ route('login') }}" class="btn-login">Login</a>
                 @if (Route::has('register'))
